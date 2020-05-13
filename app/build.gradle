@@ -1,0 +1,215 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.firebase.appdistribution'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'com.google.gms.google-services'
+
+def keystorePropertiesFile = rootProject.file("dev-keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+def secretsPropertiesFile = rootProject.file("secrets.properties")
+def secretsProperties = new Properties()
+secretsProperties.load(new FileInputStream(secretsPropertiesFile))
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.google.firebase:firebase-appdistribution-gradle:1.4.1'
+    }
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "lv.spkc.gov.apturicovid"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 47
+        versionName "1.0.47"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "SAFETY_NET_API_KEY", secretsProperties["SAFETY_NET_API_KEY"])
+        buildConfigField("String", "SECRET_KEY", secretsProperties["SECRET_KEY"])
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            testCoverageEnabled = true
+        }
+    }
+
+    productFlavors {
+        staging {
+            applicationIdSuffix ".staging"
+            firebaseAppDistribution {
+                releaseNotes="New demo version"
+                groups="mak-it"
+            }
+
+            buildConfigField("String", "API_URL", "\"https://apturicovid-staging-api.spkc.gov.lv/api/\"")
+            buildConfigField("String", "STATS_URL", "\"https://apturicovid-staging-files.spkc.gov.lv/stats/v1/covid-stats.json\"")
+            buildConfigField("String", "INDEX_URL", "\"https://apturicovid-staging-files.spkc.gov.lv/dkfs/v1/index.txt\"")
+            buildConfigField("String", "CONFIG_URL", "\"https://apturicovid-staging-files.spkc.gov.lv/exposure_configurations/v1/android.json\"")
+        }
+        production {
+            buildConfigField("String", "API_URL", "\"https://apturicovid-api.spkc.gov.lv/api/\"")
+            buildConfigField("String", "STATS_URL", "\"https://apturicovid-files.spkc.gov.lv/stats/v1/covid-stats.json\"")
+            buildConfigField("String", "INDEX_URL", "\"https://apturicovid-files.spkc.gov.lv/dkfs/v1/index.txt\"")
+            buildConfigField("String", "CONFIG_URL", "\"https://apturicovid-files.spkc.gov.lv/exposure_configurations/v1/android.json\"")
+        }
+    }
+
+    flavorDimensions "default"
+
+    signingConfigs {
+        debug {
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    api 'com.google.android.gms:play-services-base:17.2.1'
+    api fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+
+    def daggerVersion = '2.25.2'
+    def recyclerviewVersion = '1.1.0'
+    def constraintLayoutVersion = '2.0.0-beta6'
+    def workVersion = "2.3.4"
+    def glideVersion = "4.11.0"
+    def glideCompilerVersion = "4.10.0"
+    def glideOkHttpIntegrationVersion = "4.9.0"
+    def guavaVersion = '27.0.1'
+    def coroutinesVersion = "1.3.1"
+    def retrofitVersion = '2.8.1'
+    def jodaTimeVersion = '2.10.2'
+    def timberTreeUtilsVersion = '1.0.0'
+    def timberVersion = '4.7.1'
+    def ok2curlVersion = "0.6.0"
+    def lifecycleVersion = "2.2.0"
+    def roomVersion = '2.2.5'
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.3.0'
+    implementation 'androidx.navigation:navigation-fragment:2.2.2'
+    implementation 'androidx.navigation:navigation-ui:2.2.2'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+    implementation "androidx.security:security-crypto:1.0.0-rc02"
+
+    implementation "com.google.android.gms:play-services-safetynet:$google_play_services_version"
+
+    //test
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // dependency injection
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:$coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutinesVersion"
+
+    // android support libraries
+    implementation "androidx.recyclerview:recyclerview:$recyclerviewVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
+
+    //work manager
+    // Kotlin + coroutines
+    implementation "androidx.work:work-runtime-ktx:$workVersion"
+
+    // glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    implementation ("com.github.bumptech.glide:okhttp3-integration:$glideOkHttpIntegrationVersion"){
+        exclude group: 'glide-parent'
+    }
+    kapt "com.github.bumptech.glide:compiler:$glideCompilerVersion"
+
+    // core libraries for java
+    implementation "com.google.guava:guava:$guavaVersion-android"
+
+    // network
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.0'
+
+    // joda time
+    api "net.danlew:android.joda:$jodaTimeVersion"
+    testImplementation "joda-time:joda-time:$jodaTimeVersion"
+
+    // pin edit text
+    implementation ('com.alimuzaffar.lib:pinentryedittext:2.0.6') {
+        // Exclude is only needed if you already have
+        // androidx.appcompat as a dependency in your app.
+        exclude group: 'androidx.appcompat', module: 'appcompat'
+    }
+
+    implementation 'com.google.android.gms:play-services-auth:18.0.0'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:17.4.0'
+    implementation 'com.google.android.gms:play-services-basement:17.2.1'
+    implementation 'com.google.android.gms:play-services-tasks:17.0.2'
+    implementation 'com.google.android.gms:play-services-vision:20.0.0'
+    implementation 'com.google.firebase:firebase-crashlytics:17.0.0'
+    implementation 'com.google.firebase:firebase-analytics-ktx:17.4.2'
+
+    // logger'
+    implementation "net.ypresto.timbertreeutils:timbertreeutils:$timberTreeUtilsVersion"
+    implementation "com.jakewharton.timber:timber:$timberVersion"
+    implementation "com.github.mrmike:ok2curl:$ok2curlVersion"
+
+    // room
+    api "androidx.room:room-runtime:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    api "androidx.room:room-ktx:$roomVersion"
+}

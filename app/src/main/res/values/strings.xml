@@ -1,0 +1,186 @@
+<resources>
+    <string name="app_name" translatable="false">Apturi Covid</string>
+    <string name="title_home">Sākums</string>
+    <string name="title_information">Informācija</string>
+    <string name="title_settings">Iestatījumi</string>
+    <string name="title_statistics">Statistika</string>
+
+    <!-- Intro -->
+    <string name="intro_header">Palīdzi pārraut\nvīrusa ķēdi!</string>
+    <string name="intro_main">Anonīmi un bez atrašanās vietas datiem savā ierīcē fiksē brīžus, kad esi kopā ar citiem. Ja vēlies, norādi tālruni saziņai ar SPKC.</string>
+    <string name="intro_agreement">Piekrītu Lietotnes noteikumiem,\nar Privātuma politiku iepazinos</string>
+    <string name="button_next">Tālāk</string>
+    <string name="button_send">Sūtīt</string>
+    <string name="button_close">Aizvērt</string>
+
+    <!--Home-->
+    <string name="home_button_share">Uzaicini</string>-->
+    <string name="home_header">Kontakta fiksēšana</string>
+    <string name="home_status_work">Šobrīd ieslēgta</string>
+    <string name="home_status_idle">Šobrīd izslēgta</string>
+    <string name="home_status_starting">Tiek ieslēgta</string>
+    <string name="home_previous_day">Iepriekšējā diennaktī</string>
+    <string name="home_tested">Testēti</string>
+    <string name="home_ill">Saslimuši</string>
+    <string name="home_dead">Miruši</string>
+
+    <!--Label-->
+    <string name="label_stats_title">Covid-19 statistika Latvijā</string>
+    <string name="label_tested">Testēti</string>
+    <string name="label_infected">Saslimuši</string>
+    <string name="label_dead">Miruši</string>
+    <string name="label_percentage">Īpatsvars</string>
+    <string name="label_total">Kopā</string>
+    <string name="label_yesterday">Vakar</string>
+    <string name="label_sick">Saslimušie</string>
+    <string name="label_detailed_stats">Detalizēta statistika</string>
+
+    <string name="confirm_stay_anonymous_text">Saskares gadījumā saņemsi tikai paziņojumu tepat lietotnē, un atbalsta iespējas būs ierobežotas. Vai tiešām turpināt bez tālruņa norādīšanas?</string>
+    <string name="confirm_stay_anonymous_no_tracing_text">Vai tiešām turpināt, neieslēdzot kontakta fiksēšanu?</string>
+    <string name="confirm_stay_anonymous_yes">Jā</string>
+    <string name="confirm_stay_anonymous_no">Nē</string>
+
+    <!--Settings-->
+    <string name="label_settings">Iestatījumi</string>
+    <string name="label_enter_SPKC_code">Ja tev SPKC piešķir kodu, ievadi to šeit:</string>
+    <string name="button_enter_code">Ievadīt SPKC kodu</string>
+    <string name="label_notify_contact_search">Rādīt man paziņojumu, ja kontakta fiksēšana izslēdzas</string>
+
+    <!--Activation-->
+    <string name="label_contact_title_tv">Kontakta fiksēšana</string>
+    <string name="label_contact_activation_description_tv">Kontakts: 15+ minūšu klātbūtne līdz ~2 m tuvumā.\nFiksēšana: šifrs, ko tālrunis glabā 14 dienas, tad dzēš.\nKontakta fiksēšana nav izsekošana.</string>
+    <string name="label_activate">Ieslēgt</string>
+    <string name="label_switch_description">Šo funkciju vari ieslēgt arī vēlāk. Un izslēgt, kad vien vēlies.</string>
+    <string name="specify_contact_description">Norādi kontakttālruni, pa kuru Covid-19 saskares gadījumā SPKC ar tevi sazināties.</string>
+    <string name="label_why_specify_number">Kāpēc norādīt tālruni?</string>
+    <string name="label_other_contact">Norādīts tuvinieka tālrunis</string>
+    <string name="label_remain_anonymous">Nevēlos norādīt tālruni</string>
+
+    <!--Why enter number-->
+    <string name="label_why_number_description">Ja SPKC varēs ar tevi sazināties, būs iespējams novērtēt tavu risku, un, ja nepieciešams, atzīt tevi par kontaktpersonu. Tad tev kļūs pieejams atbalsta iespēju tīkls – piemēram, ģimenes ārsts varēs izrakstīt darba nespējas lapu.\n\n
+        SPKC tavu kontakttālruni ar saskares informāciju saņems tikai tad, ja tev tiks konstatēta saskare ar Covid-19, un ne mirkli agrāk. Nevienam citam nekādi dati par tevi zināmi nebūs vispār.</string>
+    <string name="label_why_number">Kāpēc ir vērts norādīt tālruni?</string>
+    <string name="label_understand">Aizvērt</string>
+    <string name="label_ok">Labi</string>
+
+    <!--Number confirm-->
+    <string name="number_confirm_header">Numura apstiprinājums</string>
+    <string name="number_confirm_enter_code">Ievadi kodu šeit:</string>
+    <string name="number_confirm_missing_code">Nesaņēmu kodu, sūtīt vēlreiz</string>
+    <string name="number_confirm_incorrect_code">Ievadīts nepareizs kods</string>
+
+    <string name="code_expiration">Kods derīgs 30 minūtes</string>
+
+    <!-- sms verification -->
+    <string name="sms_verification_info">Uz norādīto tālruņa numuru %1$s ir nosūtīts kods.</string>
+
+    <!--Covid contact-->
+    <string name="covid_contact_header">Fiksēts kontakts ar Covid-19</string>
+    <string name="covid_contact_warning">Tev ir bijusi saskare ar Covid-19 saslimušo.</string>
+    <string name="covid_contact_next_step">Ko tagad darīt?</string>
+    <string name="covid_contact_recommendation_1">Paliec mājās, ierobežo saskarsmi</string>
+    <string name="covid_contact_recommendation_2">Vēro simptomus</string>
+    <string name="covid_contact_recommendation_3">Ir simptomi? Sazinies ar ģimenes ārstu</string>
+    <string name="covid_contact_recommendation_4">Smagi simptomi? Zvani 113</string>
+    <string name="covid_contact_recommendation_5">Gaidi ziņu no SPKC</string>
+
+    <string name="covid_contact_description">Ņem vērā, ka kontakta fiksēšana nenozīmē, ka tev ir infekcija. Šobrīd galvenais – saglabāt rāmu garu, ievērot piesardzību un klausīt mediķus. Iespējams, ka laiks līdz SPKC zvanam vilksies kā mūžība. Lūdzu, bruņojies ar pacietību.</string>
+    <string name="covid_contact_description_no_phone">Ņem vērā, ka kontakta fiksēšana nenozīmē, ka tev ir infekcija. Šobrīd galvenais – saglabāt rāmu garu, ievērot piesardzību un klausīt mediķus. Varbūt tagad vēlies norādīt savu tālruni, lai SPKC ar tevi sazinātos?</string>
+
+    <!--News statistics-->
+    <string name="news_statistics_percent" translatable="false">%1$.2f %%</string>
+
+    <!-- Data transfer success -->
+    <string name="label_data_sent">Paldies! Paziņojums nosūtīts!</string>
+    <string name="label_success_description">Liels paldies par līdzdarbošanos sabiedrības veselības labā! Nelielā darbība, ko tikko veici, būtiski palīdzēs pasargāt citus un efektīvāk pārraut vīrusa izplatības ķēdi.</string>
+
+    <!-- Data transfer submit -->
+    <string name="label_send_data">Sūtīt ziņu fiksētajiem kontaktiem</string>
+    <string name="label_send_data_description">Ja esi inficēts, ar SPKC izsniegtu kodu šeit vari nosūtīt automātisku paziņojumu fiksētajiem kontaktiem, kam bijis inficēšanās risks – brīdināt gan savējos, gan arī svešos līdzcilvēkus. Paziņojums neatklās informāciju par tevi pašu.</string>
+
+    <!--Various-->
+    <string name="label_wrong_number">Neatbilstošs numura formāts</string>
+    <string name="label_empty_number">Numurs nav ievadīts</string>
+    <string name="label_specify_contact">Kontakta fiksēšana</string>
+    <string name="label_specify_phone">Norādīt tālruni</string>
+
+    <!--Contact -->
+    <string name="label_contact">Kontakttālrunis saziņai</string>
+    <string name="label_not_specified">Nav norādīts</string>
+    <string name="label_specify">Norādīt</string>
+    <string name="label_change">Mainīt</string>
+
+    <!--FAQ-->
+    <string name="faq_header">Kā darbojas kontakta fiksēšana?</string>
+    <string name="faq_description">Kad divi viedtālruņi atrodas līdz ~2 m tuvumā, tie pa tiešo apmainās ar šifru, un katrs to glabā 14 dienas. Ja tālruņa saimnieks atzīmē, ka ir inficēts, tie tālruņi, kuros tajā brīdī ir šifrs, saņem paziņojumu.</string>
+    <string name="faq_bullet_points_header">Un kā ar manu privātumu?</string>
+    <string name="label_dummy_point_1">Dati glabājas tikai tālrunī</string>
+    <string name="label_dummy_point_2">Dati tiek automātiski dzēsti</string>
+    <string name="label_dummy_point_3">Citi lietotāji tavu identitāti nezinās</string>
+    <string name="label_dummy_point_4">GPS datus lietotne nefiksē, pat ja GPS ir ieslēgts</string>
+    <string name="faq_most_asked_questions">Biežāk uzdotie jautājumi</string>
+    <string name="faq_question_1">Kāpēc izmantot šo lietotni?</string>
+    <string name="faq_answer_1">Lai palīdzētu ierobežot vīrusa izplatību Latvijā un ātrāk uzzinātu, vai esi bijis kontaktā ar Covid-19. Izmantojot lietotni, varēsi savlaicīgāk izolēties, lai neapdraudētu ģimeni, kolēģus, draugus un pārējos iedzīvotājus, kā arī pievērst uzmanību simptomiem un ātrāk vērsties pēc palīdzības, ja nepieciešams.</string>
+    <string name="faq_question_2">Cik lietotāju vajag, lai lietotne būtu efektīva?</string>
+    <string name="faq_answer_2">Saskaņā ar epidemiologu un zinātnieku aplēsēm, pat ja tikai 20 % Latvijas iedzīvotāju izmantos lietotni, tas jau būs nozīmīgs atbalsts riska identificēšanai un turpmākai infekcijas ierobežošanai sabiedrībā. Tomēr, jo vairāk iedzīvotāju to izmantos, jo lielāks efekts. </string>
+    <string name="faq_question_3">Kā darbojas lietotne?</string>
+    <string name="faq_answer_3">Tā anonīmi ar Bluetooth piefiksē tuvumā (līdz ~2 metriem, 15+ minūtes) esošos viedtālruņus, kuros arī darbojas šī lietotne. Fiksētā informācija glabājas tikai viedtālrunī un pēc 14 dienām automātiski dzēšas. Ja lietotājam tiek apstiprināta saslimšana ar Covid-19, SPKC nosūtīs kodu. To ievadot lietotnē, varēs aktivizēt anonīma paziņojuma nosūtīšanu fiksētajiem kontaktiem, kam bijis inficēšanās risks. Paziņojuma saņēmējam netiek atklāta tā izsūtītāja identitāte. Tāpat saslimušais neuzzina, kas ir paziņojuma saņēmēji.</string>
+    <string name="faq_question_4">Kāda informācija tiek izmantota lietotnē?</string>
+    <string name="faq_answer_4">Ar Bluetooth fiksētie kontakti glabājas tikai ierīcē kā šifrēti kodi un nav pieejami ne pašam lietotājam, ne lietotnes izstrādātājiem. Tie tiek dzēsti pēc attiecīgā 14 dienu perioda.\n\nJa izvēlies norādīt kontakttālruni, to SPKC saņems tikai tad, ja tev pienāks paziņojums par saskari ar Covid-19. SPKC būs pieejami šādi dati: tālrunis, saskares datums, signāla stiprums, saskares ilgums.\n\nLietotne nesaņem un neglabā informāciju par lietotāju atrašanās vietu un precīzu kontakta laiku.</string>
+    <string name="faq_question_5">Ko darīt, ja saņemu lietotnes paziņojumu, ka man bijusi saskare ar Covid-19 saslimušo?</string>
+    <string name="faq_answer_5">Lai pārliecinātos, ka nevari inficēt citus, SPKC iesaka pašizolāciju un vērot, vai neparādās Covid-19 simptomi. Tuvas kontaktpersonas statusu piešķir tikai SPKC. Ja lietotnē esi norādījis telefona numuru, SPKC sazināsies un izstāstīs par tālāko rīcību.</string>
+    <string name="faq_question_6">Vai lietotni izmantot ir droši?</string>
+    <string name="faq_answer_6">Lietotne ir izstrādāta sadarbībā ar Cert.lv un Datu valsts inspekciju, ievērojot Eiropas datu aizsardzības principus un drošības regulējumu.\n\nPapildu drošībai iesakām regulāri veikt viedtālruņa programmatūras un lietotnes atjauninājumus.</string>
+    <string name="faq_question_7">Kā darbojas Bluetooth?</string>
+    <string name="faq_answer_7">Bluetooth ir neliela rādiusa bezvadu saziņas tehnoloģija, ko izmanto viedtālruņos, bezvadu austiņās un viedpulksteņos. Tajā balstās arī lielākā daļa pasaules kontakta fiksēšanas lietotņu, jo ļauj to izdarīt šifrētā veidā. Lai tas darbotos efektīvāk un mazāk noslogotu ierīču baterijas, arī Apple un Google programmatūrā optimizē Bluetooth izmantošanu. Lai izmantotu lietotni, Bluetooth ir jābūt ieslēgtam, un bez tā lietotne nedarbosies.</string>
+    <string name="faq_question_8">Vai lietotne darbosies arī citās valstīs?</string>
+    <string name="faq_answer_8">Pagaidām nē. Starptautiskā sadarbībā tiek pētīts, kā šādas kontakta fiksēšanas lietotnes varētu izmantot arī viesojoties ārzemēs. Šobrīd Apple un Google ir noteikuši ierobežojumus, ka katru kontaktu fiksēšanas lietotni var izmantot tikai attiecīgajā valstī. Tas attiecas arī uz lietotājiem, kuri Latvijā izmanto citās valstīs reģistrētus viedtālruņu profilus.</string>
+    <string name="faq_question_9">Kāpēc mana Android ierīce prasa ieslēgt GPS?</string>
+    <string name="faq_answer_9">Jo pašlaik Android operētājsistēmā Bluetooth Low Energy savienojums ir iekļauts GPS modulī. Tikai tā vari izmantot vajadzīgo Bluetooth funkcionalitāti. Šī prasība nenāk no šīs lietotnes, un tā atrašanās vietas datiem nepiekļūst. Par to vari pārliecināties lietotnes uzstādījumos – GPS piekļuves tiesību tai nav.</string>
+
+    <string name="faq_privacy_policy">Privātuma politika</string>
+    <string name="faq_terms_of_use">Lietošanas noteikumi</string>
+
+    <string name="label_success_close">Aizvērt</string>
+    <string name="confirm_turn_off_tracking_text">Vai tiešām turpināt ar izslēgtu kontakta fiksēšanu?</string>
+    <string name="label_data_refreshed">Dati atjaunoti: %s</string>
+
+    <string name="label_code_resent">Kods nosūtīts atkārtoti</string>
+    <string name="label_code_resend_error">Lūdzu, uzgaidi %1$s sekundes, lai kodu nosūtītu atkārtoti</string>
+    <string name="label_generic_error">Atgadījās kļūda, lūdzam mēģināt vēlreiz</string>
+
+
+    <!-- exposure notification -->
+    <string name="notification_title">Mieru, tikai mieru.</string>
+    <string name="notification_message">Tev konstatēta saskare ar Covid-19 saslimušo.</string>
+
+
+    <!-- bluetooth state monitor notification -->
+    <string name="bt_monitor_notification_title">Kontakta fiksēšana izslēgusies</string>
+    <string name="bt_monitor_notification_message">Kontakta fiksēšana Apturi Covid lietotnē šobrīd nedarbojas.</string>
+
+    <!-- exposure notification -->
+    <string name="notification_channel_name" translatable="false">Exposure Notification</string>
+    <string name="notification_channel_description" translatable="false">Exposure notification alerts.</string>
+
+    <!-- bluetooth state monitor notification -->
+    <string name="bt_monitor_notification_channel_name" translatable="false">Bluetooth Monitor Notification</string>
+    <string name="bt_monitor_notification_channel_description" translatable="false">Bluetooth Monitor notification alerts.</string>
+
+    <string name="share_link" translatable="false">https://www.apturicovid.lv/</string>
+    <string name="privacy_policy_url">https://apturicovid.lv/privatuma-politika</string>
+    <string name="terms_of_use_url">https://apturicovid.lv/lietosanas-noteikumi</string>
+    <string name="detailed_statistics_url" translatable="false">https://arkartassituacija.gov.lv/</string>
+    <string name="lv_language_code" translatable="false">LV</string>
+    <string name="en_language_code" translatable="false">EN</string>
+    <string name="ru_language_code" translatable="false">RU</string>
+    
+    <string name="label_exposure_message">Mieru, tikai mieru. Tev konstatēta saskare ar Covid-19 saslimušo.</string>
+    <string name="label_what_about_my_privacy">Un kā ar manu privātumu?</string>
+    <string name="confirm_turn_off_tracking_yes">Jā</string>
+    <string name="confirm_turn_off_tracking_no">Nē</string>
+    <string name="network_error_message">Lietotne šobrīd darbojas bezsaistē</string>
+
+    <string name="exposure_api_error_unavailable">Diemžēl tavā ierīcē kontakta fiksēšana nedarbojas, jo tā pagaidām neatbalsta Exposure API. Gaidi atjauninājumu.</string>
+    <string name="exposure_api_error_not_enabled">Nav, ko nosūtīt – neesi izmantojis lietotni pietiekami ilgi</string>
+</resources>

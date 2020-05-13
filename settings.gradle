@@ -1,0 +1,2 @@
+rootProject.name='Apturi Covid'
+include ':app'

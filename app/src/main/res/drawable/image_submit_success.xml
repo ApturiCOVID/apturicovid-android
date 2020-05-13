@@ -1,0 +1,59 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="140dp"
+    android:height="134dp"
+    android:viewportWidth="140"
+    android:viewportHeight="134">
+  <path
+      android:pathData="M21,75.892a45.5,45.676 0,1 0,91 0a45.5,45.676 0,1 0,-91 0z"
+      android:strokeAlpha="0.8"
+      android:fillColor="#E3EEEC"
+      android:fillType="nonZero"
+      android:fillAlpha="0.8"/>
+  <path
+      android:pathData="M66.85,130c29.961,0 54.25,-24.382 54.25,-54.46 0,-30.077 -24.289,-54.459 -54.25,-54.459S12.6,45.463 12.6,75.541"
+      android:strokeWidth="6.3"
+      android:fillColor="#00000000"
+      android:fillType="nonZero"
+      android:strokeColor="#E9F1F0"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M49.7,2.543a2.1,2.108 0,1 0,4.2 0a2.1,2.108 0,1 0,-4.2 0z"
+      android:strokeAlpha="0.151"
+      android:fillColor="#458B7A"
+      android:fillType="nonZero"
+      android:fillAlpha="0.151"/>
+  <path
+      android:pathData="M0,33.027a2.8,2.811 0,1 0,5.6 0a2.8,2.811 0,1 0,-5.6 0z"
+      android:strokeAlpha="0.401"
+      android:fillColor="#F48645"
+      android:fillType="nonZero"
+      android:fillAlpha="0.401"/>
+  <path
+      android:pathData="M91.7,11.243a2.8,2.811 0,1 0,5.6 0a2.8,2.811 0,1 0,-5.6 0z"
+      android:strokeAlpha="0.201"
+      android:fillColor="#458B7A"
+      android:fillType="nonZero"
+      android:fillAlpha="0.201"/>
+  <path
+      android:pathData="M135.8,86.432a2.1,2.108 0,1 0,4.2 0a2.1,2.108 0,1 0,-4.2 0z"
+      android:strokeAlpha="0.301"
+      android:fillColor="#458B7A"
+      android:fillType="nonZero"
+      android:fillAlpha="0.301"/>
+  <path
+      android:pathData="M33.6,42.865a2.1,2.108 0,1 0,4.2 0a2.1,2.108 0,1 0,-4.2 0z"
+      android:strokeAlpha="0.251"
+      android:fillColor="#458B7A"
+      android:fillType="nonZero"
+      android:fillAlpha="0.251"/>
+  <path
+      android:pathData="M133.7,42.865a2.1,2.108 0,1 0,4.2 0a2.1,2.108 0,1 0,-4.2 0z"
+      android:strokeAlpha="0.501"
+      android:fillColor="#F48645"
+      android:fillType="nonZero"
+      android:fillAlpha="0.501"/>
+  <path
+      android:pathData="M43.507,73.302c-2.149,2.415 -1.985,6.102 0.369,8.317L61.282,98l33.034,-33.976c2.25,-2.314 2.25,-5.998 0,-8.312 -2.17,-2.232 -5.739,-2.283 -7.971,-0.112 -0.038,0.036 -0.075,0.073 -0.111,0.111L60.93,81.728l-9.334,-8.784c-2.271,-2.137 -5.845,-2.029 -7.983,0.242l-0.106,0.116z"
+      android:fillColor="#10775F"
+      android:fillType="evenOdd"/>
+</vector>

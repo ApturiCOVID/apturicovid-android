@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/back_arrow_iv"
+                android:layout_width="@dimen/back_arrow_size"
+                android:layout_height="@dimen/back_arrow_size"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="@dimen/back_arrow_padding_top"
+                android:padding="@dimen/back_arrow_padding"
+                android:src="@drawable/ic_back_arrow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/contact_image_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image_contact"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/back_arrow_iv" />
+
+            <TextView
+                android:id="@+id/activation_title_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fragment_side_margin"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="@dimen/fragment_side_margin"
+                android:text="@string/label_contact_title_tv"
+                android:textAlignment="center"
+                android:textColor="@color/titleTextColor"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contact_image_iv" />
+
+            <TextView
+                android:id="@+id/activation_description_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fragment_side_margin"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/fragment_side_margin"
+                android:text="@string/label_contact_activation_description_tv"
+                android:textAlignment="center"
+                android:textColor="@color/subtitleTextColor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/activation_title_tv" />
+
+            <View
+                android:id="@+id/divider_1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/fragment_side_margin"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="@dimen/fragment_side_margin"
+                android:background="@color/dividerGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/activation_description_tv" />
+
+            <TextView
+                android:id="@+id/label_activate_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fragment_side_margin"
+                android:layout_marginTop="20dp"
+                android:text="@string/label_activate"
+                android:textColor="@color/subtitleTextColor"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/activate_switch"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_1" />
+
+            <TextView
+                android:id="@+id/label_switch_description_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fragment_side_margin"
+                android:layout_marginTop="8dp"
+                android:text="@string/label_switch_description"
+                android:textColor="@color/regularTextColor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/label_activate_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_activate_tv" />
+
+            <Switch
+                android:id="@+id/activate_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/fragment_side_margin"
+                android:scaleX="0.9"
+                android:scaleY="0.9"
+                android:thumb="@drawable/switch_thumb"
+                android:track="@drawable/switch_track_gray"
+                app:layout_constraintTop_toTopOf="@id/label_activate_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/label_activate_tv" />
+
+            <View
+                android:id="@+id/divider_2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/fragment_side_margin"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="@dimen/fragment_side_margin"
+                android:background="@color/dividerGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_switch_description_tv" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/specify_number_container_cl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_2">
+
+                <TextView
+                    android:id="@+id/contact_description_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:text="@string/specify_contact_description"
+                    android:textColor="@color/subtitleTextColor"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/contact_why_btn_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="10dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/label_why_number"
+                    android:textColor="@color/titleTextColor"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/contact_description_tv" />
+
+                <EditText
+                    android:id="@+id/phone_code_et"
+                    android:layout_width="75dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_edit_text_phone_code"
+                    android:inputType="phone"
+                    android:enabled="false"
+                    android:paddingStart="16dp"
+                    android:text="+371"
+                    android:textColor="@color/grayTextColor"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/contact_why_btn_tv" />
+
+                <View
+                    android:id="@+id/phone_divider"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:background="@color/dividerGray"
+                    app:layout_constraintBottom_toBottomOf="@id/phone_code_et"
+                    app:layout_constraintStart_toEndOf="@id/phone_code_et"
+                    app:layout_constraintTop_toTopOf="@id/phone_code_et" />
+
+                <EditText
+                    android:id="@+id/phone_et"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:background="@drawable/bg_edit_text_phone"
+                    android:inputType="phone"
+                    android:maxLength="8"
+                    android:paddingStart="16dp"
+                    android:textColor="@color/subtitleTextColor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/phone_divider"
+                    app:layout_constraintTop_toBottomOf="@id/contact_why_btn_tv" />
+
+                <CheckBox
+                    android:id="@+id/third_party_contact_cb"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="16dp"
+                    android:button="@drawable/checkbox_selector"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/phone_et" />
+
+                <TextView
+                    android:id="@+id/other_contact_description_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:layout_marginBottom="2dp"
+                    android:text="@string/label_other_contact"
+                    android:textColor="@color/subtitleTextColor"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/third_party_contact_cb"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/third_party_contact_cb"
+                    app:layout_constraintTop_toTopOf="@id/third_party_contact_cb" />
+
+                <LinearLayout
+                    android:id="@+id/remain_anonymous_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center_vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/other_contact_description_tv">
+
+                    <TextView
+                        android:id="@+id/contact_remain_anonymous_btn_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/label_remain_anonymous"
+                        android:textColor="@color/regularTextColor"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/other_contact_description_tv" />
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="2dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:layout_constraintStart_toEndOf="@id/contact_remain_anonymous_btn_tv"
+                        app:layout_constraintTop_toTopOf="@id/contact_remain_anonymous_btn_tv" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/button_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="divider_2,specify_number_container_cl" />
+
+            <Button
+                android:id="@+id/next_button"
+                android:layout_width="@dimen/default_button_width"
+                android:layout_height="@dimen/default_button_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="58dp"
+                android:layout_marginBottom="58dp"
+                android:background="@drawable/default_button_bg_selector"
+                android:text="@string/button_next"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_barrier"
+                app:layout_constraintVertical_bias="1.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

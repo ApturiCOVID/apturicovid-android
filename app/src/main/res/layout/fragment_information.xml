@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundGray"
+            tools:context=".ui.information.InformationFragment">
+
+            <LinearLayout
+                android:id="@+id/topContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_info_header"
+                android:orientation="vertical"
+                android:paddingBottom="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="@dimen/info_image_size"
+                    android:layout_height="@dimen/info_image_size"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="@dimen/fragment_text_vertical_margin"
+                    android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                    android:layout_marginBottom="2dp"
+                    android:src="@drawable/faq_logo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:layout_marginBottom="2dp"
+                    android:text="@string/faq_header"
+                    android:textColor="@color/headerTextColor"
+                    android:textAlignment="textStart"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:layout_marginBottom="2dp"
+                    android:text="@string/faq_description"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/subtitleTextColor"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:layout_marginBottom="4dp"
+                    android:textColor="@color/subtitleTextColor"
+                    android:text="@string/faq_bullet_points_header"
+                    android:textAlignment="textStart"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:layout_marginTop="8dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:src="@drawable/ic_background_circle"
+                        android:tint="@color/colorAccent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/primaryTextColor"
+                        android:text="@string/label_dummy_point_1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:src="@drawable/ic_background_circle"
+                        android:tint="@color/colorAccent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/primaryTextColor"
+                        android:text="@string/label_dummy_point_2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:src="@drawable/ic_background_circle"
+                        android:tint="@color/colorAccent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/primaryTextColor"
+                        android:text="@string/label_dummy_point_3" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:src="@drawable/ic_background_circle"
+                        android:tint="@color/colorAccent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/primaryTextColor"
+                        android:text="@string/label_dummy_point_4" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bottomContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/topContainer">
+
+                <TextView
+                    android:id="@+id/listViewTitleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                    android:layout_marginBottom="18dp"
+                    android:text="@string/faq_most_asked_questions"
+                    android:textColor="@color/headerTextColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <View style="@style/Divider" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/questionContainer1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp">
+
+                    <TextView
+                        android:id="@+id/questionView1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:text="@string/faq_question_1"
+                        android:textAlignment="textStart"
+                        android:textSize="13sp"
+                        android:textColor="@color/regularTextColor"
+                        app:layout_constraintEnd_toEndOf="@id/questionImage1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/questionImage1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:layout_marginEnd="@dimen/faq_image_margin_end"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:src="@drawable/faq_colapse"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expandableLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_duration="150"
+                    app:el_expanded="false"
+                    app:el_parallax="0.5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:textColor="@color/headerTextColor"
+                        android:text="@string/faq_answer_1" />
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+                <View style="@style/Divider" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/questionContainer2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp">
+
+                    <TextView
+                        android:id="@+id/questionView2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:text="@string/faq_question_2"
+                        android:textAlignment="textStart"
+                        android:textSize="13sp"
+                        android:textColor="@color/regularTextColor"
+                        app:layout_constraintEnd_toEndOf="@id/questionImage2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/questionImage2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:layout_marginEnd="@dimen/faq_image_margin_end"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:src="@drawable/faq_colapse"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expandableLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_duration="150"
+                    app:el_expanded="false"
+                    app:el_parallax="0.5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:textColor="@color/headerTextColor"
+                        android:text="@string/faq_answer_2" />
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+                <View style="@style/Divider" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/questionContainer3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp">
+
+                    <TextView
+                        android:id="@+id/questionView3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:text="@string/faq_question_3"
+                        android:textAlignment="textStart"
+                        android:textSize="13sp"
+                        android:textColor="@color/regularTextColor"
+                        app:layout_constraintEnd_toEndOf="@id/questionImage3"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/questionImage3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:layout_marginEnd="@dimen/faq_image_margin_end"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:src="@drawable/faq_colapse"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expandableLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_duration="150"
+                    app:el_expanded="false"
+                    app:el_parallax="0.5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                        android:textColor="@color/headerTextColor"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:text="@string/faq_answer_3" />
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+                <View style="@style/Divider" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/questionContainer4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp">
+
+                    <TextView
+                        android:id="@+id/questionView4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:text="@string/faq_question_4"
+                        android:textAlignment="textStart"
+                        android:textSize="13sp"
+                        android:textColor="@color/regularTextColor"
+                        app:layout_constraintEnd_toEndOf="@id/questionImage4"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/questionImage4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:layout_marginEnd="@dimen/faq_image_margin_end"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:src="@drawable/faq_colapse"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expandableLayout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_duration="150"
+                    app:el_expanded="false"
+                    app:el_parallax="0.5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:textColor="@color/headerTextColor"
+                        android:text="@string/faq_answer_4" />
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+                <View style="@style/Divider" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/questionContainer5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp">
+
+                    <TextView
+                        android:id="@+id/questionView5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:text="@string/faq_question_5"
+                        android:textAlignment="textStart"
+                        android:textSize="13sp"
+                        android:textColor="@color/regularTextColor"
+                        app:layout_constraintEnd_toEndOf="@id/questionImage5"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/questionImage5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:layout_marginEnd="@dimen/faq_image_margin_end"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:src="@drawable/faq_colapse"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expandableLayout5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_duration="150"
+                    app:el_expanded="false"
+                    app:el_parallax="0.5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:textColor="@color/headerTextColor"
+                        android:text="@string/faq_answer_5" />
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+                <View style="@style/Divider" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/questionContainer6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp">
+
+                    <TextView
+                        android:id="@+id/questionView6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:text="@string/faq_question_6"
+                        android:textAlignment="textStart"
+                        android:textSize="13sp"
+                        android:textColor="@color/regularTextColor"
+                        app:layout_constraintEnd_toEndOf="@id/questionImage6"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/questionImage6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:layout_marginEnd="@dimen/faq_image_margin_end"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:src="@drawable/faq_colapse"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expandableLayout6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_duration="150"
+                    app:el_expanded="false"
+                    app:el_parallax="0.5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:textColor="@color/headerTextColor"
+                        android:text="@string/faq_answer_6" />
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+                <View style="@style/Divider" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/questionContainer7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp">
+
+                    <TextView
+                        android:id="@+id/questionView7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:text="@string/faq_question_7"
+                        android:textAlignment="textStart"
+                        android:textSize="13sp"
+                        android:textColor="@color/regularTextColor"
+                        app:layout_constraintEnd_toEndOf="@id/questionImage7"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/questionImage7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:layout_marginEnd="@dimen/faq_image_margin_end"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:src="@drawable/faq_colapse"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expandableLayout7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_duration="150"
+                    app:el_expanded="false"
+                    app:el_parallax="0.5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:textColor="@color/headerTextColor"
+                        android:text="@string/faq_answer_7" />
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+                <View style="@style/Divider" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/questionContainer8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp">
+
+                    <TextView
+                        android:id="@+id/questionView8"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:text="@string/faq_question_8"
+                        android:textAlignment="textStart"
+                        android:textSize="13sp"
+                        android:textColor="@color/regularTextColor"
+                        app:layout_constraintEnd_toEndOf="@id/questionImage8"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/questionImage8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:layout_marginEnd="@dimen/faq_image_margin_end"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:src="@drawable/faq_colapse"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expandableLayout8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_duration="150"
+                    app:el_expanded="false"
+                    app:el_parallax="0.5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:textColor="@color/headerTextColor"
+                        android:text="@string/faq_answer_8" />
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+                <View style="@style/Divider" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/questionContainer9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp">
+
+                    <TextView
+                        android:id="@+id/questionView9"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:text="@string/faq_question_9"
+                        android:textAlignment="textStart"
+                        android:textSize="13sp"
+                        android:textColor="@color/regularTextColor"
+                        app:layout_constraintEnd_toEndOf="@id/questionImage9"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/questionImage9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:layout_marginEnd="@dimen/faq_image_margin_end"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:src="@drawable/faq_colapse"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expandableLayout9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_duration="150"
+                    app:el_expanded="false"
+                    app:el_parallax="0.5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:textColor="@color/headerTextColor"
+                        android:text="@string/faq_answer_9" />
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+                <TextView
+                    android:id="@+id/privacyPolicyLinkView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                    android:layout_marginBottom="@dimen/faq_margin_vertical"
+                    android:text="@string/faq_privacy_policy"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorButton" />
+
+                <TextView
+                    android:id="@+id/termsOfUseView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                    android:layout_marginTop="@dimen/faq_margin_vertical"
+                    android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                    android:layout_marginBottom="75dp"
+                    android:textStyle="bold"
+                    android:text="@string/faq_terms_of_use"
+                    android:textColor="@color/colorButton" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

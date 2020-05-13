@@ -1,0 +1,68 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="fragment_text_horizontal_margin">30dp</dimen>
+    <dimen name="fragment_text_vertical_margin">31dp</dimen>
+
+    <dimen name="fragment_header_text_size">26sp</dimen>
+    <dimen name="fragment_body_text_size">14sp</dimen>
+
+    <dimen name="default_button_height">50dp</dimen>
+    <dimen name="default_button_width">175dp</dimen>
+
+    <dimen name="language_item_side_size">41dp</dimen>
+    <dimen name="language_item_text_size">16sp</dimen>
+    <dimen name="language_item_start_margin">15dp</dimen>
+    <dimen name="bg_rounded_corner_radius">28dp</dimen>
+    <dimen name="stats_card_corner_radius">12dp</dimen>
+    <dimen name="stat_card_side_margin">20dp</dimen>
+    <dimen name="stat_card_height">140dp</dimen>
+
+    <dimen name="web_view_back_height">45dp</dimen>
+    <dimen name="web_view_back_width">45dp</dimen>
+    <dimen name="web_view_back_insets">16dp</dimen>
+    <dimen name="fragment_side_margin">28dp</dimen>
+    <dimen name="confirmation_fragment_side_margin">20dp</dimen>
+    <dimen name="confirmation_dialog_button_size">16sp</dimen>
+    <dimen name="fragment_top_margin">56dp</dimen>
+
+    <dimen name="home_status_size">16sp</dimen>
+    <dimen name="home_switch_height">33dp</dimen>
+    <dimen name="home_switch_width">60dp</dimen>
+    <dimen name="home_switch_top_margin">24dp</dimen>
+    <dimen name="home_statistics_header_top_margin">42dp</dimen>
+    <dimen name="home_statistics_subtitle_text_size">13sp</dimen>
+    <dimen name="home_statistics_divider_margin">18dp</dimen>
+    <dimen name="home_statistics_divider_height">32dp</dimen>
+    <dimen name="home_statistics_divider_width">2dp</dimen>
+
+    <dimen name="share_top_margin">46dp</dimen>
+    <dimen name="edit_text_corner_radius">5dp</dimen>
+    <dimen name="checkbox_side_length">38dp</dimen>
+
+    <dimen name="sms_header_text_size">18sp</dimen>
+
+    <dimen name="faq_image_margin_end">40dp</dimen>
+    <dimen name="faq_margin_vertical">12dp</dimen>
+
+    <dimen name="dialog_button_height">50dp</dimen>
+    <dimen name="exposure_panel_height">120dp</dimen>
+    <dimen name="home_footer_height">160dp</dimen>
+    <dimen name="exposure_panel_bottom_margin">142dp</dimen>
+    <dimen name="home_switch_margin_bottom">24dp</dimen>
+    <dimen name="home_exposure_message_text_size">14sp</dimen>
+    <dimen name="home_image_bottom_margin">32dp</dimen>
+    <dimen name="info_image_size">130dp</dimen>
+    <dimen name="back_arrow_size">58dp</dimen>
+    <dimen name="back_arrow_padding">20dp</dimen>
+    <dimen name="back_arrow_padding_top">24dp</dimen>
+    <dimen name="share_button_width">20dp</dimen>
+    <dimen name="share_button_height">17dp</dimen>
+    <dimen name="stat_regular_text_size">20sp</dimen>
+    <dimen name="stat_ratio_text_size">24sp</dimen>
+    <dimen name="exposed_label_icon_size">33dp</dimen>
+
+    <item name="home_image_size_percent" type="dimen">0.43</item>
+</resources>

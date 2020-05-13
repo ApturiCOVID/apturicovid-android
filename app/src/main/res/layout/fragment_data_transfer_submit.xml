@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true">
+
+            <ImageView
+                android:id="@+id/back_arrow_iv"
+                android:layout_width="@dimen/back_arrow_size"
+                android:layout_height="@dimen/back_arrow_size"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="@dimen/back_arrow_padding_top"
+                android:padding="@dimen/back_arrow_padding"
+                android:src="@drawable/ic_back_arrow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/data_submit_title_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fragment_side_margin"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/fragment_side_margin"
+                android:text="@string/label_send_data"
+                android:textAlignment="center"
+                android:textColor="@color/headerTextColor"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/back_arrow_iv"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/data_submit_description_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fragment_side_margin"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/fragment_side_margin"
+                android:text="@string/label_send_data_description"
+                android:textAlignment="center"
+                android:textColor="@color/subtitleTextColor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/data_submit_title_tv" />
+
+
+            <TextView
+                android:id="@+id/enter_code_label_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fragment_side_margin"
+                android:layout_marginTop="42dp"
+                android:layout_marginEnd="@dimen/fragment_side_margin"
+                android:text="@string/number_confirm_enter_code"
+                android:textAlignment="center"
+                android:textColor="@color/subtitleTextColor"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/data_submit_description_tv" />
+
+            <com.alimuzaffar.lib.pin.PinEntryEditText
+                android:id="@+id/code_et"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/fragment_side_margin"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/fragment_side_margin"
+                android:cursorVisible="false"
+                android:digits="0123456789"
+                android:inputType="numberDecimal"
+                android:maxLength="8"
+                android:textIsSelectable="false"
+                android:textSize="18sp"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/enter_code_label_tv"
+                app:pinAnimationType="popIn"
+                app:pinBackgroundDrawable="@drawable/bg_pin_number"
+                app:pinBackgroundIsSquare="true"
+                app:pinCharacterSpacing="6dp"
+                app:pinTextBottomPadding="13dp" />
+
+            <TextView
+                android:id="@+id/error_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backgroundGray"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="12dp"
+                android:text="@string/number_confirm_incorrect_code"
+                android:textColor="@color/grayTextColor2"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/code_et" />
+
+            <Button
+                android:id="@+id/next_button"
+                android:layout_width="@dimen/default_button_width"
+                android:layout_height="@dimen/default_button_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/default_button_bg_selector"
+                android:textAllCaps="false"
+                android:text="@string/button_send"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/error_tv"
+                app:layout_constraintVertical_bias="1.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

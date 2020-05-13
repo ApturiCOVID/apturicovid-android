@@ -1,0 +1,135 @@
+{
+  "project_info": {
+    "project_number": "503076402814",
+    "firebase_url": "https://apturicovid.firebaseio.com",
+    "project_id": "apturicovid",
+    "storage_bucket": "apturicovid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503076402814:android:d50c8e46df34d1ec1aca2f",
+        "android_client_info": {
+          "package_name": "lv.spkc.apturicovid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "503076402814-p5d4f0si8vmi59rilirkvkibe5tl9dad.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lv.spkc.apturicovid",
+            "certificate_hash": "f84be4eadd66839e2b82eaabc777cc368344b3d7"
+          }
+        },
+        {
+          "client_id": "503076402814-45d0mitmdp8d7hm5jbbtos4ifhcn3fmi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3JfoVTcUkJp4CpGObVK5CrS49ZSf1bl0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "503076402814-45d0mitmdp8d7hm5jbbtos4ifhcn3fmi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "503076402814-anfsm7qifd8dq60g0dor7i4ftc6mjbbc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "lv.spkc.gov.apturicovid.staging"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503076402814:android:5d8cba16d971f6221aca2f",
+        "android_client_info": {
+          "package_name": "lv.spkc.gov.apturicovid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "503076402814-45d0mitmdp8d7hm5jbbtos4ifhcn3fmi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3JfoVTcUkJp4CpGObVK5CrS49ZSf1bl0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "503076402814-45d0mitmdp8d7hm5jbbtos4ifhcn3fmi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "503076402814-anfsm7qifd8dq60g0dor7i4ftc6mjbbc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "lv.spkc.gov.apturicovid.staging"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503076402814:android:05b37e8cfd9fafac1aca2f",
+        "android_client_info": {
+          "package_name": "lv.spkc.gov.apturicovid.staging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "503076402814-o585tu5ihqj0ae5fq8qmi0ark0ge4i6o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lv.spkc.gov.apturicovid.staging",
+            "certificate_hash": "019e843205212e73dfc7a5828b968581c00ddc97"
+          }
+        },
+        {
+          "client_id": "503076402814-45d0mitmdp8d7hm5jbbtos4ifhcn3fmi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3JfoVTcUkJp4CpGObVK5CrS49ZSf1bl0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "503076402814-45d0mitmdp8d7hm5jbbtos4ifhcn3fmi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "503076402814-anfsm7qifd8dq60g0dor7i4ftc6mjbbc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "lv.spkc.gov.apturicovid.staging"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

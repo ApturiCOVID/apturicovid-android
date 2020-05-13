@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/confirmation_fragment_side_margin"
+        android:background="@drawable/background_rounded">
+
+        <TextView
+            android:id="@+id/description_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="16dp"
+            android:textColor="@color/headerTextColor"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Mollit non eq si non proident enim eiusmod aliqua aliqua officia aute occaecat aliquip est aute" />
+
+        <View
+            android:id="@+id/divider_vertical"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/dividerGray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description_tv" />
+
+        <TextView
+            android:id="@+id/cancel_button"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dialog_button_height"
+            android:gravity="center"
+            tools:text="NO"
+            android:textColor="@color/headerTextColor"
+            android:textSize="@dimen/confirmation_dialog_button_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/description_tv"
+            app:layout_constraintTop_toBottomOf="@id/description_tv"
+            app:layout_constraintWidth_percent=".5" />
+
+        <View
+            android:id="@+id/divider_horizontal"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/dividerGray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/accept_button"
+            app:layout_constraintTop_toBottomOf="@id/divider_vertical" />
+
+        <TextView
+            android:id="@+id/accept_button"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dialog_button_height"
+            android:gravity="center"
+            tools:text="YES"
+            android:textColor="@color/headerTextColor"
+            android:textSize="@dimen/confirmation_dialog_button_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cancel_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description_tv" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

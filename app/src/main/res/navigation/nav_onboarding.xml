@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_onboarding"
+    app:startDestination="@id/introFragment">
+
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="lv.spkc.apturicovid.ui.intro.IntroFragment"
+        android:label="IntroFragment" >
+    </fragment>
+    <fragment
+        android:id="@+id/activationFragment"
+        android:name="lv.spkc.apturicovid.ui.intro.ActivationFragment"/>
+    <fragment
+        android:id="@+id/whyEnterNumberFragmentIntro"
+        android:name="lv.spkc.apturicovid.ui.settings.WhyEnterNumberFragment"/>
+    <fragment
+        android:id="@+id/smsVerification"
+        android:name="lv.spkc.apturicovid.ui.sms.SmsRetrievalFragment"/>
+</navigation>

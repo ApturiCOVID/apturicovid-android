@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/bottomNavFragment">
+
+    <fragment
+        android:id="@+id/bottomNavFragment"
+        android:name="lv.spkc.apturicovid.ui.bottomnav.BottomNavFragment"
+        android:label="BottomNavFragment">
+        <action
+            android:id="@+id/toDataTransferWizard"
+            app:destination="@id/data_transfer_graph" />
+
+    </fragment>
+
+    <navigation
+        android:id="@+id/data_transfer_graph"
+        app:startDestination="@id/dataSubmitFragment">
+
+        <fragment
+            android:id="@+id/dataSubmitFragment"
+            android:name="lv.spkc.apturicovid.ui.settings.datatransfer.DataTransferSubmitFragment">
+            <action
+                android:id="@+id/action_go_to_success"
+                app:destination="@id/dataSuccessFragment"
+                app:launchSingleTop="true"
+                app:popUpTo="@+id/main_nav_graph"
+                app:popUpToInclusive="true" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/dataSuccessFragment"
+            android:name="lv.spkc.apturicovid.ui.settings.datatransfer.DataTransferSuccessFragment" />
+    </navigation>
+
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="lv.spkc.apturicovid.ui.settings.ContactFragment" />
+
+    <fragment
+        android:id="@+id/whyEnterNumberFragment"
+        android:name="lv.spkc.apturicovid.ui.settings.WhyEnterNumberFragment" />
+    <fragment
+        android:id="@+id/SMSRetrievalFragment"
+        android:name="lv.spkc.apturicovid.ui.sms.SmsRetrievalFragment"
+        android:label="SMSRetrievalFragment" />
+    <fragment
+        android:id="@+id/exposedNextStepsFragment"
+        android:name="lv.spkc.apturicovid.ui.home.ExposedNextStepsFragment"
+        android:label="ExposedNextStepsFragment" />
+
+    <fragment
+        android:id="@+id/debugInfoFragment"
+        android:name="lv.spkc.apturicovid.ui.home.DebugInfoFragment"
+        android:label="DebugInfoFragment" />
+</navigation>

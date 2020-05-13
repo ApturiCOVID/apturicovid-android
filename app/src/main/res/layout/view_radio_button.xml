@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="uiModel"
+            type="lv.spkc.apturicovid.ui.widget.radiobutton.RadioButtonUiModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/radio_button_outline_iv"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:padding="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/radio_btn_deselected"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/radio_button_selected_iv"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/radio_btn_selected"
+            android:scaleY="0"
+            android:scaleX="0"
+            app:layout_constraintBottom_toBottomOf="@+id/radio_button_outline_iv"
+            app:layout_constraintEnd_toEndOf="@+id/radio_button_outline_iv"
+            app:layout_constraintStart_toStartOf="@+id/radio_button_outline_iv"
+            app:layout_constraintTop_toTopOf="@+id/radio_button_outline_iv" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/radio_button_outline_iv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/radio_button_outline_iv"
+            app:layout_constraintTop_toTopOf="@+id/radio_button_outline_iv">
+
+            <TextView
+                android:id="@+id/button_title_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/radio_btn_text_color_selector"
+                android:textSize="16sp"
+                tools:text="Norādīt kontaktu"
+                app:layout_constraintStart_toEndOf="@+id/radio_button_outline_iv"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

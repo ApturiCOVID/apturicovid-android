@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#22725A</color>
+    <color name="colorPrimaryDark">#003122</color>
+    <color name="colorAccent">#F48645</color>
+    <color name="colorInactive">#A7BBB5</color>
+
+    <color name="colorGreenAccent">#30a07f</color>
+
+    <color name="colorButton">#30a07f</color>
+    <color name="colorButtonDisabled">#6FBDA6</color>
+    <color name="colorButtonRed">#EF5C5B</color>
+
+    <color name="primaryTextColor">#4e4e5d</color>
+    <color name="headerTextColor">#161b28</color>
+    <color name="hyperlinkColor">#458b7a</color>
+
+    <color name="titleTextColor">#30a07f</color>
+    <color name="subtitleTextColor">#272727</color>
+    <color name="statValueTextColor">#404048</color>
+    <color name="regularTextColor">#616672</color>
+    <color name="warningTextColor">#da6565</color>
+    <color name="grayTextColor">#9d9d9d</color>
+    <color name="grayTextColor2">#999999</color>
+    <color name="networkErrorText">#96969f</color>
+
+
+    <color name="switchGray">#ebebed</color>
+
+    <color name="networkErrorBackground">#e7e7e8</color>
+
+    <color name="backgroundGray">#F3F4F3</color>
+    <color name="backgroundError">#F6E1E1</color>
+
+    <color name="editTextErrorTextColor">#9B2500</color>
+    <color name="dividerGray">#D3D3D3</color>
+
+    <color name="checkboxOutlineColor">#9eb7b2</color>
+    <color name="dividerGreen">#0d5b44</color>
+
+    <color name="statusColor">@color/colorGreenAccent</color>
+
+    <color name="smsHeader">#30a07f</color>
+
+    <color name="colorLink">#f5772d</color>
+    <color name="backgroundTransparent">#001B1C21</color>
+</resources>

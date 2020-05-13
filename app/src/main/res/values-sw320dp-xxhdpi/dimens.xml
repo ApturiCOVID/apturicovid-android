@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="exposure_panel_height">70dp</dimen>
+    <dimen name="home_footer_height">90dp</dimen>
+    <dimen name="exposure_panel_bottom_margin">60dp</dimen>
+
+    <dimen name="fragment_header_text_size">16sp</dimen>
+    <dimen name="home_status_size">13sp</dimen>
+    <dimen name="home_statistics_header_top_margin">16dp</dimen>
+    <dimen name="home_statistics_subtitle_text_size">11sp</dimen>
+
+    <dimen name="home_switch_height">22dp</dimen>
+    <dimen name="home_switch_width">40dp</dimen>
+
+    <dimen name="home_switch_margin_bottom">10dp</dimen>
+    <dimen name="home_exposure_message_text_size">10sp</dimen>
+    <dimen name="home_image_bottom_margin">14dp</dimen>
+    <dimen name="share_top_margin">10dp</dimen>
+
+    <dimen name="stat_card_height">130dp</dimen>
+
+    <item name="home_image_size_percent" type="dimen">0.42</item>
+
+    <dimen name="fragment_top_margin">36dp</dimen>
+
+    <dimen name="back_arrow_size">44dp</dimen>
+    <dimen name="back_arrow_padding">14dp</dimen>
+    <dimen name="back_arrow_padding_top">16dp</dimen>
+    <dimen name="info_image_size">110dp</dimen>
+
+    <dimen name="language_item_side_size">34dp</dimen>
+    <dimen name="language_item_text_size">13sp</dimen>
+
+    <dimen name="share_button_width">15dp</dimen>
+    <dimen name="share_button_height">11dp</dimen>
+
+    <dimen name="stat_regular_text_size">16sp</dimen>
+    <dimen name="stat_ratio_text_size">18sp</dimen>
+    <dimen name="stat_card_side_margin">14dp</dimen>
+    <dimen name="exposed_label_icon_size">25dp</dimen>
+</resources>

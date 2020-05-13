@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/back_arrow_iv"
+                android:layout_width="@dimen/back_arrow_size"
+                android:layout_height="@dimen/back_arrow_size"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="@dimen/back_arrow_padding_top"
+                android:padding="@dimen/back_arrow_padding"
+                android:src="@drawable/ic_back_arrow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/topContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/back_arrow_iv">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                    android:layout_marginBottom="2dp"
+                    android:src="@drawable/ic_alert" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:layout_marginBottom="2dp"
+                    android:text="@string/covid_contact_header"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/headerTextColor"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:layout_marginBottom="2dp"
+                    android:text="@string/covid_contact_warning"
+                    android:textAlignment="textStart"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/covid_contact_next_step"
+                    android:textColor="@color/headerTextColor"
+                    android:textAlignment="textStart"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:src="@drawable/ic_background_circle"
+                        android:tint="@color/colorAccent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/covid_contact_recommendation_1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:src="@drawable/ic_background_circle"
+                        android:tint="@color/colorAccent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/covid_contact_recommendation_2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:src="@drawable/ic_background_circle"
+                        android:tint="@color/colorAccent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/covid_contact_recommendation_3" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:src="@drawable/ic_background_circle"
+                        android:tint="@color/colorAccent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/covid_contact_recommendation_4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/optional_to_do"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:src="@drawable/ic_background_circle"
+                        android:tint="@color/colorAccent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/covid_contact_recommendation_5" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/contact_info_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:layout_marginBottom="2dp"
+                    android:text="@string/covid_contact_description"
+                    android:textAlignment="textStart"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/number_button"
+                android:layout_width="@dimen/default_button_width"
+                android:layout_height="@dimen/default_button_height"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="58dp"
+                android:background="@drawable/default_button_bg_selector"
+                android:text="@string/label_specify_contact"
+                android:textAllCaps="false"
+                android:visibility="gone"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/topContainer"
+                app:layout_constraintVertical_bias="1.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

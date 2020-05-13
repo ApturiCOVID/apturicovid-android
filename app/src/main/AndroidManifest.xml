@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="lv.spkc.apturicovid">
+
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
+    <uses-feature android:name="android.hardware.bluetooth" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <application
+        android:name=".StopCovidApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.SplashActivity"
+            android:theme="@style/AppTheme.SplashScreen"
+            android:noHistory="true"
+            android:screenOrientation="sensorPortrait"
+            android:windowSoftInputMode="adjustResize"
+            tools:ignore="LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity">
+        </activity>
+
+        <activity
+            android:name=".activity.OnboardingActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity">
+        </activity>
+
+        <provider
+            android:name="androidx.work.impl.WorkManagerInitializer"
+            android:authorities="lv.spkc.apturicovid.workmanager-init"
+            android:enabled="false"
+            android:exported="false"
+            tools:replace="android:authorities" />
+
+        <!-- Receivers -->
+        <receiver
+            android:name=".ExposureNotificationBroadcastReceiver"
+            android:permission="com.google.android.gms.nearby.exposurenotification.EXPOSURE_CALLBACK"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.exposurenotification.ACTION_EXPOSURE_STATE_UPDATED" />
+                <action android:name="com.google.android.gms.exposurenotification.ACTION_REQUEST_DIAGNOSIS_KEYS" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".BootUpReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".PackageUpdatedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
