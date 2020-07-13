@@ -138,7 +138,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
-    implementation "androidx.security:security-crypto:1.0.0-rc02"
+    implementation "androidx.security:security-crypto:1.1.0-alpha01"
 
     implementation "com.google.android.gms:play-services-safetynet:$google_play_services_version"
 
