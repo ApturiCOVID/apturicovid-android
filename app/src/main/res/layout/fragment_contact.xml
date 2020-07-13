@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ScrollView
@@ -106,13 +107,15 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="@dimen/fragment_side_margin"
                 android:background="@drawable/bg_edit_text_phone"
-                android:inputType="phone"
+                android:digits="0123456789"
+                android:inputType="numberDecimal"
                 android:maxLength="8"
                 android:paddingStart="16dp"
                 android:textColor="@color/subtitleTextColor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/phone_divider"
-                app:layout_constraintTop_toBottomOf="@id/contact_why_btn_tv" />
+                app:layout_constraintTop_toBottomOf="@id/contact_why_btn_tv"
+                tools:ignore="TextFields" />
 
             <CheckBox
                 android:id="@+id/third_party_contact_cb"
