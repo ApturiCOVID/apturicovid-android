@@ -22,13 +22,13 @@
     <string name="home_previous_day">In the last 24 hours</string>
     <string name="home_tested">Tested</string>
     <string name="home_ill">New cases</string>
-    <string name="home_dead">Deceased</string>
+    <string name="home_dead">Deaths</string>
 
     <!--Label-->
     <string name="label_stats_title">COVID-19 statistics in Latvia</string>
     <string name="label_tested">Tested</string>
     <string name="label_infected">New cases</string>
-    <string name="label_dead">Deceased</string>
+    <string name="label_dead">Deaths</string>
     <string name="label_percentage">Proportion</string>
     <string name="label_total">Total</string>
     <string name="label_yesterday">Yesterday</string>
