@@ -19,7 +19,7 @@
     <string name="home_status_idle">Is switched off</string>
     <!--status update -->
     <string name="home_status_starting">Switching on</string>
-    <string name="home_previous_day">In the last 24 hours</string>
+    <string name="home_previous_day">In the last 24\u00A0hours</string>
     <string name="home_tested">Tested</string>
     <string name="home_ill">New cases</string>
     <string name="home_dead">Deaths</string>
@@ -48,7 +48,7 @@
 
     <!--Activation-->
     <string name="label_contact_title_tv">Contact detection</string>
-    <string name="label_contact_activation_description_tv">Contact: up to ~2 m proximity for 15+ minutes.\nDetection: a code kept on phone for 14 days, then deleted.\nContact detection is not tracking.</string>
+    <string name="label_contact_activation_description_tv">Contact: up to ~2\u00A0m proximity for 15+\u00A0minutes.\nDetection: a code kept on phone for 14\u00A0days, then deleted.\nContact detection is not tracking.</string>
     <string name="label_activate">Switch on</string>
     <string name="label_switch_description">This function can be switched on later. And switched off at any time.</string>
     <string name="specify_contact_description">Provide a contact number for SPKC to call you if you have been exposed to COVID-19.</string>
@@ -69,7 +69,7 @@
     <string name="number_confirm_missing_code">Code not received, resend</string>
     <string name="number_confirm_incorrect_code">Incorrect code entered</string>
 
-    <string name="code_expiration">Code valid for 30 minutes</string>
+    <string name="code_expiration">Code valid for 30\u00A0minutes</string>
 
     <!-- sms verification -->
     <string name="sms_verification_info">A code has been sent to the provided number %1$s.</string>
@@ -117,7 +117,7 @@
 
     <!--FAQ-->
     <string name="faq_header">How does contact detection work?</string>
-    <string name="faq_description">When two smartphones are in up to ~2 m proximity, they directly exchange a code, and each device keeps it for 14 days. If a phone user marks themselves as infected, all phones keeping the respective code receive a notification.</string>
+    <string name="faq_description">When two smartphones are in up to ~2\u00A0m proximity, they directly exchange a code, and each device keeps it for 14\u00A0days. If a phone user marks themselves as infected, all phones keeping the respective code receive a notification.</string>
     <string name="faq_bullet_points_header">What about my privacy?</string>
     <string name="label_dummy_point_1">Data is kept on device only</string>
     <string name="label_dummy_point_2">Data is automatically deleted</string>
@@ -129,9 +129,9 @@
     <string name="faq_question_2">How many users does the app need to be effective?</string>
     <string name="faq_answer_2">According to calculations by epidemiologists and experts, even if the app is used just by 20% of residents of Latvia, it will already help identify risks and limit the spread of infection going forward. However, the more people use it, the more effective it will be.</string>
     <string name="faq_question_3">How does the app work?</string>
-    <string name="faq_answer_3">It anonymously detects nearby smartphones that also have this app installed (up to ~2 m proximity, for 15+ minutes). This information is only kept on device, and automatically deleted after 14 days. If a user is confirmed to be a COVID-19 case, SPKC will send them a code. When entered in the app, an anonymous notification will be sent to detected contacts that have been at risk to be infected. Sender’s identity is not disclosed to recipients. Likewise, the infected individual does not know who the recipients are.</string>
+    <string name="faq_answer_3">It anonymously detects nearby smartphones that also have this app installed (up to ~2\u00A0m proximity, for 15+\u00A0minutes). This information is only kept on device, and automatically deleted after 14\u00A0days. If a user is confirmed to be a COVID-19 case, SPKC will send them a code. When entered in the app, an anonymous notification will be sent to detected contacts that have been at risk to be infected. Sender’s identity is not disclosed to recipients. Likewise, the infected individual does not know who the recipients are.</string>
     <string name="faq_question_4">What information is used in the app?</string>
-    <string name="faq_answer_4">Contacts detected via Bluetooth are kept on device only, encrypted with random generated key, and are not disclosed to the user or developers of this app. Data is deleted after 14 days.\n\nIf you provide your phone number, SPKC will only receive it if and when you are notified about exposure to COVID-19. SPKC will have access to this data: phone number, contact date, signal strength, contact duration.\n\nThe app does not access or store information about the location of the user or the exact time of contact.</string>
+    <string name="faq_answer_4">Contacts detected via Bluetooth are kept on device only, encrypted with random generated key, and are not disclosed to the user or developers of this app. Data is deleted after 14\u00A0days.\n\nIf you provide your phone number, SPKC will only receive it if and when you are notified about exposure to COVID-19. SPKC will have access to this data: phone number, contact date, signal strength, contact duration.\n\nThe app does not access or store information about the location of the user or the exact time of contact.</string>
     <string name="faq_question_5">What should I do if I receive a notification that I have been exposed to COVID-19?</string>
     <string name="faq_answer_5">To make sure you do not infect others SPKC recommends to self-isolate and monitor your symptoms for the onset of COVID-19. Only SPKC can get you official close contact status. If you have provided your phone number in the app, SPKC will get in touch and inform about further action.</string>
     <string name="faq_question_6">Is it safe to use the app?</string>
@@ -150,7 +150,7 @@
     <string name="confirm_turn_off_tracking_text">Continue with contact detection switched off?</string>
     <string name="label_data_refreshed">Information updated: %s</string>
     <string name="label_code_resent">Code resent</string>
-    <string name="label_code_resend_error">Please wait %1$s seconds to resend code</string>
+    <string name="label_code_resend_error">Please wait %1$s\u00A0seconds to resend code</string>
     <string name="label_generic_error">Something went wrong, please try again</string>
 
     <!-- bluetooth state monitor notification -->
