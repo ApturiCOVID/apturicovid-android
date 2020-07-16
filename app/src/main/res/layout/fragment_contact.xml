@@ -61,20 +61,35 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/contact_title_tv" />
 
-            <TextView
-                android:id="@+id/contact_why_btn_tv"
+            <LinearLayout
+                android:id="@+id/contact_why_ll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/fragment_side_margin"
-                android:layout_marginTop="10dp"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp"
-                android:text="@string/label_why_number"
-                android:textColor="@color/titleTextColor"
-                android:textSize="15sp"
-                android:textStyle="bold"
+                android:gravity="center_vertical"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/contact_description_tv" />
+                app:layout_constraintTop_toBottomOf="@id/contact_description_tv">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/label_why_number"
+                    android:textColor="@color/titleTextColor"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:tint="@color/titleTextColor" />
+            </LinearLayout>
 
             <EditText
                 android:id="@+id/phone_code_et"
@@ -89,7 +104,7 @@
                 android:text="+371"
                 android:textColor="@color/grayTextColor"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/contact_why_btn_tv" />
+                app:layout_constraintTop_toBottomOf="@id/contact_why_ll" />
 
             <View
                 android:id="@+id/phone_divider"
@@ -114,7 +129,7 @@
                 android:textColor="@color/subtitleTextColor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/phone_divider"
-                app:layout_constraintTop_toBottomOf="@id/contact_why_btn_tv"
+                app:layout_constraintTop_toBottomOf="@id/contact_why_ll"
                 tools:ignore="TextFields" />
 
             <CheckBox
@@ -152,17 +167,14 @@
                 app:layout_constraintTop_toBottomOf="@id/other_contact_description_tv">
 
                 <TextView
-                    android:id="@+id/contact_remain_anonymous_btn_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
                     android:text="@string/label_remain_anonymous"
-                    android:textColor="@color/regularTextColor"
+                    android:textColor="@color/titleTextColor"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/other_contact_description_tv" />
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:layout_width="10dp"
@@ -170,9 +182,7 @@
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="2dp"
                     android:src="@drawable/ic_chevron_right"
-                    app:layout_constraintBottom_toBottomOf="@id/contact_remain_anonymous_btn_tv"
-                    app:layout_constraintStart_toEndOf="@id/contact_remain_anonymous_btn_tv"
-                    app:layout_constraintTop_toTopOf="@id/contact_remain_anonymous_btn_tv" />
+                    android:tint="@color/titleTextColor" />
             </LinearLayout>
 
             <Button

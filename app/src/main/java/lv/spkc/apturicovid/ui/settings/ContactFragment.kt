@@ -56,7 +56,7 @@ class ContactFragment : BaseFragment() {
                 thirdPartyContactCb.isChecked = !thirdPartyContactCb.isChecked
             }
 
-            contactWhyBtnTv.setOnClickListener {
+            contactWhyLl.setOnClickListener {
                 findNavController().navigate(R.id.whyEnterNumberFragment)
             }
 
