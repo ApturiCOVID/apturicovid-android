@@ -40,6 +40,8 @@ class SettingsFragment: BaseFragment() {
 
             notifySwitch.isChecked = viewModel.getSwitchStatus()
 
+            versionNr.text = viewModel.getApplicationVersionString()
+
             when (viewModel.getSelectedLocale()) {
                 LV_LANGUAGE_CODE -> languageCodeLv.isSelected = true
                 EN_LANGUAGE_CODE -> languageCodeEn.isSelected = true
