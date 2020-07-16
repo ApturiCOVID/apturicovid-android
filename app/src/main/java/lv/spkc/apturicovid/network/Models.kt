@@ -120,14 +120,14 @@ data class CovidStats(
     val totalInfectedCount: Int,
     @SerializedName("total_death_count")
     val totalDeathCount: Int,
+    @SerializedName("total_recovered_count")
+    val totalRecoveredCount: Int,
     @SerializedName("yesterday_tests_count")
     val yesterdayTestCount: Int,
     @SerializedName("yesterday_infected_count")
     val yesterdayInfectedCount: Int,
     @SerializedName("yesterday_death_count")
     val yesterdayDeathCount: Int,
-    @SerializedName("infected_tests_proportion")
-    val infectedTestRatio: Float,
     @SerializedName("updated_at")
     val updatedAt: DateTime
 )

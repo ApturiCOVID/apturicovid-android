@@ -29,10 +29,9 @@
     <string name="label_tested">Tested</string>
     <string name="label_infected">New cases</string>
     <string name="label_dead">Deaths</string>
-    <string name="label_percentage">Proportion</string>
+    <string name="label_recovered">Recovered</string>
     <string name="label_total">Total</string>
     <string name="label_yesterday">Yesterday</string>
-    <string name="label_sick">Infected</string>
     <string name="label_detailed_stats">Detailed statistics</string>
 
     <string name="confirm_stay_anonymous_text">In case of contact you will only get a notification in the app, and support options available to you will be limited. Continue without phone number?</string>

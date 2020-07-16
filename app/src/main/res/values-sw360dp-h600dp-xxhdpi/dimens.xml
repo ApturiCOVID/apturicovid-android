@@ -37,5 +37,6 @@
     <dimen name="stat_regular_text_size">20sp</dimen>
     <dimen name="stat_ratio_text_size">24sp</dimen>
     <dimen name="stat_card_side_margin">20dp</dimen>
+    <dimen name="stat_card_middle_margin">10dp</dimen>
     <dimen name="exposed_label_icon_size">33dp</dimen>
 </resources>

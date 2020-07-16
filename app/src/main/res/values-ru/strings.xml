@@ -28,10 +28,9 @@
     <string name="label_tested">Протестировано</string>
     <string name="label_infected">Заболело</string>
     <string name="label_dead">Умерло</string>
-    <string name="label_percentage">Соотношение</string>
+    <string name="label_recovered">Выздоровело</string>
     <string name="label_total">Всего</string>
     <string name="label_yesterday">Вчера</string>
-    <string name="label_sick">Больные</string>
     <string name="label_detailed_stats">Подробная статистика</string>
 
     <!--Settings-->

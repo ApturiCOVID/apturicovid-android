@@ -145,55 +145,17 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/home_statistics_tested_count"
-                style="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
-                android:text="@{String.valueOf(covidStats.yesterdayTestCount)}"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/fragment_header_text_size"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/divider_tested"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/home_statistics_header"
-                app:layout_constraintVertical_bias="0.15" />
-
-            <TextView
-                android:id="@+id/home_statistics_tested_count_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-medium"
-                android:text="@string/home_tested"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/home_statistics_subtitle_text_size"
-                app:layout_constraintEnd_toEndOf="@id/home_statistics_tested_count"
-                app:layout_constraintStart_toStartOf="@id/home_statistics_tested_count"
-                app:layout_constraintTop_toBottomOf="@id/home_statistics_tested_count" />
-
-            <View
-                android:id="@+id/divider_tested"
-                android:layout_width="@dimen/home_statistics_divider_width"
-                android:layout_height="@dimen/home_statistics_divider_height"
-                android:background="@color/dividerGreen"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.35"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/home_statistics_header"
-                app:layout_constraintVertical_bias="0.25" />
-
-            <TextView
                 android:id="@+id/home_statistics_ill_count"
                 style="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
                 android:text="@{String.valueOf(covidStats.yesterdayInfectedCount)}"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/fragment_header_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/divider_ill"
-                app:layout_constraintStart_toEndOf="@+id/divider_tested"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/home_statistics_header"
                 app:layout_constraintVertical_bias="0.15" />
 
@@ -216,7 +178,7 @@
                 android:background="@color/dividerGreen"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.65"
+                app:layout_constraintHorizontal_bias="0.35"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/home_statistics_header"
                 app:layout_constraintVertical_bias="0.25" />
@@ -226,18 +188,17 @@
                 style="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
                 android:text="@{String.valueOf(covidStats.yesterdayDeathCount)}"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/fragment_header_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/divider_ill"
+                app:layout_constraintEnd_toStartOf="@id/divider_dead"
+                app:layout_constraintStart_toEndOf="@+id/divider_ill"
                 app:layout_constraintTop_toBottomOf="@+id/home_statistics_header"
                 app:layout_constraintVertical_bias="0.15" />
 
             <TextView
-                android:id="@+id/home_statistics_ill_dead_label"
+                android:id="@+id/home_statistics_dead_count_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
@@ -247,6 +208,45 @@
                 app:layout_constraintEnd_toEndOf="@id/home_statistics_dead_count"
                 app:layout_constraintStart_toStartOf="@id/home_statistics_dead_count"
                 app:layout_constraintTop_toBottomOf="@id/home_statistics_dead_count" />
+
+            <View
+                android:id="@+id/divider_dead"
+                android:layout_width="@dimen/home_statistics_divider_width"
+                android:layout_height="@dimen/home_statistics_divider_height"
+                android:background="@color/dividerGreen"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.65"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_statistics_header"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <TextView
+                android:id="@+id/home_statistics_tested_count"
+                style="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                android:text="@{String.valueOf(covidStats.yesterdayTestCount)}"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/fragment_header_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/divider_dead"
+                app:layout_constraintTop_toBottomOf="@+id/home_statistics_header"
+                app:layout_constraintVertical_bias="0.15" />
+
+            <TextView
+                android:id="@+id/home_statistics_tested_count_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/home_tested"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/home_statistics_subtitle_text_size"
+                app:layout_constraintEnd_toEndOf="@id/home_statistics_tested_count"
+                app:layout_constraintStart_toStartOf="@id/home_statistics_tested_count"
+                app:layout_constraintTop_toBottomOf="@id/home_statistics_tested_count" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

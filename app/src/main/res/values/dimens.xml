@@ -18,6 +18,7 @@
     <dimen name="bg_rounded_corner_radius">28dp</dimen>
     <dimen name="stats_card_corner_radius">12dp</dimen>
     <dimen name="stat_card_side_margin">20dp</dimen>
+    <dimen name="stat_card_middle_margin">10dp</dimen>
     <dimen name="stat_card_height">140dp</dimen>
 
     <dimen name="web_view_back_height">45dp</dimen>

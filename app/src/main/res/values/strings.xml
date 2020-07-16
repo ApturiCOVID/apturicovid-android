@@ -29,10 +29,9 @@
     <string name="label_tested">Testēti</string>
     <string name="label_infected">Saslimuši</string>
     <string name="label_dead">Miruši</string>
-    <string name="label_percentage">Īpatsvars</string>
+    <string name="label_recovered">Izveseļojušies</string>
     <string name="label_total">Kopā</string>
     <string name="label_yesterday">Vakar</string>
-    <string name="label_sick">Saslimušie</string>
     <string name="label_detailed_stats">Detalizēta statistika</string>
 
     <string name="confirm_stay_anonymous_text">Saskares gadījumā saņemsi tikai paziņojumu tepat lietotnē, un atbalsta iespējas būs ierobežotas. Vai tiešām turpināt bez tālruņa norādīšanas?</string>
