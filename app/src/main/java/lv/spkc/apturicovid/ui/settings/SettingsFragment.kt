@@ -87,8 +87,8 @@ class SettingsFragment: BaseFragment() {
                 }
             }
 
-            notifySwitch.setOnClickListener {
-                viewModel.selectNotifyTrackingSwitch(notifySwitch.isChecked)
+            notifySwitch.setOnCheckedChangeListener { _, isChecked ->
+                viewModel.selectNotifyTrackingSwitch(isChecked)
             }
         }
     }
