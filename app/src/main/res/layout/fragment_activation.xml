@@ -27,11 +27,10 @@
                 android:id="@+id/contact_image_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fragment_side_margin"
                 android:src="@drawable/image_contact"
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/back_arrow_iv" />
+                app:layout_constraintTop_toBottomOf="@id/back_arrow_iv" />
 
             <TextView
                 android:id="@+id/activation_title_tv"
@@ -41,7 +40,6 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="@dimen/fragment_side_margin"
                 android:text="@string/label_contact_title_tv"
-                android:textAlignment="center"
                 android:textColor="@color/titleTextColor"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -57,7 +55,6 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="@dimen/fragment_side_margin"
                 android:text="@string/label_contact_activation_description_tv"
-                android:textAlignment="center"
                 android:textColor="@color/subtitleTextColor"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +77,7 @@
                 android:id="@+id/label_activate_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/fragment_side_margin"
+                android:layout_marginStart="@dimen/fragment_large_side_margin"
                 android:layout_marginTop="20dp"
                 android:text="@string/label_activate"
                 android:textColor="@color/subtitleTextColor"
@@ -93,7 +90,7 @@
                 android:id="@+id/label_switch_description_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/fragment_side_margin"
+                android:layout_marginStart="@dimen/fragment_large_side_margin"
                 android:layout_marginTop="8dp"
                 android:text="@string/label_switch_description"
                 android:textColor="@color/regularTextColor"

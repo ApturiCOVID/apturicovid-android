@@ -24,6 +24,7 @@
     <dimen name="web_view_back_width">45dp</dimen>
     <dimen name="web_view_back_insets">16dp</dimen>
     <dimen name="fragment_side_margin">28dp</dimen>
+    <dimen name="fragment_large_side_margin">38dp</dimen>
     <dimen name="confirmation_fragment_side_margin">20dp</dimen>
     <dimen name="confirmation_dialog_button_size">16sp</dimen>
     <dimen name="fragment_top_margin">56dp</dimen>
