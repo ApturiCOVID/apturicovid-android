@@ -100,6 +100,7 @@
     <string name="confirm_stay_anonymous_yes">Да</string>
     <string name="confirm_stay_anonymous_no">Нет</string>
 
+    <string name="share_link">https://www.apturicovid.lv/#ru</string>
     <string name="privacy_policy_url">https://apturicovid.lv/privatuma-politika/#ru</string>
     <string name="terms_of_use_url">https://apturicovid.lv/lietosanas-noteikumi/#ru</string>
 

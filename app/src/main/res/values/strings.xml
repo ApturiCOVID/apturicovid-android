@@ -167,7 +167,7 @@
     <string name="bt_monitor_notification_channel_name" translatable="false">Bluetooth Monitor Notification</string>
     <string name="bt_monitor_notification_channel_description" translatable="false">Bluetooth Monitor notification alerts.</string>
 
-    <string name="share_link" translatable="false">https://www.apturicovid.lv/</string>
+    <string name="share_link">https://www.apturicovid.lv/</string>
     <string name="privacy_policy_url">https://apturicovid.lv/privatuma-politika</string>
     <string name="terms_of_use_url">https://apturicovid.lv/lietosanas-noteikumi</string>
     <string name="detailed_statistics_url" translatable="false">https://arkartassituacija.gov.lv/</string>

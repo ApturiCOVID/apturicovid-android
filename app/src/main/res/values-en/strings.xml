@@ -101,6 +101,7 @@
     <string name="label_specify_contact">Contact detection</string>
     <string name="label_specify_phone">Provide number</string>
 
+    <string name="share_link">https://www.apturicovid.lv/#en</string>
     <string name="privacy_policy_url">https://apturicovid.lv/privatuma-politika/#en</string>
     <string name="terms_of_use_url">https://apturicovid.lv/lietosanas-noteikumi/#en</string>
 
