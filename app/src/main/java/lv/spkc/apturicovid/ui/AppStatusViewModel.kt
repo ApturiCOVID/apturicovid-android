@@ -1,17 +1,15 @@
 package lv.spkc.apturicovid.ui
 
 import androidx.lifecycle.*
-import kotlinx.coroutines.launch
 import lv.spkc.apturicovid.event.Event
 import lv.spkc.apturicovid.persistance.ExposureRepository
 import lv.spkc.apturicovid.ui.settings.SettingsRepository
-import lv.spkc.apturicovid.utils.CovidCoroutineExceptionHandler
 import java.net.InetAddress
 import javax.inject.Inject
 
 class AppStatusViewModel @Inject constructor(
     private val settingsRepository: SettingsRepository,
-    private val exposureRepository: ExposureRepository
+    exposureRepository: ExposureRepository
 ) : ViewModel() {
     private val loadingLiveDataList: MutableList<LiveData<Boolean>> = mutableListOf()
     private val loadingMediator = MediatorLiveData<Boolean>()
