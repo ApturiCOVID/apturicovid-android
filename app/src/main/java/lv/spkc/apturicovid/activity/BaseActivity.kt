@@ -1,6 +1,7 @@
 package lv.spkc.apturicovid.activity
 
-import android.app.*
+import android.app.Activity
+import android.app.Dialog
 import android.bluetooth.BluetoothAdapter
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -8,13 +9,9 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.content.res.Configuration
 import android.net.ConnectivityManager
-import android.os.Build
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.auth.api.phone.SmsRetriever
@@ -35,10 +32,10 @@ import lv.spkc.apturicovid.ui.AppStatusViewModel
 import lv.spkc.apturicovid.ui.intro.SmsViewModel
 import lv.spkc.apturicovid.ui.settings.datatransfer.DataTransferViewModel
 import lv.spkc.apturicovid.ui.widget.ErrorDialogFragment
+import lv.spkc.apturicovid.utils.BtNotificationManager
 import lv.spkc.apturicovid.utils.CovidCoroutineExceptionHandler
 import lv.spkc.apturicovid.utils.DisplayableError
 import lv.spkc.apturicovid.utils.NetworkUtils
-import lv.spkc.apturicovid.worker.BtMonitorWorker
 import timber.log.Timber
 import java.util.*
 import javax.inject.Inject
@@ -198,11 +195,15 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
     private fun registerToBluetoothBroadcastReceiver() {
         bluetoothBroadcastReceiver = BluetoothBroadcastReceiver().also {
             it.bluetoothBroadcastReceiverListener = object : BluetoothBroadcastReceiver.BluetoothBroadcastReceiverListener {
-                override fun onFailure() {
+                override fun onTurnedOff() {
                     Timber.e("Bluetooth is not operational")
                     if (appStatusViewModel.isTrackingStateNotificationsEnabled()) {
-                        showNotification()
+                        BtNotificationManager.showNotification(this@BaseActivity)
                     }
+                }
+
+                override fun onTurnedOn() {
+                    BtNotificationManager.hideNotificationIfPresent(this@BaseActivity)
                 }
             }
         }
@@ -243,39 +244,6 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
         networkErrorLayout?.apply {
             animate().translationY(-networkErrorContainerHeight.toFloat()).duration = 100
         }
-    }
-
-    private fun createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(
-                BtMonitorWorker.BT_MONITOR_NOTIFICATION_CHANNEL_ID,
-                getString(R.string.bt_monitor_notification_channel_name),
-                NotificationManager.IMPORTANCE_HIGH
-            )
-            channel.description = getString(R.string.bt_monitor_notification_channel_description)
-            val notificationManager = ContextCompat.getSystemService(
-               this, NotificationManager::class.java
-            )
-            notificationManager?.createNotificationChannel(channel)
-        }
-    }
-
-    private fun showNotification() {
-        createNotificationChannel()
-        val intent = Intent(Intent.ACTION_MAIN, null)
-        intent.action = android.provider.Settings.ACTION_BLUETOOTH_SETTINGS
-        val pendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
-        val builder = NotificationCompat.Builder(this, BtMonitorWorker.BT_MONITOR_NOTIFICATION_CHANNEL_ID)
-            .setSmallIcon(R.mipmap.ic_launcher_round)
-            .setContentTitle(getString(R.string.bt_monitor_notification_title))
-            .setContentText(getString(R.string.bt_monitor_notification_message))
-            .setStyle(NotificationCompat.BigTextStyle().bigText(getString(R.string.bt_monitor_notification_message)))
-            .setOngoing(true)
-            .setAutoCancel(true)
-            .setPriority(NotificationCompat.PRIORITY_MAX)
-            .setContentIntent(pendingIntent)
-        val notificationManager = NotificationManagerCompat.from(this)
-        notificationManager.notify(0, builder.build())
     }
 
     @Suppress("DEPRECATION") // apps should use the more versatile... bla bla bla... This one is better
