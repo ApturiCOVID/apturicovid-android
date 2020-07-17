@@ -38,7 +38,7 @@ fun String.makeSectionOfTextBold(textToBold: String): SpannableStringBuilder? {
 }
 
 fun String.isPhoneNumber(): Boolean {
-    return "^((2|6)[0-9]{7}|\\+371(2|6)[0-9]{7}|\\+(?!371)[0-9]{4,15})\$".toRegex().matchEntire(this) != null
+    return "^([26][0-9]{7}|\\+371[26][0-9]{7}|\\+(?!371)[0-9]{4,15})\$".toRegex().matchEntire(this) != null
 }
 
 fun String.decrypt(): String {
