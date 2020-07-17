@@ -133,6 +133,18 @@ class HomeFragment : BaseFragment() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        //
+        // Needed to reset correct switch state after user dismisses tracing disabling dialog by
+        // sending app to the background and then resuming
+        //
+        exposureViewModel.exposureApiState.value.let {
+            binding.tracingToggle.isChecked = it == ExposureApiState.Enabled
+        }
+    }
+
     private fun showExposurePanelBottomMargin(newMargin: Int, animate: Boolean = !freshRedraw) {
         val params: ConstraintLayout.LayoutParams = binding.exposedNextSteps.layoutParams as ConstraintLayout.LayoutParams
         binding.exposedNextSteps.toggleVisibility(true)
