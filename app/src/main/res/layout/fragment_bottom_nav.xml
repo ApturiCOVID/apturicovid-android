@@ -17,6 +17,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:theme="@style/BottomNavigationTheme"
+            app:labelVisibilityMode="labeled"
             app:menu="@menu/bottom_nav_menu" />
 
         <fragment
