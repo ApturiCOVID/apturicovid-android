@@ -102,6 +102,7 @@
     <string name="label_empty_number">Numurs nav ievadīts</string>
     <string name="label_specify_contact">Kontakta fiksēšana</string>
     <string name="label_specify_phone">Norādīt tālruni</string>
+    <string name="lv_phone_code" translatable="false">+371</string>
 
     <!--Contact -->
     <string name="label_contact">Kontakttālrunis saziņai</string>

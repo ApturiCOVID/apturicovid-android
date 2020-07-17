@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.firebase.appdistribution'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
@@ -20,10 +19,6 @@ buildscript {
         google()
         mavenCentral()
         jcenter()
-    }
-
-    dependencies {
-        classpath 'com.google.firebase:firebase-appdistribution-gradle:2.0.0'
     }
 }
 
@@ -64,10 +59,6 @@ android {
     productFlavors {
         staging {
             applicationIdSuffix ".staging"
-            firebaseAppDistribution {
-                releaseNotes="New demo version"
-                groups="mak-it"
-            }
 
             buildConfigField("String", "API_URL", "\"https://apturicovid-staging-api.spkc.gov.lv/api/\"")
             buildConfigField("String", "STATS_URL", "\"https://apturicovid-staging-files.spkc.gov.lv/stats/v1/covid-stats.json\"")
@@ -101,8 +92,8 @@ android {
         jvmTarget = "1.8"
     }
 
-    dataBinding {
-        enabled = true
+    buildFeatures {
+        dataBinding = true
     }
 }
 
@@ -164,6 +155,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0'
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
     implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
+    implementation 'com.google.android:flexbox:2.0.1'
 
     //work manager
     // Kotlin + coroutines

@@ -7,190 +7,206 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".ui.settings.SettingsFragment">
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/settings_header_cl"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_settings_header"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            tools:context=".ui.settings.SettingsFragment">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/settings_header_cl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_settings_header"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/container_flex"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="@dimen/fragment_top_margin"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    app:alignItems="stretch"
+                    app:flexWrap="wrap"
+                    app:justifyContent="space_between"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/settings_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="none"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/label_settings"
+                        android:textColor="@color/headerTextColor"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/language_selector"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_alignSelf="auto"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <FrameLayout
+                            android:id="@+id/language_code_lv"
+                            android:layout_width="@dimen/language_item_side_size"
+                            android:layout_height="@dimen/language_item_side_size"
+                            android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                            android:background="@drawable/language_item_background_selector">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/lv_language_code"
+                                android:textColor="@color/hyperlinkColor"
+                                android:textSize="@dimen/language_item_text_size" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@+id/language_code_en"
+                            android:layout_width="@dimen/language_item_side_size"
+                            android:layout_height="@dimen/language_item_side_size"
+                            android:layout_marginStart="@dimen/language_item_start_margin"
+                            android:background="@drawable/language_item_background_selector">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/en_language_code"
+                                android:textColor="@color/hyperlinkColor"
+                                android:textSize="@dimen/language_item_text_size" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@+id/language_code_ru"
+                            android:layout_width="@dimen/language_item_side_size"
+                            android:layout_height="@dimen/language_item_side_size"
+                            android:layout_marginStart="@dimen/language_item_start_margin"
+                            android:background="@drawable/language_item_background_selector">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/ru_language_code"
+                                android:textColor="@color/hyperlinkColor"
+                                android:textSize="@dimen/language_item_text_size" />
+                        </FrameLayout>
+                    </LinearLayout>
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <TextView
+                    android:id="@+id/enter_code_label_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="@dimen/fragment_side_margin"
+                    android:text="@string/label_enter_SPKC_code"
+                    android:textColor="@color/subtitleTextColor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/container_flex" />
+
+                <Button
+                    android:id="@+id/code_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/default_button_height"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="48dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:background="@drawable/default_button_bg_selector"
+                    android:minWidth="@dimen/default_button_width"
+                    android:text="@string/button_enter_code"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/enter_code_label_tv" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <lv.spkc.apturicovid.ui.widget.SpecifyContactView
+                android:id="@+id/specify_contact_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/settings_header_cl" />
+
+            <View
+                android:id="@+id/divider_1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/fragment_side_margin"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/fragment_side_margin"
+                android:background="@color/dividerGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/specify_contact_view" />
 
             <TextView
-                android:id="@+id/settings_title_tv"
+                android:id="@+id/label_notify_contact_search_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/fragment_side_margin"
-                android:layout_marginTop="@dimen/fragment_top_margin"
-                android:text="@string/label_settings"
-                android:textColor="@color/headerTextColor"
-                android:textSize="18sp"
-                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:text="@string/label_notify_contact_search"
+                android:textColor="@color/subtitleTextColor"
+                app:layout_constraintEnd_toStartOf="@id/notify_switch"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/divider_1" />
 
-            <LinearLayout
+            <Switch
+                android:id="@+id/notify_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/fragment_side_margin"
-                app:layout_constraintBottom_toBottomOf="@id/settings_title_tv"
+                android:scaleX="0.9"
+                android:scaleY="0.9"
+                android:thumb="@drawable/switch_thumb"
+                android:track="@drawable/switch_track_gray"
+                app:layout_constraintBottom_toTopOf="@id/divider_2"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/settings_title_tv">
+                app:layout_constraintTop_toBottomOf="@+id/divider_1" />
 
-                <FrameLayout
-                    android:id="@+id/language_code_lv"
-                    android:layout_width="@dimen/language_item_side_size"
-                    android:layout_height="@dimen/language_item_side_size"
-                    android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
-                    android:background="@drawable/language_item_background_selector">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/lv_language_code"
-                        android:textColor="@color/hyperlinkColor"
-                        android:textSize="@dimen/language_item_text_size" />
-                </FrameLayout>
-
-                <FrameLayout
-                    android:id="@+id/language_code_en"
-                    android:layout_width="@dimen/language_item_side_size"
-                    android:layout_height="@dimen/language_item_side_size"
-                    android:layout_marginStart="@dimen/language_item_start_margin"
-                    android:background="@drawable/language_item_background_selector">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/en_language_code"
-                        android:textColor="@color/hyperlinkColor"
-                        android:textSize="@dimen/language_item_text_size" />
-                </FrameLayout>
-
-                <FrameLayout
-                    android:id="@+id/language_code_ru"
-                    android:layout_width="@dimen/language_item_side_size"
-                    android:layout_height="@dimen/language_item_side_size"
-                    android:layout_marginStart="@dimen/language_item_start_margin"
-                    android:background="@drawable/language_item_background_selector">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/ru_language_code"
-                        android:textColor="@color/hyperlinkColor"
-                        android:textSize="@dimen/language_item_text_size" />
-                </FrameLayout>
-            </LinearLayout>
+            <View
+                android:id="@+id/divider_2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/fragment_side_margin"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="@dimen/fragment_side_margin"
+                android:background="@color/dividerGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_notify_contact_search_tv" />
 
             <TextView
-                android:id="@+id/enter_code_label_tv"
+                android:id="@+id/version_nr"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/fragment_side_margin"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="@dimen/fragment_side_margin"
-                android:text="@string/label_enter_SPKC_code"
-                android:textColor="@color/subtitleTextColor"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                android:layout_marginTop="20dp"
+                android:singleLine="true"
+                android:textColor="@color/grayTextColor"
+                app:layout_constraintEnd_toStartOf="@id/notify_switch"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/settings_title_tv" />
-
-            <Button
-                android:id="@+id/code_button"
-                android:layout_width="@dimen/default_button_width"
-                android:layout_height="@dimen/default_button_height"
-                android:layout_gravity="center"
-                android:layout_marginStart="@dimen/fragment_side_margin"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="48dp"
-                android:background="@drawable/default_button_bg_selector"
-                android:text="@string/button_enter_code"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/enter_code_label_tv" />
+                app:layout_constraintTop_toBottomOf="@id/divider_2" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <lv.spkc.apturicovid.ui.widget.SpecifyContactView
-            android:id="@+id/specify_contact_view"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/settings_header_cl" />
-
-        <View
-            android:id="@+id/divider_1"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginStart="@dimen/fragment_side_margin"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="@dimen/fragment_side_margin"
-            android:background="@color/dividerGray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/specify_contact_view" />
-
-        <TextView
-            android:id="@+id/label_notify_contact_search_tv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/fragment_side_margin"
-            android:layout_marginTop="20dp"
-            android:text="@string/label_notify_contact_search"
-            android:textColor="@color/subtitleTextColor"
-            app:layout_constraintEnd_toStartOf="@id/notify_switch"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider_1" />
-
-        <Switch
-            android:id="@+id/notify_switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/fragment_side_margin"
-            android:scaleX="0.9"
-            android:scaleY="0.9"
-            android:thumb="@drawable/switch_thumb"
-            android:track="@drawable/switch_track_gray"
-            app:layout_constraintBottom_toTopOf="@id/divider_2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/divider_1" />
-
-        <View
-            android:id="@+id/divider_2"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginStart="@dimen/fragment_side_margin"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="@dimen/fragment_side_margin"
-            android:background="@color/dividerGray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/label_notify_contact_search_tv" />
-
-        <TextView
-            android:id="@+id/version_nr"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/fragment_side_margin"
-            android:layout_marginTop="20dp"
-            android:singleLine="true"
-            android:textColor="@color/grayTextColor"
-            app:layout_constraintEnd_toStartOf="@id/notify_switch"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider_2" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

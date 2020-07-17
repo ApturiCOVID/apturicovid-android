@@ -70,6 +70,8 @@
                 android:paddingBottom="8dp"
                 android:gravity="center_vertical"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintTop_toBottomOf="@id/contact_description_tv">
 
                 <TextView
@@ -93,18 +95,18 @@
 
             <EditText
                 android:id="@+id/phone_code_et"
-                android:layout_width="75dp"
+                android:layout_width="wrap_content"
                 android:layout_height="45dp"
                 android:layout_marginStart="@dimen/fragment_side_margin"
-                android:layout_marginTop="8dp"
                 android:background="@drawable/bg_edit_text_phone_code"
-                android:inputType="phone"
                 android:enabled="false"
+                android:inputType="phone"
+                android:minWidth="75dp"
                 android:paddingStart="16dp"
-                android:text="+371"
+                android:text="@string/lv_phone_code"
                 android:textColor="@color/grayTextColor"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/contact_why_ll" />
+                app:layout_constraintTop_toTopOf="@+id/phone_et" />
 
             <View
                 android:id="@+id/phone_divider"
@@ -126,11 +128,20 @@
                 android:inputType="phone"
                 android:maxLength="8"
                 android:paddingStart="16dp"
+                android:singleLine="true"
                 android:textColor="@color/subtitleTextColor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/phone_divider"
                 app:layout_constraintTop_toBottomOf="@id/contact_why_ll"
+                app:layout_constraintBottom_toTopOf="@id/barrier"
                 tools:ignore="TextFields" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:constraint_referenced_ids="third_party_contact_cb,other_contact_description_tv" />
 
             <CheckBox
                 android:id="@+id/third_party_contact_cb"
@@ -163,6 +174,8 @@
                 android:layout_marginStart="@dimen/fragment_side_margin"
                 android:layout_marginTop="24dp"
                 android:gravity="center_vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/other_contact_description_tv">
 

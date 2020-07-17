@@ -11,15 +11,6 @@ inline fun <T> LifecycleOwner.observeLiveData(data: LiveData<T>, crossinline onC
     })
 }
 
-inline fun <T> LifecycleOwner.observeLiveDataOnce(data: LiveData<T>, crossinline onChangedFunction: (T) -> Unit) {
-    data.observeForever(object : Observer<T> {
-        override fun onChanged(t: T) {
-            onChangedFunction(t)
-            data.removeObserver(this)
-        }
-    })
-}
-
 inline fun <T> LifecycleOwner.observeEvent(data: LiveData<Event<T>>, crossinline onEventUnhandledContent: (T) -> Unit) {
     data.observe(this, Observer {
         it?.getContentIfNotHandled()?.let(onEventUnhandledContent)

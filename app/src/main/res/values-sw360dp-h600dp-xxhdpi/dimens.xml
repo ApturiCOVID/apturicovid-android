@@ -18,6 +18,7 @@
     <dimen name="share_top_margin">34dp</dimen>
 
     <dimen name="stat_card_height">140dp</dimen>
+    <dimen name="stat_card_min_width">180dp</dimen>
 
     <item name="home_image_size_percent" type="dimen">0.46</item>
 
