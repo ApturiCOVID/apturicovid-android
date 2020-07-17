@@ -2,6 +2,7 @@ package lv.spkc.apturicovid.ui.settings
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import lv.spkc.apturicovid.BuildConfig
 import lv.spkc.apturicovid.activity.viewmodel.BaseViewModel
 import lv.spkc.apturicovid.event.Event
 import lv.spkc.apturicovid.model.ContactNumber
@@ -58,5 +59,9 @@ class SettingsViewModel @Inject constructor(
 
     fun getDebugInfo(): String {
         return settingsRepository.debugingLogData
+    }
+
+    fun getApplicationVersionString(): String {
+        return "v ${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE})"
     }
 }
