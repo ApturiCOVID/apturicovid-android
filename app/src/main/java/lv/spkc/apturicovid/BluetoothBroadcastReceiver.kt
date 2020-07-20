@@ -14,12 +14,17 @@ class BluetoothBroadcastReceiver : BroadcastReceiver() {
             val state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, -1)
 
             if (action == BluetoothAdapter.ACTION_STATE_CHANGED && state == BluetoothAdapter.STATE_OFF) {
-                bluetoothBroadcastReceiverListener.onFailure()
+                bluetoothBroadcastReceiverListener.onTurnedOff()
+            }
+
+            if (action == BluetoothAdapter.ACTION_STATE_CHANGED && state == BluetoothAdapter.STATE_ON) {
+                bluetoothBroadcastReceiverListener.onTurnedOn()
             }
         }
     }
 
     interface BluetoothBroadcastReceiverListener {
-        fun onFailure()
+        fun onTurnedOff()
+        fun onTurnedOn()
     }
 }
