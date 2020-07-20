@@ -39,8 +39,4 @@ open class BaseViewModel : ViewModel() {
         this.handleException(context, throwable)
         alsoOnErrorDo.invoke(throwable)
     }
-
-    fun showLoading(showLoading: Boolean) {
-        _loadingLiveData.value = showLoading
-    }
 }
