@@ -8,7 +8,6 @@ import lv.spkc.apturicovid.activity.viewmodel.ExposureViewModel
 import lv.spkc.apturicovid.activity.viewmodel.SplashActivityViewModel
 import lv.spkc.apturicovid.di.viewmodel.ViewModelKey
 import lv.spkc.apturicovid.ui.AppStatusViewModel
-import lv.spkc.apturicovid.ui.home.HomeViewModel
 import lv.spkc.apturicovid.ui.intro.OnboardingViewModel
 import lv.spkc.apturicovid.ui.intro.SmsViewModel
 import lv.spkc.apturicovid.ui.settings.SettingsViewModel
@@ -23,11 +22,6 @@ internal abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(AppStatusViewModel::class)
     abstract fun bindAppStatusViewModel(viewModel: AppStatusViewModel): ViewModel
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(HomeViewModel::class)
-    abstract fun bindHomeViewModel(viewModel: HomeViewModel): ViewModel
 
     @Binds
     @IntoMap

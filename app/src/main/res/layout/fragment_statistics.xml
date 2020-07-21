@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="covidStats"
             type="lv.spkc.apturicovid.network.CovidStats" />
@@ -25,7 +26,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_fancy_bottom"
-                android:textAlignment="center"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -36,33 +36,33 @@
                     android:id="@+id/stats_title_tv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:layout_marginTop="@dimen/fragment_top_margin"
                     android:text="@string/label_stats_title"
                     android:textColor="@color/headerTextColor"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@id/stat_card_flow"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/stats_date_refreshed_tv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:layout_marginTop="2dp"
-                    tools:text="@string/label_data_refreshed"
                     android:textColor="@color/subtitleTextColor"
                     android:textSize="14sp"
-                    app:refreshDateText="@{covidStats.updatedAt}"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@id/stat_card_flow"
-                    app:layout_constraintTop_toBottomOf="@id/stats_title_tv" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/stats_title_tv"
+                    app:refreshDateText="@{covidStats.updatedAt}"
+                    tools:text="@string/label_data_refreshed" />
 
                 <androidx.constraintlayout.helper.widget.Flow
                     android:id="@+id/stat_card_flow"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:layout_marginTop="28dp"
@@ -78,9 +78,11 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/stat_card_1"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/stat_card_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/bg_stats_card_rounded"
+                    android:minWidth="@dimen/stat_card_min_width"
+                    android:minHeight="@dimen/stat_card_height"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/stats_date_refreshed_tv">
 
@@ -102,6 +104,13 @@
                             android:textColor="@android:color/white" />
                     </FrameLayout>
 
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/infected_barrier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="right"
+                        app:constraint_referenced_ids="infected_total_label_tv,infected_yesterday_label_tv" />
+
                     <TextView
                         android:id="@+id/infected_total_label_tv"
                         android:layout_width="wrap_content"
@@ -110,8 +119,6 @@
                         android:layout_marginTop="@dimen/stat_card_side_margin"
                         android:paddingBottom="2dp"
                         android:text="@string/label_total"
-                        app:layout_constraintEnd_toEndOf="@id/infected_stats_barrier"
-                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/stat_header_1" />
 
@@ -123,56 +130,45 @@
                         android:layout_marginTop="@dimen/stat_card_side_margin"
                         android:paddingBottom="2dp"
                         android:text="@string/label_yesterday"
-                        app:layout_constraintEnd_toEndOf="@id/infected_stats_barrier"
-                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/infected_total_label_tv" />
-
-                    <androidx.constraintlayout.widget.Barrier
-                        android:id="@+id/infected_stats_barrier"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:barrierDirection="end"
-                        app:constraint_referenced_ids="infected_total_label_tv,infected_yesterday_label_tv" />
 
                     <TextView
                         android:id="@+id/infected_total_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/stat_card_middle_margin"
-                        android:layout_marginEnd="@dimen/stat_card_side_margin"
+                        android:paddingEnd="5dp"
                         android:text="@{String.valueOf(covidStats.totalInfectedCount)}"
                         android:textColor="@color/statValueTextColor"
                         android:textSize="@dimen/stat_regular_text_size"
                         android:textStyle="bold"
-                        tools:text="1231"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toEndOf="@id/infected_stats_barrier"
-                        app:layout_constraintBottom_toBottomOf="@id/infected_total_label_tv" />
+                        app:layout_constraintBottom_toBottomOf="@id/infected_total_label_tv"
+                        app:layout_constraintStart_toEndOf="@id/infected_barrier"
+                        tools:text="1231" />
 
                     <TextView
                         android:id="@+id/infected_yesterday_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/stat_card_side_margin"
+                        android:paddingEnd="5dp"
                         android:text="@{String.valueOf(covidStats.yesterdayInfectedCount)}"
                         android:textColor="@color/statValueTextColor"
                         android:textSize="@dimen/stat_regular_text_size"
                         android:textStyle="bold"
-                        tools:text="543"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@id/infected_total_tv"
-                        app:layout_constraintBottom_toBottomOf="@id/infected_yesterday_label_tv" />
+                        app:layout_constraintBottom_toBottomOf="@id/infected_yesterday_label_tv"
+                        app:layout_constraintStart_toStartOf="@+id/infected_total_tv"
+                        tools:text="543" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/stat_card_2"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/stat_card_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/bg_stats_card_rounded"
+                    android:minWidth="@dimen/stat_card_min_width"
+                    android:minHeight="@dimen/stat_card_height"
                     app:layout_constraintStart_toEndOf="@id/stat_card_1"
                     app:layout_constraintTop_toBottomOf="@id/stats_date_refreshed_tv">
 
@@ -194,6 +190,13 @@
                             android:textColor="@android:color/white" />
                     </FrameLayout>
 
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/dead_barrier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="right"
+                        app:constraint_referenced_ids="dead_total_label_tv,dead_yesterday_label_tv" />
+
                     <TextView
                         android:id="@+id/dead_total_label_tv"
                         android:layout_width="wrap_content"
@@ -202,8 +205,6 @@
                         android:layout_marginTop="@dimen/stat_card_side_margin"
                         android:paddingBottom="2dp"
                         android:text="@string/label_total"
-                        app:layout_constraintEnd_toEndOf="@id/dead_stats_barrier"
-                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/stat_header_2" />
 
@@ -215,56 +216,45 @@
                         android:layout_marginTop="@dimen/stat_card_side_margin"
                         android:paddingBottom="2dp"
                         android:text="@string/label_yesterday"
-                        app:layout_constraintEnd_toEndOf="@id/dead_stats_barrier"
-                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/dead_total_label_tv" />
-
-                    <androidx.constraintlayout.widget.Barrier
-                        android:id="@+id/dead_stats_barrier"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:barrierDirection="end"
-                        app:constraint_referenced_ids="dead_total_label_tv,dead_yesterday_label_tv" />
 
                     <TextView
                         android:id="@+id/dead_total_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/stat_card_middle_margin"
-                        android:layout_marginEnd="@dimen/stat_card_side_margin"
+                        android:paddingEnd="5dp"
                         android:text="@{String.valueOf(covidStats.totalDeathCount)}"
                         android:textColor="@color/statValueTextColor"
                         android:textSize="@dimen/stat_regular_text_size"
                         android:textStyle="bold"
-                        tools:text="1231"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toEndOf="@id/dead_stats_barrier"
-                        app:layout_constraintBottom_toBottomOf="@id/dead_total_label_tv" />
+                        app:layout_constraintBottom_toBottomOf="@id/dead_total_label_tv"
+                        app:layout_constraintStart_toEndOf="@+id/dead_barrier"
+                        tools:text="1231" />
 
                     <TextView
                         android:id="@+id/dead_yesterday_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/stat_card_side_margin"
+                        android:paddingEnd="5dp"
                         android:text="@{String.valueOf(covidStats.yesterdayDeathCount)}"
                         android:textColor="@color/statValueTextColor"
                         android:textSize="@dimen/stat_regular_text_size"
                         android:textStyle="bold"
-                        tools:text="543"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintBottom_toBottomOf="@id/dead_yesterday_label_tv"
                         app:layout_constraintStart_toStartOf="@id/dead_total_tv"
-                        app:layout_constraintBottom_toBottomOf="@id/dead_yesterday_label_tv" />
+                        tools:text="543" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/stat_card_3"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/stat_card_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/bg_stats_card_rounded"
+                    android:minWidth="@dimen/stat_card_min_width"
+                    android:minHeight="@dimen/stat_card_height"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/stat_card_1">
 
@@ -286,6 +276,13 @@
                             android:textColor="@android:color/white" />
                     </FrameLayout>
 
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/tested_barrier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="right"
+                        app:constraint_referenced_ids="tested_total_label_tv,tested_yesterday_label_tv" />
+
                     <TextView
                         android:id="@+id/tested_total_label_tv"
                         android:layout_width="wrap_content"
@@ -294,8 +291,6 @@
                         android:layout_marginTop="@dimen/stat_card_side_margin"
                         android:paddingBottom="2dp"
                         android:text="@string/label_total"
-                        app:layout_constraintEnd_toEndOf="@id/tested_stats_barrier"
-                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/stat_header_3" />
 
@@ -307,56 +302,45 @@
                         android:layout_marginTop="@dimen/stat_card_side_margin"
                         android:paddingBottom="2dp"
                         android:text="@string/label_yesterday"
-                        app:layout_constraintEnd_toEndOf="@id/tested_stats_barrier"
-                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tested_total_label_tv" />
-
-                    <androidx.constraintlayout.widget.Barrier
-                        android:id="@+id/tested_stats_barrier"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:barrierDirection="end"
-                        app:constraint_referenced_ids="tested_total_label_tv,tested_yesterday_label_tv" />
 
                     <TextView
                         android:id="@+id/tested_total_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/stat_card_middle_margin"
-                        android:layout_marginEnd="@dimen/stat_card_side_margin"
+                        android:paddingEnd="5dp"
                         android:text="@{String.valueOf(covidStats.totalTestCount)}"
                         android:textColor="@color/statValueTextColor"
                         android:textSize="@dimen/stat_regular_text_size"
                         android:textStyle="bold"
-                        tools:text="1231"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toEndOf="@id/tested_stats_barrier"
-                        app:layout_constraintBottom_toBottomOf="@id/tested_total_label_tv" />
+                        app:layout_constraintBottom_toBottomOf="@id/tested_total_label_tv"
+                        app:layout_constraintStart_toEndOf="@+id/tested_barrier"
+                        tools:text="1231" />
 
                     <TextView
                         android:id="@+id/tested_yesterday_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/stat_card_side_margin"
+                        android:paddingEnd="5dp"
                         android:text="@{String.valueOf(covidStats.yesterdayTestCount)}"
                         android:textColor="@color/statValueTextColor"
                         android:textSize="@dimen/stat_regular_text_size"
                         android:textStyle="bold"
-                        tools:text="543"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintBottom_toBottomOf="@id/tested_yesterday_label_tv"
                         app:layout_constraintStart_toStartOf="@id/tested_total_tv"
-                        app:layout_constraintBottom_toBottomOf="@id/tested_yesterday_label_tv" />
+                        tools:text="543" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/stat_card_4"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/stat_card_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/bg_stats_card_rounded"
+                    android:minWidth="@dimen/stat_card_min_width"
+                    android:minHeight="@dimen/stat_card_height"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/stat_card_3"
                     app:layout_constraintTop_toBottomOf="@id/stat_card_2">
@@ -386,32 +370,30 @@
                         android:layout_marginStart="@dimen/stat_card_side_margin"
                         android:paddingBottom="2dp"
                         android:text="@string/label_total"
-                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/stat_header_4"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
+                        app:layout_constraintTop_toBottomOf="@id/stat_header_4" />
 
                     <TextView
                         android:id="@+id/recovered_total_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/stat_card_middle_margin"
-                        android:layout_marginEnd="@dimen/stat_card_side_margin"
+                        android:paddingEnd="5dp"
                         android:text="@{String.valueOf(covidStats.totalRecoveredCount)}"
                         android:textColor="@color/statValueTextColor"
                         android:textSize="@dimen/stat_regular_text_size"
                         android:textStyle="bold"
-                        tools:text="543"
-                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintBottom_toBottomOf="@id/recovered_total_label_tv"
                         app:layout_constraintStart_toEndOf="@id/recovered_total_label_tv"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/recovered_total_label_tv" />
+                        tools:text="543" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
                     android:id="@+id/detailed_statistics"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:layout_marginTop="26dp"
                     android:layout_marginBottom="64dp"
                     android:text="@string/label_detailed_stats"
@@ -419,7 +401,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="@id/stat_card_flow"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/stat_card_flow" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

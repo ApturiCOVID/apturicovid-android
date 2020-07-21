@@ -34,9 +34,4 @@ open class BaseViewModel : ViewModel() {
     fun showErrorDialog(throwable: Throwable) {
         _errorEventLiveData.postValue(Event(throwable))
     }
-
-    fun CoroutineExceptionHandler.withAction(alsoOnErrorDo: ((Throwable) -> Unit)) = CoroutineExceptionHandler { context, throwable ->
-        this.handleException(context, throwable)
-        alsoOnErrorDo.invoke(throwable)
-    }
 }

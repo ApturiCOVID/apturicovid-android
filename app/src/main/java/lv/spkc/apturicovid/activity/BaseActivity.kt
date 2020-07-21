@@ -1,7 +1,6 @@
 package lv.spkc.apturicovid.activity
 
 import android.app.Activity
-import android.app.Dialog
 import android.bluetooth.BluetoothAdapter
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -15,8 +14,6 @@ import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.auth.api.phone.SmsRetriever
-import com.google.android.gms.common.ConnectionResult
-import com.google.android.gms.common.GoogleApiAvailability
 import com.google.android.gms.nearby.exposurenotification.ExposureNotificationClient
 import dagger.android.support.DaggerAppCompatActivity
 import dagger.android.support.DaggerDialogFragment
@@ -45,7 +42,6 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
         private const val REQUEST_CODE_START_EXPOSURE_NOTIFICATION = 12341
         private const val REQUEST_CODE_SEND_DATA = 12342
         private const val SMS_RETRIEVAL_REQUEST_CODE = 383
-        private const val MY_ERROR_DIALOG_REQUEST = 876876
     }
 
     @Inject
@@ -144,22 +140,12 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
     fun checkExposureNotificationModuleStatus() {
         if (!hasExposureNotificationModule()) {
             Timber.e("EN module missing")
-//            TODO enable when decided to do so
-//            showUpdateDialogIfNeeded()
         }
     }
 
     private fun hasExposureNotificationModule(): Boolean {
         val intent = Intent(ExposureNotificationClient.ACTION_EXPOSURE_NOTIFICATION_SETTINGS)
         return intent.resolveActivity(packageManager) != null
-    }
-
-    private fun showUpdateDialogIfNeeded() {
-        val code = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(applicationContext)
-        if (code != ConnectionResult.SUCCESS) {
-            val dlg: Dialog = GoogleApiAvailability.getInstance().getErrorDialog(this, code, MY_ERROR_DIALOG_REQUEST)
-            dlg.show()
-        }
     }
 
     private fun startSmsUserConsent() {

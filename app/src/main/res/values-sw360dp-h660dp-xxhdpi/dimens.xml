@@ -20,6 +20,7 @@
     <dimen name="stat_card_side_margin">20dp</dimen>
     <dimen name="stat_card_middle_margin">10dp</dimen>
     <dimen name="stat_card_height">140dp</dimen>
+    <dimen name="stat_card_min_width">180dp</dimen>
 
     <dimen name="web_view_back_height">45dp</dimen>
     <dimen name="web_view_back_width">45dp</dimen>
