@@ -157,6 +157,10 @@
     <string name="bt_monitor_notification_title">Contact detection is switched off</string>
     <string name="bt_monitor_notification_message">Contact tracing with Apturi Covid app is currently off.</string>
 
+    <!-- location services_ state monitor notification -->
+    <string name="location_services_notification_title">Contact detection is switched off</string>
+    <string name="location_services_notification_message">Contact tracing with Apturi Covid app is currently off.</string>
+
     <!-- exposure notification -->
     <string name="notification_title">Don’t panic.</string>
     <string name="notification_message">You have been exposed to a COVID-19 case.</string>

@@ -156,6 +156,10 @@
     <string name="bt_monitor_notification_title">Фиксирование контакта выключено</string>
     <string name="bt_monitor_notification_message">Фиксирование контакта в приложении Apturi Covid сейчас не происходит.</string>
 
+    <!-- location services_ state monitor notification -->
+    <string name="location_services_notification_title">Фиксирование контакта выключено</string>
+    <string name="location_services_notification_message">Фиксирование контакта в приложении Apturi Covid сейчас не происходит.</string>
+
     <!-- exposure notification -->
     <string name="notification_title">Спокойствие, только спокойствие!</string>
     <string name="notification_message">У тебя обнаружен контакт с человеком, зараженным COVID-19.</string>

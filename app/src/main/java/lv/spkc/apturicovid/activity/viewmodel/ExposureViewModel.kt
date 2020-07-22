@@ -31,6 +31,8 @@ class ExposureViewModel @Inject constructor(private val exposureNotificationClie
     private val _resolveRequest = MutableLiveData<Event<Status>>()
     val resolveRequest: LiveData<Event<Status>> = _resolveRequest
 
+    private val _exposureState = MutableLiveData<Boolean>()
+
     init {
         viewModelScope.launch(coroutineExceptionHandler) {
             updateState()
@@ -57,8 +59,8 @@ class ExposureViewModel @Inject constructor(private val exposureNotificationClie
                 }
             }
         }) {
-            if (exposureNotificationClient.isEnabled.await()) {
-                return@launch
+            if (exposureNotificationClient.isEnabled.await() && _exposureState.value == false) {
+                exposureNotificationClient.stop().await()
             }
             exposureNotificationClient.start().await()
 
@@ -89,7 +91,15 @@ class ExposureViewModel @Inject constructor(private val exposureNotificationClie
     }
 
     private suspend fun updateState() {
-        val state = if (exposureNotificationClient.isEnabled.await()) ExposureApiState.Enabled else ExposureApiState.Disabled
+        val isTracingEnabled = exposureNotificationClient.isEnabled.await()
+        val areServicesOperational = _exposureState.value == true
+
+        val state = if (isTracingEnabled && areServicesOperational) ExposureApiState.Enabled else ExposureApiState.Disabled
         _exposureApiState.value = state
+    }
+
+    suspend fun changeExposureState(enabled: Boolean) {
+        _exposureState.value = enabled
+        updateState()
     }
 }
