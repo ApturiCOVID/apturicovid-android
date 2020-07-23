@@ -53,7 +53,7 @@ class ActivationFragment : BaseFragment() {
                 }
             }
 
-            contactWhyLl.setOnClickListener {
+            contactWhyRl.setOnClickListener {
                 findNavController().navigate(R.id.whyEnterNumberFragmentIntro)
             }
 
@@ -83,7 +83,7 @@ class ActivationFragment : BaseFragment() {
                 }
             }
 
-            remainAnonymousLl.setOnClickListener {
+            remainAnonymousRl.setOnClickListener {
                 ConfirmationDialogFragment.newInstance(
                     R.string.confirm_stay_anonymous_text,
                     R.string.confirm_stay_anonymous_no,

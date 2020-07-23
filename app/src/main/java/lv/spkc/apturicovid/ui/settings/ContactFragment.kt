@@ -39,7 +39,7 @@ class ContactFragment : BaseFragment() {
                 findNavController().popBackStack()
             }
 
-            remainAnonymousLl.setOnClickListener {
+            remainAnonymousRl.setOnClickListener {
                 ConfirmationDialogFragment.newInstance(
                     R.string.confirm_stay_anonymous_text,
                     R.string.confirm_stay_anonymous_no,
@@ -56,7 +56,7 @@ class ContactFragment : BaseFragment() {
                 thirdPartyContactCb.isChecked = !thirdPartyContactCb.isChecked
             }
 
-            contactWhyLl.setOnClickListener {
+            contactWhyRl.setOnClickListener {
                 findNavController().navigate(R.id.whyEnterNumberFragment)
             }
 
