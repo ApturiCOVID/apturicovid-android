@@ -179,7 +179,7 @@
                 android:scaleX="0.9"
                 android:scaleY="0.9"
                 android:thumb="@drawable/switch_thumb"
-                android:track="@drawable/switch_track_gray"
+                android:track="@drawable/switch_track_red"
                 app:layout_constraintBottom_toTopOf="@id/divider_2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider_1" />
