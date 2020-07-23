@@ -107,7 +107,7 @@
                 android:scaleX="0.9"
                 android:scaleY="0.9"
                 android:thumb="@drawable/switch_thumb"
-                android:track="@drawable/switch_track_gray"
+                android:track="@drawable/switch_track_red"
                 app:layout_constraintTop_toTopOf="@id/label_activate_tv"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="@id/label_activate_tv" />
