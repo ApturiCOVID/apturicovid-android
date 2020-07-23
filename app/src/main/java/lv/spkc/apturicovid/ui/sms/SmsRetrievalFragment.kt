@@ -73,16 +73,16 @@ class SmsRetrievalFragment: BaseFragment() {
                 findNavController().popBackStack()
             }
 
-            resendCodeTv.setOnClickListener { smsViewModel.startCodeRetrievalTimer(MILLIS_IN_MINUTE, false) }
+            resendCodeTv.setOnClickListener { smsViewModel.startCodeRetrievalTimer(MILLIS_IN_MINUTE, true) }
         }
 
         observeLiveData(smsViewModel.requestRemainingTimeShowMessagePairLiveData) {
             if (it.first == 0L) {
                 sendNumber()
-                if (!it.second) Toast.makeText(requireContext(), getString(R.string.label_code_resent), Toast.LENGTH_SHORT).show()
-            } else {
+                if (it.second) Toast.makeText(requireContext(), getString(R.string.label_code_resent), Toast.LENGTH_SHORT).show()
+            } else if (it.second) {
                 val errorText = String.format(getString(R.string.label_code_resend_error), it.first * -1 / MILLIS_IN_SECOND)
-                if (!it.second) Toast.makeText(requireContext(), errorText, Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), errorText, Toast.LENGTH_SHORT).show()
             }
         }
 
