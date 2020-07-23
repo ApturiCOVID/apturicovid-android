@@ -159,6 +159,10 @@
     <string name="bt_monitor_notification_title">Kontakta fiksēšana izslēgusies</string>
     <string name="bt_monitor_notification_message">Kontakta fiksēšana Apturi Covid lietotnē šobrīd nedarbojas.</string>
 
+    <!-- location services_ state monitor notification -->
+    <string name="location_services_notification_title">Kontakta fiksēšana izslēgusies</string>
+    <string name="location_services_notification_message">Kontakta fiksēšana Apturi Covid lietotnē šobrīd nedarbojas.</string>
+
     <!-- exposure notification -->
     <string name="notification_channel_name" translatable="false">Exposure Notification</string>
     <string name="notification_channel_description" translatable="false">Exposure notification alerts.</string>
@@ -166,6 +170,10 @@
     <!-- bluetooth state monitor notification -->
     <string name="bt_monitor_notification_channel_name" translatable="false">Bluetooth Monitor Notification</string>
     <string name="bt_monitor_notification_channel_description" translatable="false">Bluetooth Monitor notification alerts.</string>
+
+    <!-- location services state monitor notification -->
+    <string name="location_services_notification_channel_name" translatable="false">Location Services Notification</string>
+    <string name="location_services_notification_channel_description" translatable="false">Location services notification alerts.</string>
 
     <string name="share_link">https://www.apturicovid.lv/</string>
     <string name="privacy_policy_url">https://apturicovid.lv/privatuma-politika</string>

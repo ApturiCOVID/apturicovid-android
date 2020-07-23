@@ -7,10 +7,12 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.res.Configuration
+import android.location.LocationManager
 import android.net.ConnectivityManager
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
+import androidx.core.location.LocationManagerCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.auth.api.phone.SmsRetriever
@@ -19,6 +21,7 @@ import dagger.android.support.DaggerAppCompatActivity
 import dagger.android.support.DaggerDialogFragment
 import kotlinx.coroutines.launch
 import lv.spkc.apturicovid.BluetoothBroadcastReceiver
+import lv.spkc.apturicovid.LocationServiceStatusBroadcastReceiver
 import lv.spkc.apturicovid.R
 import lv.spkc.apturicovid.SmsBroadcastReceiver
 import lv.spkc.apturicovid.activity.viewmodel.ExposureViewModel
@@ -29,10 +32,7 @@ import lv.spkc.apturicovid.ui.AppStatusViewModel
 import lv.spkc.apturicovid.ui.intro.SmsViewModel
 import lv.spkc.apturicovid.ui.settings.datatransfer.DataTransferViewModel
 import lv.spkc.apturicovid.ui.widget.ErrorDialogFragment
-import lv.spkc.apturicovid.utils.BtNotificationManager
-import lv.spkc.apturicovid.utils.CovidCoroutineExceptionHandler
-import lv.spkc.apturicovid.utils.DisplayableError
-import lv.spkc.apturicovid.utils.NetworkUtils
+import lv.spkc.apturicovid.utils.*
 import timber.log.Timber
 import java.util.*
 import javax.inject.Inject
@@ -42,6 +42,7 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
         private const val REQUEST_CODE_START_EXPOSURE_NOTIFICATION = 12341
         private const val REQUEST_CODE_SEND_DATA = 12342
         private const val SMS_RETRIEVAL_REQUEST_CODE = 383
+        private const val SWITCH_LOG_ERROR = "Failed changing switch state"
     }
 
     @Inject
@@ -50,6 +51,7 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
     private var smsBroadcastReceiver: SmsBroadcastReceiver? = null
 
     private var bluetoothBroadcastReceiver: BluetoothBroadcastReceiver? = null
+    private var locationServiceStatusBroadcastReceiver: LocationServiceStatusBroadcastReceiver? = null
 
     private val smsViewModel by viewModels<SmsViewModel> { viewModelFactory }
 
@@ -98,22 +100,31 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
                 }
             }
         }
+
+        checkRequiredServicesState()
+
+        registerToLocationBroadcastReceiver()
+        registerToBluetoothBroadcastReceiver()
+        registerConnectionChangeReceiver()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        unregisterReceiver(locationServiceStatusBroadcastReceiver)
+        unregisterReceiver(bluetoothBroadcastReceiver)
+        unregisterConnectionChangeReceiver()
     }
 
     override fun onStart() {
         super.onStart()
 
         registerToSmsBroadcastReceiver()
-        registerToBluetoothBroadcastReceiver()
-        registerConnectionChangeReceiver()
     }
 
     override fun onStop() {
         super.onStop()
 
         unregisterReceiver(smsBroadcastReceiver)
-        unregisterReceiver(bluetoothBroadcastReceiver)
-        unregisterConnectionChangeReceiver()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -185,17 +196,49 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
                     Timber.e("Bluetooth is not operational")
                     if (appStatusViewModel.isTrackingStateNotificationsEnabled()) {
                         BtNotificationManager.showNotification(this@BaseActivity)
+                        lifecycleScope.launch(CovidCoroutineExceptionHandler(SWITCH_LOG_ERROR)) {
+                            exposureViewModel.changeExposureState(false)
+                        }
                     }
                 }
 
                 override fun onTurnedOn() {
                     BtNotificationManager.hideNotificationIfPresent(this@BaseActivity)
+                    lifecycleScope.launch(CovidCoroutineExceptionHandler(SWITCH_LOG_ERROR)) {
+                        exposureViewModel.changeExposureState(true)
+                    }
                 }
             }
         }
 
         val intentFilter = IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED)
         registerReceiver(bluetoothBroadcastReceiver, intentFilter)
+    }
+
+    private fun registerToLocationBroadcastReceiver() {
+        locationServiceStatusBroadcastReceiver = LocationServiceStatusBroadcastReceiver().also {
+            it.locationServiceStatusBroadcastReceiverListener = object : LocationServiceStatusBroadcastReceiver.LocationServiceStatusBroadcastReceiverListener {
+                override fun onTurnedOff() {
+                    Timber.e("Location services are disabled")
+                    if (appStatusViewModel.isTrackingStateNotificationsEnabled()) {
+                        LocationServicesNotificationManager.showNotification(this@BaseActivity)
+                        lifecycleScope.launch(CovidCoroutineExceptionHandler(SWITCH_LOG_ERROR)) {
+                            exposureViewModel.changeExposureState(false)
+                        }
+                    }
+                }
+
+                override fun onTurnedOn() {
+                    LocationServicesNotificationManager.hideNotificationIfPresent(this@BaseActivity)
+                    lifecycleScope.launch(CovidCoroutineExceptionHandler(SWITCH_LOG_ERROR)) {
+                        exposureViewModel.changeExposureState(true)
+                    }
+                }
+            }
+        }
+
+        val intentFilter = IntentFilter(LocationManager.PROVIDERS_CHANGED_ACTION)
+        registerReceiver(locationServiceStatusBroadcastReceiver, intentFilter)
     }
 
     private fun fetchVerificationCode(message: String): String {
@@ -258,6 +301,16 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
     private fun onNetworkChanged() {
         lifecycleScope.launch(CovidCoroutineExceptionHandler("Error checking internet connection")) {
             onNetworkAvailable(NetworkUtils.isInternetAvailable())
+        }
+    }
+
+    private fun checkRequiredServicesState() {
+        lifecycleScope.launch(CovidCoroutineExceptionHandler("Error checking required services state")) {
+            val locationManager = (this@BaseActivity.getSystemService(Context.LOCATION_SERVICE) as? LocationManager)
+
+            val isOperational = locationManager?.let { LocationManagerCompat.isLocationEnabled(it) } ?: false
+                    && BluetoothAdapter.getDefaultAdapter()?.isEnabled ?: false
+            exposureViewModel.changeExposureState(isOperational)
         }
     }
 
