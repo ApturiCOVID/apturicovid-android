@@ -95,7 +95,7 @@
 
     <!-- Data transfer submit -->
     <string name="label_send_data">Sūtīt ziņu fiksētajiem kontaktiem</string>
-    <string name="label_send_data_description">Ja esi inficēts, ar SPKC izsniegtu kodu šeit vari nosūtīt automātisku paziņojumu fiksētajiem kontaktiem, kam bijis inficēšanās risks – brīdināt gan savējos, gan arī svešos līdzcilvēkus. Paziņojums neatklās informāciju par tevi pašu.</string>
+    <string name="label_send_data_description">Ja esi inficēts, ar SPKC izsniegtu kodu šeit vari nosūtīt automātisku paziņojumu fiksētajiem kontaktiem, kam bijis inficēšanās risks – brīdināt gan savējos, gan arī svešos līdzcilvēkus. Paziņojums neatklās informāciju par tevi pašu. Kods ir derīgs 30\u00A0minūtes.</string>
 
     <!--Various-->
     <string name="label_wrong_number">Neatbilstošs numura formāts</string>

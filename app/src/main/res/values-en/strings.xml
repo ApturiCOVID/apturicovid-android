@@ -92,7 +92,7 @@
 
     <!-- Data transfer submit -->
     <string name="label_send_data">Notify detected contacts</string>
-    <string name="label_send_data_description">If you are infected, here’s where you can enter a code from SPKC and automatically notify detected contacts at risk to be infected – from loved ones to complete strangers. The notification will not disclose any information about you.</string>
+    <string name="label_send_data_description">If you are infected, here’s where you can enter a code from SPKC and automatically notify detected contacts at risk to be infected – from loved ones to complete strangers. The notification will not disclose any information about you. Code is valid for 30\u00A0minutes.</string>
 
     <!--Various-->
     <string name="label_wrong_number">Number format incompatible</string>
