@@ -48,7 +48,7 @@ class SmsRetrievalFragment: BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         with(binding) {
-            smsViewModel.startCodeRetrievalTimer(MILLIS_IN_MINUTE)
+            handleSendNumberRequest()
 
             codeEt.filters += AllCaps()
 
@@ -77,13 +77,7 @@ class SmsRetrievalFragment: BaseFragment() {
         }
 
         observeLiveData(smsViewModel.requestRemainingTimeShowMessagePairLiveData) {
-            if (it.first == 0L) {
-                sendNumber()
-                if (it.second) Toast.makeText(requireContext(), getString(R.string.label_code_resent), Toast.LENGTH_SHORT).show()
-            } else if (it.second) {
-                val errorText = String.format(getString(R.string.label_code_resend_error), it.first * -1 / MILLIS_IN_SECOND)
-                Toast.makeText(requireContext(), errorText, Toast.LENGTH_SHORT).show()
-            }
+            handleSendNumberRequest(it.first, it.second)
         }
 
         observeEvent(smsViewModel.smsCodeEventLiveData) {
@@ -119,6 +113,16 @@ class SmsRetrievalFragment: BaseFragment() {
                     errorTv.visibility = View.VISIBLE
                 }
             }
+        }
+    }
+
+    private fun handleSendNumberRequest(remainingRequestTime: Long = 0L, showMessage: Boolean = false) {
+        if (remainingRequestTime == 0L) {
+            sendNumber()
+            if (showMessage) Toast.makeText(requireContext(), getString(R.string.label_code_resent), Toast.LENGTH_SHORT).show()
+        } else if (showMessage) {
+            val errorText = String.format(getString(R.string.label_code_resend_error), remainingRequestTime * -1 / MILLIS_IN_SECOND)
+            Toast.makeText(requireContext(), errorText, Toast.LENGTH_SHORT).show()
         }
     }
 
