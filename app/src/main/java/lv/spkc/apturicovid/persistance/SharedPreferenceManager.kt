@@ -10,6 +10,7 @@ class SharedPreferenceManager(private val preferenceStorage: PreferenceStorage) 
         private const val KEY_IS_TACKING_NOTIFICATIONS_ENABLED = "is_tracking_notifications_enabled"
         private const val DEBUG_DATA = "debug_data"
         private const val HAS_MIGRATED_TO_V2_STORAGE = "migratedToV2Storage"
+        private const val KET_LAST_SMS_REQUEST_TIME = "last_sms_request_time"
     }
 
     var language: String
@@ -43,4 +44,8 @@ class SharedPreferenceManager(private val preferenceStorage: PreferenceStorage) 
     var migratedToV2Storage: Boolean
         get() = preferenceStorage.getObject(HAS_MIGRATED_TO_V2_STORAGE, Boolean::class.java) ?: false
         set(value) = preferenceStorage.setObject(HAS_MIGRATED_TO_V2_STORAGE, value)
+
+    var lastSmsCodeRequestTime: Long
+        get() = preferenceStorage.getObject(KET_LAST_SMS_REQUEST_TIME, Long::class.java) ?: 0
+        set(value) = preferenceStorage.setObject(KET_LAST_SMS_REQUEST_TIME, value)
 }
