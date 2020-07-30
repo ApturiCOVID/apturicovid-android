@@ -197,7 +197,7 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
                     if (appStatusViewModel.isTrackingStateNotificationsEnabled()) {
                         BtNotificationManager.showNotification(this@BaseActivity)
                         lifecycleScope.launch(CovidCoroutineExceptionHandler(SWITCH_LOG_ERROR)) {
-                            exposureViewModel.changeExposureState(false)
+                            checkRequiredServicesState()
                         }
                     }
                 }
@@ -205,7 +205,7 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
                 override fun onTurnedOn() {
                     BtNotificationManager.hideNotificationIfPresent(this@BaseActivity)
                     lifecycleScope.launch(CovidCoroutineExceptionHandler(SWITCH_LOG_ERROR)) {
-                        exposureViewModel.changeExposureState(true)
+                        checkRequiredServicesState()
                     }
                 }
             }
@@ -223,7 +223,7 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
                     if (appStatusViewModel.isTrackingStateNotificationsEnabled()) {
                         LocationServicesNotificationManager.showNotification(this@BaseActivity)
                         lifecycleScope.launch(CovidCoroutineExceptionHandler(SWITCH_LOG_ERROR)) {
-                            exposureViewModel.changeExposureState(false)
+                            checkRequiredServicesState()
                         }
                     }
                 }
@@ -231,7 +231,7 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
                 override fun onTurnedOn() {
                     LocationServicesNotificationManager.hideNotificationIfPresent(this@BaseActivity)
                     lifecycleScope.launch(CovidCoroutineExceptionHandler(SWITCH_LOG_ERROR)) {
-                        exposureViewModel.changeExposureState(true)
+                        checkRequiredServicesState()
                     }
                 }
             }
