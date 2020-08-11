@@ -1,0 +1,4 @@
+API_URL="https://your-domain-here/api/"
+STATS_URL="https://your-domain-here/stats/v1/covid-stats.json"
+INDEX_URL="https://your-domain-here/dkfs/v1/index.txt"
+CONFIG_URL="https://your-domain-here/exposure_configurations/v1/android.json"

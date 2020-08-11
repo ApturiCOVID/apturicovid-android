@@ -14,6 +14,10 @@ def secretsPropertiesFile = rootProject.file("secrets.properties")
 def secretsProperties = new Properties()
 secretsProperties.load(new FileInputStream(secretsPropertiesFile))
 
+def stagingEnvironmentPropertiesFile = rootProject.file("staging-environment.properties")
+def stagingEnvironmentProperties = new Properties()
+stagingEnvironmentProperties.load(new FileInputStream(stagingEnvironmentPropertiesFile))
+
 buildscript {
     repositories {
         google()
@@ -60,10 +64,10 @@ android {
         staging {
             applicationIdSuffix ".staging"
 
-            buildConfigField("String", "API_URL", "\"https://apturicovid-staging-api.spkc.gov.lv/api/\"")
-            buildConfigField("String", "STATS_URL", "\"https://apturicovid-staging-files.spkc.gov.lv/stats/v1/covid-stats.json\"")
-            buildConfigField("String", "INDEX_URL", "\"https://apturicovid-staging-files.spkc.gov.lv/dkfs/v1/index.txt\"")
-            buildConfigField("String", "CONFIG_URL", "\"https://apturicovid-staging-files.spkc.gov.lv/exposure_configurations/v1/android.json\"")
+            buildConfigField("String", "API_URL", stagingEnvironmentProperties["API_URL"])
+            buildConfigField("String", "STATS_URL", stagingEnvironmentProperties["STATS_URL"])
+            buildConfigField("String", "INDEX_URL", stagingEnvironmentProperties["INDEX_URL"])
+            buildConfigField("String", "CONFIG_URL", stagingEnvironmentProperties["CONFIG_URL"])
         }
         production {
             buildConfigField("String", "API_URL", "\"https://apturicovid-api.spkc.gov.lv/api/\"")

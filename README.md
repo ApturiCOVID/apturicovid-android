@@ -31,6 +31,7 @@ Exposure Detection is performed at every application launch and every 60 minutes
 1. Add Firebase configuration: place your `google-services.json` under the `/app` directory
 1. Copy the `dev-keystore.properties.example` file to `dev-keystore.properties` and set the development keystore information.
 1. Copy the `secrets.properties.example` file to `secrets.properties` and set the [SafetyNet](https://developer.android.com/training/safetynet/attestation) key.
+1. Copy the `staging-environment.properties.example` file to `staging-environment.properties` and set the API and file storage URLs.
 
 ## Support & Feedback
 
