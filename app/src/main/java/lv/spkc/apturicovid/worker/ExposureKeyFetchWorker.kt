@@ -8,7 +8,7 @@ import com.google.android.gms.nearby.exposurenotification.ExposureNotificationCl
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import lv.spkc.apturicovid.BuildConfig
+import lv.spkc.apturicovid.di.module.NetworkModule
 import lv.spkc.apturicovid.network.ExposureApiConfig
 import lv.spkc.apturicovid.network.FileLoader
 import lv.spkc.apturicovid.persistance.ExposureCheckTokenDao
@@ -86,7 +86,7 @@ class ExposureKeyFetchWorker @Inject constructor(
             try {
                 storeExposureCheckTokens()
 
-                val apiExposureConfig = fileLoader.getJsonFromApiFile(context, BuildConfig.CONFIG_URL, TEMP_CONFIG_FILE_PREFIX)?.let {
+                val apiExposureConfig = fileLoader.getJsonFromApiFile(context, NetworkModule.CONFIG_URL, TEMP_CONFIG_FILE_PREFIX)?.let {
                     Gson().fromJson(it, ExposureApiConfig::class.java)
                 }
 
@@ -106,8 +106,8 @@ class ExposureKeyFetchWorker @Inject constructor(
 
     private suspend fun storeExposureCheckTokens() {
         withContext(Dispatchers.IO) {
-            Timber.d("Fetching index ${BuildConfig.INDEX_URL}")
-            val request = Request.Builder().url(BuildConfig.INDEX_URL).build()
+            Timber.d("Fetching index ${NetworkModule.INDEX_URL}")
+            val request = Request.Builder().url(NetworkModule.INDEX_URL).build()
             val response = okHttpClient.newCall(request).execute()
 
             Timber.d("Got response")
