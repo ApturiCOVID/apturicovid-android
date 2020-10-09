@@ -60,6 +60,14 @@ class AppStatusViewModel @Inject constructor(
         return settingsRepository.language
     }
 
+    fun getAcceptanceV2Confirmed(): Boolean {
+        return settingsRepository.acceptanceV2Confirmed
+    }
+
+    fun saveAcceptanceV2Confirmed() {
+        settingsRepository.acceptanceV2Confirmed = true
+    }
+
     private fun isInternetAvailable(): Boolean = try {
         val ipAddress = InetAddress.getByName("google.com")
         ipAddress.toString().isNotEmpty()

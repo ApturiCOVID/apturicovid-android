@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_top_margin" >
+
+                    <ImageView
+                        android:id="@+id/world_image_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fragment_side_margin"
+                        android:src="@drawable/image_world"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <FrameLayout
+                        android:id="@+id/language_stack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/language_item_side_size"
+                        android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                        android:layout_marginEnd="23dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.3"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/title_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                    android:layout_marginTop="44dp"
+                    android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="start"
+                    android:text="@string/europe_support_title"
+                    android:textColor="@color/headerTextColor"
+                    android:textSize="@dimen/fragment_header_text_size" />
+
+                <TextView
+                    android:id="@+id/description_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                    android:gravity="start"
+                    android:text="@string/intro_main"
+                    android:textColor="@color/primaryTextColor"
+                    android:textSize="@dimen/fragment_body_text_size" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
+                    android:layout_marginTop="34dp"
+                    android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
+                    android:layout_marginBottom="38dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/confirmation_cb"
+                        android:layout_width="@dimen/checkbox_side_length"
+                        android:layout_height="@dimen/checkbox_side_length"
+                        android:layout_gravity="center_vertical"
+                        android:button="@drawable/checkbox_selector" />
+
+                    <TextView
+                        android:id="@+id/confirmation_cb_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/v2_terms_label"
+                        android:textColor="@color/primaryTextColor"
+                        android:textColorLink="@color/hyperlinkColor" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/continue_button"
+            android:layout_width="@dimen/default_button_width"
+            android:layout_height="@dimen/default_button_height"
+            android:layout_gravity="center"
+            android:layout_marginBottom="36dp"
+            android:background="@drawable/default_button_bg_selector"
+            android:enabled="false"
+            android:text="@string/button_next"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

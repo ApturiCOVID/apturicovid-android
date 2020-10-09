@@ -46,4 +46,10 @@ class SettingsRepository @Inject constructor(private val sharedPreferenceManager
         set(value) {
             sharedPreferenceManager.debuggingData = value
         }
+
+    var acceptanceV2Confirmed: Boolean
+        get() = sharedPreferenceManager.acceptanceV2Confirmed
+        set(value) {
+            sharedPreferenceManager.acceptanceV2Confirmed = value
+        }
 }

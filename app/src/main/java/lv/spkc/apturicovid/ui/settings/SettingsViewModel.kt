@@ -4,24 +4,17 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import lv.spkc.apturicovid.BuildConfig
 import lv.spkc.apturicovid.activity.viewmodel.BaseViewModel
-import lv.spkc.apturicovid.event.Event
 import lv.spkc.apturicovid.model.ContactNumber
-import lv.spkc.apturicovid.persistance.SharedPreferenceManager
-import java.util.*
 import javax.inject.Inject
 
 class SettingsViewModel @Inject constructor(
-    private val settingsRepository: SettingsRepository,
-    private val sharedPreferenceManager: SharedPreferenceManager
+    private val settingsRepository: SettingsRepository
 ): BaseViewModel() {
     private val _contactNumberLiveData = MutableLiveData<String>()
     val contactNumberLiveData: LiveData<String> = _contactNumberLiveData
 
     private val _isThirdPartyNumberLiveData = MutableLiveData<Boolean>()
     val isThirdPartyNumberLiveData: LiveData<Boolean> = _isThirdPartyNumberLiveData
-
-    private val _languageChangedLiveData = MutableLiveData<Event<Boolean>>()
-    val languageChangedLiveData: LiveData<Event<Boolean>> = _languageChangedLiveData
 
     init {
         _contactNumberLiveData.value = settingsRepository.phoneNumber
@@ -38,15 +31,6 @@ class SettingsViewModel @Inject constructor(
 
         _isThirdPartyNumberLiveData.value = contactNumber?.isThirdParty
         settingsRepository.phoneIsThirdParty = contactNumber?.isThirdParty ?: false
-    }
-
-    fun getSelectedLocale(): String {
-        return Locale.getDefault().language
-    }
-
-    fun setLanguage(language: String) {
-        sharedPreferenceManager.language = language
-        _languageChangedLiveData.value = Event(true)
     }
 
     fun selectNotifyTrackingSwitch(isEnabled: Boolean) {

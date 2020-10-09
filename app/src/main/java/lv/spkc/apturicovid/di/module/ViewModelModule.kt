@@ -8,7 +8,8 @@ import lv.spkc.apturicovid.activity.viewmodel.ExposureViewModel
 import lv.spkc.apturicovid.activity.viewmodel.SplashActivityViewModel
 import lv.spkc.apturicovid.di.viewmodel.ViewModelKey
 import lv.spkc.apturicovid.ui.AppStatusViewModel
-import lv.spkc.apturicovid.ui.intro.OnboardingViewModel
+import lv.spkc.apturicovid.ui.LanguageViewModel
+import lv.spkc.apturicovid.ui.intro.AcceptancesViewModel
 import lv.spkc.apturicovid.ui.intro.SmsViewModel
 import lv.spkc.apturicovid.ui.settings.SettingsViewModel
 import lv.spkc.apturicovid.ui.settings.datatransfer.DataTransferViewModel
@@ -35,8 +36,8 @@ internal abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(OnboardingViewModel::class)
-    abstract fun bindIntroViewModel(viewModel: OnboardingViewModel): ViewModel
+    @ViewModelKey(AcceptancesViewModel::class)
+    abstract fun bindAcceptancesViewModel(viewModel: AcceptancesViewModel): ViewModel
 
     @Binds
     @IntoMap
@@ -62,4 +63,9 @@ internal abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(SmsViewModel::class)
     abstract fun bindSmsViewModel(viewModel: SmsViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(LanguageViewModel::class)
+    abstract fun bindLanguageViewModel(viewModel: LanguageViewModel): ViewModel
 }

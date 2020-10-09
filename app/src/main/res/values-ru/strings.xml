@@ -8,6 +8,8 @@
     <string name="intro_header">Помоги прервать цепочку заражений!</string>
     <string name="intro_main">Анонимно и без данных геолокации фиксируй на своем устройстве случаи сближения с другими. Если хочешь, укажи свой телефон для связи с SPKC.</string>
     <string name="intro_agreement">Я согласен(-а) с Правилами использования приложения и\nознакомился(-ась) с Политикой конфиденциальности</string>
+    <string name="terms_link">Правилами использования приложения</string>
+    <string name="privacy_link">Политикой конфиденциальности</string>
     <string name="button_next">Дальше</string>
     <string name="button_send">Отправить</string>
     <string name="button_close">Закрыть</string>
@@ -168,4 +170,12 @@
 
     <string name="exposure_api_error_unavailable">К сожалению, на твоем устройстве фиксация контакта невозможна, поскольку оно пока не поддерживает  Exposure API. Дождись обновления.</string>
     <string name="exposure_api_error_not_enabled">Нет данных для отправки, кажется, ты использовал приложение недостаточно долго</string>
+
+    <!-- TODO -->
+    <!-- terms acceptance -->
+    <string name="europe_support_title">TODO: ru europe_support_title</string>
+    <string name="europe_support_description">TODO: ru europe_support_description</string>
+    <string name="v2_terms_label">TODO: ru v2_terms_label</string>
+    <string name="v2_terms_link">TODO: ru v2_terms_link</string>
+    <string name="v2_privacy_link">TODO: ru v2_privacy_link</string>
 </resources>

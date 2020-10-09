@@ -8,6 +8,8 @@
     <string name="intro_header">Help break the virus chain!</string>
     <string name="intro_main">Anonymously and with no location data register on your device when you are close to others. Provide your number for SPKC if you want to.</string>
     <string name="intro_agreement">I accept App Terms of Use,\nand have read the Privacy policy</string>
+    <string name="terms_link">App Terms of Use</string>
+    <string name="privacy_link">Privacy policy</string>
     <string name="button_next">Next</string>
     <string name="button_send">Send</string>
     <string name="button_close">Close</string>
@@ -169,4 +171,11 @@
 
     <string name="exposure_api_error_unavailable">Unfortunately contact detection is unavailable for your device, as it doesn’t support Exposure API yet. Wait for update.</string>
     <string name="exposure_api_error_not_enabled">Nothing to send – looks like you haven\&apos;t used the app long enough</string>
+
+    <!-- terms acceptance -->
+    <string name="europe_support_title">Europe-wide contact detection!</string>
+    <string name="europe_support_description">Contact detection apps in Europe now work together as one. See privacy policy for list of countries.</string>
+    <string name="v2_terms_label">I accept new App Terms of Use, and have read the new Privacy policy</string>
+    <string name="v2_terms_link">new App Terms of Use</string>
+    <string name="v2_privacy_link">new Privacy policy</string>
 </resources>

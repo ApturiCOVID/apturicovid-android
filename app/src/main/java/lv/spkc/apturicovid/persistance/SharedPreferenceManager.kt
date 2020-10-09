@@ -11,6 +11,7 @@ class SharedPreferenceManager(private val preferenceStorage: PreferenceStorage) 
         private const val DEBUG_DATA = "debug_data"
         private const val HAS_MIGRATED_TO_V2_STORAGE = "migratedToV2Storage"
         private const val KET_LAST_SMS_REQUEST_TIME = "last_sms_request_time"
+        private const val KEY_ACCEPTANCE_V2_CONFIRMED = "acceptance_v2_confirmed"
     }
 
     var language: String
@@ -19,7 +20,10 @@ class SharedPreferenceManager(private val preferenceStorage: PreferenceStorage) 
 
     var isOnboardingFinished: Boolean
         get() = preferenceStorage.getObject(KEY_ONBOARDING, Boolean::class.java) ?: false
-        set(value) = preferenceStorage.setObject(KEY_ONBOARDING, value)
+        set(value) {
+            if (value) { preferenceStorage.setObject(KEY_ACCEPTANCE_V2_CONFIRMED, true) }
+            preferenceStorage.setObject(KEY_ONBOARDING, value)
+        }
 
     var phone: String?
         get() = preferenceStorage.getObject(KEY_PHONE, String::class.java)
@@ -48,4 +52,8 @@ class SharedPreferenceManager(private val preferenceStorage: PreferenceStorage) 
     var lastSmsCodeRequestTime: Long
         get() = preferenceStorage.getObject(KET_LAST_SMS_REQUEST_TIME, Long::class.java) ?: 0
         set(value) = preferenceStorage.setObject(KET_LAST_SMS_REQUEST_TIME, value)
+
+    var acceptanceV2Confirmed: Boolean
+        get() = preferenceStorage.getObject(KEY_ACCEPTANCE_V2_CONFIRMED, Boolean::class.java) ?: false
+        set(value) = preferenceStorage.setObject(KEY_ACCEPTANCE_V2_CONFIRMED, value)
 }

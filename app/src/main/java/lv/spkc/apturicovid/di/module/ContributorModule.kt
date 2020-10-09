@@ -5,10 +5,12 @@ import dagger.android.ContributesAndroidInjector
 import lv.spkc.apturicovid.activity.MainActivity
 import lv.spkc.apturicovid.activity.OnboardingActivity
 import lv.spkc.apturicovid.activity.SplashActivity
+import lv.spkc.apturicovid.ui.LanguageFragment
 import lv.spkc.apturicovid.ui.bottomnav.BottomNavFragment
 import lv.spkc.apturicovid.ui.home.DebugInfoFragment
 import lv.spkc.apturicovid.ui.home.ExposedNextStepsFragment
 import lv.spkc.apturicovid.ui.home.HomeFragment
+import lv.spkc.apturicovid.ui.home.TermsConfirmationFragment
 import lv.spkc.apturicovid.ui.information.InformationFragment
 import lv.spkc.apturicovid.ui.intro.ActivationFragment
 import lv.spkc.apturicovid.ui.intro.IntroFragment
@@ -77,4 +79,10 @@ abstract class ContributorModule {
 
     @ContributesAndroidInjector
     abstract fun contributeDebugInfoFragment(): DebugInfoFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributeTermsConfirmationFragment(): TermsConfirmationFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributeLanguageFragment(): LanguageFragment
 }
