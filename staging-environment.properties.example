@@ -1,6 +1,0 @@
-API_DOMAIN="api.domain.com"
-FILES_DOMAIN="files.domain.com"
-API_SSL_PINS="sha256/XsNEQMAcQikTDZYnDYdZTi2FspxEiLcwxoKXpsmatEA=",\
-   "sha256/8R/k6PEHYdk/xtajSqqlO7yosaFygdu9qQb/SVDceD8=",
-FILES_SSL_PINS="sha256/XsNEQMAcQikTDZYnDYdZTi2FspxEiLcwxoKXpsmatEA=",\
-                  "sha256/8R/k6PEHYdk/xtajSqqlO7yosaFygdu9qQb/SVDceD8=",
