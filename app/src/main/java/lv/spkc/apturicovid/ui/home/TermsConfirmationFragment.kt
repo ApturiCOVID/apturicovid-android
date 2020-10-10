@@ -83,11 +83,6 @@ class TermsConfirmationFragment : BaseFragment() {
         }
     }
 
-    private fun openWebView(url: String) {
-        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-        startActivity(browserIntent)
-    }
-
     private fun restartActivity() {
         with(requireActivity()) {
             val intent = Intent(this, MainActivity::class.java)

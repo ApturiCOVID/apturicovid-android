@@ -52,7 +52,6 @@
                     android:layout_marginTop="44dp"
                     android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
                     android:fontFamily="sans-serif-medium"
-                    android:gravity="start"
                     android:text="@string/europe_support_title"
                     android:textColor="@color/headerTextColor"
                     android:textSize="@dimen/fragment_header_text_size" />
@@ -64,7 +63,6 @@
                     android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
-                    android:gravity="start"
                     android:text="@string/intro_main"
                     android:textColor="@color/primaryTextColor"
                     android:textSize="@dimen/fragment_body_text_size" />
@@ -76,7 +74,6 @@
                     android:layout_marginTop="34dp"
                     android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
                     android:layout_marginBottom="38dp"
-                    android:gravity="center"
                     android:orientation="horizontal">
 
                     <CheckBox

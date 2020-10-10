@@ -94,7 +94,8 @@
 
     <!-- Data transfer submit -->
     <string name="label_send_data">Notify detected contacts</string>
-    <string name="label_send_data_description">If you are infected, here’s where you can enter a code from SPKC and automatically notify detected contacts at risk to be infected – from loved ones to complete strangers. The notification will not disclose any information about you. Code is valid for 30\u00A0minutes.</string>
+    <string name="label_send_data_description">If you are infected, here’s where you can enter a code from SPKC and automatically notify detected contacts at risk to be infected – from loved ones to complete strangers, in Latvia and in Europe. The notification will not disclose any information about you. Code is valid for 30\u00A0minutes.</string>
+    <string name="label_list_of_countries">List of countries</string>
 
     <!--Various-->
     <string name="label_wrong_number">Number format incompatible</string>
@@ -105,6 +106,7 @@
     <string name="share_link">https://www.apturicovid.lv/#en</string>
     <string name="privacy_policy_url">https://apturicovid.lv/privatuma-politika/#en</string>
     <string name="terms_of_use_url">https://apturicovid.lv/lietosanas-noteikumi/#en</string>
+    <string name="list_of_countries_url">https://www.spkc.gov.lv/lv/apturicovid-sadarbibas-valstis#en</string>
 
     <string name="label_exposure_message">Don’t panic. You have been exposed to COVID-19.</string>
     <string name="label_what_about_my_privacy">What about my privacy?</string>

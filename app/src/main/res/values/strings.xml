@@ -97,7 +97,8 @@
 
     <!-- Data transfer submit -->
     <string name="label_send_data">Sūtīt ziņu fiksētajiem kontaktiem</string>
-    <string name="label_send_data_description">Ja esi inficēts, ar SPKC izsniegtu kodu šeit vari nosūtīt automātisku paziņojumu fiksētajiem kontaktiem, kam bijis inficēšanās risks – brīdināt gan savējos, gan arī svešos līdzcilvēkus. Paziņojums neatklās informāciju par tevi pašu. Kods ir derīgs 30\u00A0minūtes.</string>
+    <string name="label_send_data_description">Ja esi inficēts, ar SPKC izsniegtu kodu šeit vari nosūtīt automātisku paziņojumu fiksētajiem kontaktiem, kam bijis inficēšanās risks – brīdināt gan savējos, gan arī svešos līdzcilvēkus Latvijā un Eiropā. Paziņojums neatklās informāciju par tevi pašu. Kods ir derīgs 30\u00A0minūtes.</string>
+    <string name="label_list_of_countries">Valstu saraksts</string>
 
     <!--Various-->
     <string name="label_wrong_number">Neatbilstošs numura formāts</string>
@@ -181,6 +182,8 @@
     <string name="privacy_policy_url">https://apturicovid.lv/privatuma-politika</string>
     <string name="terms_of_use_url">https://apturicovid.lv/lietosanas-noteikumi</string>
     <string name="detailed_statistics_url" translatable="false">https://www.spkc.gov.lv/lv/aktualitates-par-covid-19</string>
+    <string name="list_of_countries_url">https://www.spkc.gov.lv/lv/apturicovid-sadarbibas-valstis#lv</string>
+
     <string name="lv_language_code" translatable="false">LV</string>
     <string name="en_language_code" translatable="false">EN</string>
     <string name="ru_language_code" translatable="false">RU</string>
