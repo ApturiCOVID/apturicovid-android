@@ -101,8 +101,6 @@
     <string name="confirm_stay_anonymous_no">Нет</string>
 
     <string name="share_link">https://www.apturicovid.lv/#ru</string>
-    <string name="privacy_policy_url">https://apturicovid.lv/privatuma-politika/#ru</string>
-    <string name="terms_of_use_url">https://apturicovid.lv/lietosanas-noteikumi/#ru</string>
 
     <string name="label_exposure_message">Спокойствие, только спокойствие. У тебя констатирован контакт с COVID-19.</string>
     <string name="label_what_about_my_privacy">И какова ситуация с сохранением моей конфиденциальности?</string>
@@ -143,8 +141,8 @@
     <string name="faq_question_9">Почему мое Android-устройство просит включить GPS?</string>
     <string name="faq_answer_9">Потому что соединение Bluetooth Low Energy в операционной системе Android входит в GPS-модуль. Только так можно использовать необходимые функции Bluetooth. Эта необходимость исходит не от приложения – оно не получает доступ к информации о местонахождении. Убедиться в этом можно в настройках приложения – у него нет GPS-доступа.</string>
 
-    <string name="faq_privacy_policy">Политикa конфиденциальности</string>
-    <string name="faq_terms_of_use">Правила использования приложения</string>
+    <string name="faq_privacy_policy_hyperlink"><a href="https://apturicovid.lv/privatuma-politika#ru">Политикa конфиденциальности</a></string>
+    <string name="faq_terms_of_use_hyperlink"><a href="https://apturicovid.lv/lietosanas-noteikumi#ru">Правила использования приложения</a></string>
 
     <string name="label_success_close">Закрыть</string>
     <string name="confirm_turn_off_tracking_text">Действительно хочешь продолжить с выключенным обнаружением контактов?</string>

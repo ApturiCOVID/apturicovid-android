@@ -139,8 +139,8 @@
     <string name="faq_question_9">Kāpēc mana Android ierīce prasa ieslēgt GPS?</string>
     <string name="faq_answer_9">Jo pašlaik Android operētājsistēmā Bluetooth Low Energy savienojums ir iekļauts GPS modulī. Tikai tā vari izmantot vajadzīgo Bluetooth funkcionalitāti. Šī prasība nenāk no šīs lietotnes, un tā atrašanās vietas datiem nepiekļūst. Par to vari pārliecināties lietotnes uzstādījumos – GPS piekļuves tiesību tai nav.</string>
 
-    <string name="faq_privacy_policy">Privātuma politika</string>
-    <string name="faq_terms_of_use">Lietošanas noteikumi</string>
+    <string name="faq_privacy_policy_hyperlink"><a href="https://apturicovid.lv/privatuma-politika#lv">Privātuma politika</a></string>
+    <string name="faq_terms_of_use_hyperlink"><a href="https://apturicovid.lv/lietosanas-noteikumi#lv">Lietošanas noteikumi</a></string>
 
     <string name="label_success_close">Aizvērt</string>
     <string name="confirm_turn_off_tracking_text">Vai tiešām turpināt ar izslēgtu kontakta fiksēšanu?</string>
@@ -177,8 +177,6 @@
     <string name="location_services_notification_channel_description" translatable="false">Location services notification alerts.</string>
 
     <string name="share_link">https://www.apturicovid.lv/</string>
-    <string name="privacy_policy_url">https://apturicovid.lv/privatuma-politika</string>
-    <string name="terms_of_use_url">https://apturicovid.lv/lietosanas-noteikumi</string>
     <string name="detailed_statistics_url" translatable="false">https://www.spkc.gov.lv/lv/aktualitates-par-covid-19</string>
 
     <string name="lv_language_code" translatable="false">LV</string>

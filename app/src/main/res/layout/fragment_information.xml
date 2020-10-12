@@ -713,9 +713,10 @@
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
                     android:layout_marginBottom="@dimen/faq_margin_vertical"
-                    android:text="@string/faq_privacy_policy"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorButton" />
+                    android:text="@string/faq_privacy_policy_hyperlink"
+                    android:textColor="@color/primaryTextColor"
+                    android:textColorLink="@color/hyperlinkColor"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/termsOfUseView"
@@ -725,9 +726,10 @@
                     android:layout_marginTop="@dimen/faq_margin_vertical"
                     android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
                     android:layout_marginBottom="75dp"
-                    android:textStyle="bold"
-                    android:text="@string/faq_terms_of_use"
-                    android:textColor="@color/colorButton" />
+                    android:text="@string/faq_terms_of_use_hyperlink"
+                    android:textColor="@color/primaryTextColor"
+                    android:textColorLink="@color/hyperlinkColor"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
