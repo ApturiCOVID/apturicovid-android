@@ -34,7 +34,7 @@ android {
         applicationId "lv.spkc.gov.apturicovid"
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 53
+        versionCode 54
         versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
