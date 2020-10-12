@@ -63,7 +63,7 @@
                     android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
-                    android:text="@string/intro_main"
+                    android:text="@string/europe_support_description"
                     android:textColor="@color/primaryTextColor"
                     android:textSize="@dimen/fragment_body_text_size" />
 
