@@ -178,7 +178,7 @@
     <string name="share_link">https://www.apturicovid.lv/</string>
     <string name="privacy_policy_url">https://apturicovid.lv/privatuma-politika</string>
     <string name="terms_of_use_url">https://apturicovid.lv/lietosanas-noteikumi</string>
-    <string name="detailed_statistics_url" translatable="false">https://arkartassituacija.gov.lv/</string>
+    <string name="detailed_statistics_url" translatable="false">https://www.spkc.gov.lv/lv/aktualitates-par-covid-19 </string>
     <string name="lv_language_code" translatable="false">LV</string>
     <string name="en_language_code" translatable="false">EN</string>
     <string name="ru_language_code" translatable="false">RU</string>
