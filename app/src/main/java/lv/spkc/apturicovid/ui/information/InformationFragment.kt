@@ -40,6 +40,7 @@ class InformationFragment : BaseFragment(), View.OnClickListener {
             questionContainer6.setOnClickListener(this@InformationFragment)
             questionContainer7.setOnClickListener(this@InformationFragment)
             questionContainer8.setOnClickListener(this@InformationFragment)
+            faqQuestion8Link.movementMethod = LinkMovementMethod()
             questionContainer9.setOnClickListener(this@InformationFragment)
 
             termsOfUseView.movementMethod = LinkMovementMethod()
