@@ -44,6 +44,7 @@
     <dimen name="share_top_margin">46dp</dimen>
     <dimen name="edit_text_corner_radius">5dp</dimen>
     <dimen name="checkbox_side_length">38dp</dimen>
+    <dimen name="pin_entry_side_margin">25dp</dimen>
 
     <dimen name="sms_header_text_size">18sp</dimen>
 

@@ -7,9 +7,7 @@
     <!-- Intro -->
     <string name="intro_header">Помоги прервать цепочку заражений!</string>
     <string name="intro_main">Анонимно и без данных геолокации фиксируй на своем устройстве случаи сближения с другими. Если хочешь, укажи свой телефон для связи с SPKC.</string>
-    <string name="intro_agreement">Я согласен(-а) с Правилами использования приложения и\nознакомился(-ась) с Политикой конфиденциальности</string>
-    <string name="terms_link">Правилами использования приложения</string>
-    <string name="privacy_link">Политикой конфиденциальности</string>
+    <string name="intro_agreement_hyperlink">Я согласен(-а) с <a href="https://apturicovid.lv/privatuma-politika">Правилами использования приложения</a> и\nознакомился(-ась) с <a href="https://apturicovid.lv/lietosanas-noteikumi">Политикой конфиденциальности</a></string>
     <string name="button_next">Дальше</string>
     <string name="button_send">Отправить</string>
     <string name="button_close">Закрыть</string>
@@ -89,7 +87,7 @@
     <!-- Data transfer submit -->
     <string name="label_send_data">Отправить сообщение констатированным контактам</string>
     <string name="label_send_data_description">Если ты инфицирован, можешь с помощью присвоенного SPKC кода разослать автоматическое сообщение тем зафиксированным контактам, у которых есть риск заражения – как близким, так и незнакомым людям. Сообщение не будет содержать какой-либо информации о тебе. Код действителен 30\u00A0минут.</string>
-    <string name="label_list_of_countries">Список стран</string>
+    <string name="list_of_countries_hyperlink"><a href="https://www.spkc.gov.lv/lv/apturicovid-sadarbibas-valstis#ru">Список стран</a></string>
 
     <!--Various-->
     <string name="label_wrong_number">Недействительный формат номера</string>
@@ -105,8 +103,7 @@
     <string name="share_link">https://www.apturicovid.lv/#ru</string>
     <string name="privacy_policy_url">https://apturicovid.lv/privatuma-politika/#ru</string>
     <string name="terms_of_use_url">https://apturicovid.lv/lietosanas-noteikumi/#ru</string>
-    <string name="list_of_countries_url">https://www.spkc.gov.lv/lv/apturicovid-sadarbibas-valstis#ru</string>
-    
+
     <string name="label_exposure_message">Спокойствие, только спокойствие. У тебя констатирован контакт с COVID-19.</string>
     <string name="label_what_about_my_privacy">И какова ситуация с сохранением моей конфиденциальности?</string>
     <string name="confirm_turn_off_tracking_yes">Да</string>
@@ -176,7 +173,5 @@
     <!-- terms acceptance -->
     <string name="europe_support_title">Теперь работает и в Европе!</string>
     <string name="europe_support_description">Теперь приложения по фиксации контактов в Европе сотрудничают и понимают друг друга. Список стран найдешь в политике конфиденциальности.</string>
-    <string name="v2_terms_label">Я согласен(-на) с новыми Правилами использования приложения и ознакомился(-ась) с новой Политикой конфиденциальности</string>
-    <string name="v2_terms_link">новыми Правилами использования приложения</string>
-    <string name="v2_privacy_link">новой Политикой конфиденциальности</string>
+    <string name="v2_terms_hyperlink">Я согласен(-на) с <a href="https://apturicovid.lv/privatuma-politika#ru">новыми Правилами использования приложения</a> и ознакомился(-ась) с <a href="https://apturicovid.lv/lietosanas-noteikumi#ru">новой Политикой конфиденциальности</a></string>
 </resources>

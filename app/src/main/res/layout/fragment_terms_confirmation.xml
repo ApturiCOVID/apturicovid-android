@@ -7,10 +7,14 @@
         android:layout_height="match_parent">
 
         <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:fillViewport="true"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -40,6 +44,8 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/world_image_iv"
+                        app:layout_constraintHorizontal_bias="1"
                         app:layout_constraintVertical_bias="0.3"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -87,7 +93,7 @@
                         android:id="@+id/confirmation_cb_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/v2_terms_label"
+                        android:text="@string/v2_terms_hyperlink"
                         android:textColor="@color/primaryTextColor"
                         android:textColorLink="@color/hyperlinkColor" />
 

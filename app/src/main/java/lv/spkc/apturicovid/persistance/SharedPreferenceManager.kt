@@ -21,7 +21,7 @@ class SharedPreferenceManager(private val preferenceStorage: PreferenceStorage) 
     var isOnboardingFinished: Boolean
         get() = preferenceStorage.getObject(KEY_ONBOARDING, Boolean::class.java) ?: false
         set(value) {
-            if (value) { preferenceStorage.setObject(KEY_ACCEPTANCE_V2_CONFIRMED, true) }
+            if (value) { acceptanceV2Confirmed = true }
             preferenceStorage.setObject(KEY_ONBOARDING, value)
         }
 

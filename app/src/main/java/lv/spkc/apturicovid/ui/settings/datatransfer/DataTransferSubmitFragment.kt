@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.text.InputFilter
+import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -61,10 +62,7 @@ class DataTransferSubmitFragment : BaseFragment() {
                 }
             }
 
-            countriesListBtn.setOnClickListener {
-                val url = getString(R.string.list_of_countries_url)
-                openWebView(url)
-            }
+            countriesListBtn.movementMethod = LinkMovementMethod()
 
             backArrowIv.setOnClickListener {
                 findNavController().popBackStack()

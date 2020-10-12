@@ -10,9 +10,6 @@ import javax.inject.Inject
 
 class LanguageViewModel @Inject constructor(private val sharedPreferenceManager: SharedPreferenceManager) : BaseViewModel() {
 
-    private val _languageChangedLiveData = MutableLiveData<Boolean>()
-    val languageChangedLiveData = _languageChangedLiveData
-
     private val _languageChangedEventLiveData = MutableLiveData<Event<Boolean>>()
     val languageChangedEventLiveData: LiveData<Event<Boolean>> = _languageChangedEventLiveData
 
@@ -23,6 +20,5 @@ class LanguageViewModel @Inject constructor(private val sharedPreferenceManager:
     fun setLanguage(language: String) {
         sharedPreferenceManager.language = language
         _languageChangedEventLiveData.value = Event(true)
-        _languageChangedLiveData.value = true
     }
 }

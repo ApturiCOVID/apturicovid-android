@@ -8,9 +8,7 @@
     <!-- Intro -->
     <string name="intro_header">Palīdzi pārraut\nvīrusa ķēdi!</string>
     <string name="intro_main">Anonīmi un bez atrašanās vietas datiem savā ierīcē fiksē brīžus, kad esi kopā ar citiem. Ja vēlies, norādi tālruni saziņai ar SPKC.</string>
-    <string name="intro_agreement">Piekrītu Lietotnes noteikumiem,\nar Privātuma politiku iepazinos</string>
-    <string name="terms_link">Lietotnes noteikumiem</string>
-    <string name="privacy_link">Privātuma politiku</string>
+    <string name="intro_agreement_hyperlink">Piekrītu <a href="https://apturicovid.lv/privatuma-politika">Lietotnes noteikumiem</a>, ar <a href="https://apturicovid.lv/lietosanas-noteikumi">Privātuma politiku</a> iepazinos</string>
     <string name="button_next">Tālāk</string>
     <string name="button_send">Sūtīt</string>
     <string name="button_close">Aizvērt</string>
@@ -98,7 +96,7 @@
     <!-- Data transfer submit -->
     <string name="label_send_data">Sūtīt ziņu fiksētajiem kontaktiem</string>
     <string name="label_send_data_description">Ja esi inficēts, ar SPKC izsniegtu kodu šeit vari nosūtīt automātisku paziņojumu fiksētajiem kontaktiem, kam bijis inficēšanās risks – brīdināt gan savējos, gan arī svešos līdzcilvēkus Latvijā un Eiropā. Paziņojums neatklās informāciju par tevi pašu. Kods ir derīgs 30\u00A0minūtes.</string>
-    <string name="label_list_of_countries">Valstu saraksts</string>
+    <string name="list_of_countries_hyperlink"><a href="https://www.spkc.gov.lv/lv/apturicovid-sadarbibas-valstis#lv">Valstu saraksts</a></string>
 
     <!--Various-->
     <string name="label_wrong_number">Neatbilstošs numura formāts</string>
@@ -182,7 +180,6 @@
     <string name="privacy_policy_url">https://apturicovid.lv/privatuma-politika</string>
     <string name="terms_of_use_url">https://apturicovid.lv/lietosanas-noteikumi</string>
     <string name="detailed_statistics_url" translatable="false">https://www.spkc.gov.lv/lv/aktualitates-par-covid-19</string>
-    <string name="list_of_countries_url">https://www.spkc.gov.lv/lv/apturicovid-sadarbibas-valstis#lv</string>
 
     <string name="lv_language_code" translatable="false">LV</string>
     <string name="en_language_code" translatable="false">EN</string>
@@ -200,7 +197,5 @@
     <!-- terms acceptance -->
     <string name="europe_support_title">Tagad fiksē kontaktu arī Eiropā!</string>
     <string name="europe_support_description">Kontakta fiksēšanas lietotnes Eiropā tagad sadarbojas un saprotas. Valstu sarakstu lasi privātuma politikā.</string>
-    <string name="v2_terms_label">Piekrītu Jaunajiem lietotnes noteikumiem, ar Jauno privātuma politiku iepazinos</string>
-    <string name="v2_terms_link">Jaunajiem lietotnes noteikumiem</string>
-    <string name="v2_privacy_link">Jauno privātuma politiku</string>
+    <string name="v2_terms_hyperlink">Piekrītu <a href="https://apturicovid.lv/privatuma-politika">Jaunajiem lietotnes noteikumiem</a>, ar <a href="https://apturicovid.lv/lietosanas-noteikumi">Jauno privātuma politiku iepazinos</a> iepazinos</string>
 </resources>
