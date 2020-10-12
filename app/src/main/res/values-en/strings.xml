@@ -7,7 +7,7 @@
     <!-- Intro -->
     <string name="intro_header">Help break the virus chain!</string>
     <string name="intro_main">Anonymously and with no location data register on your device when you are close to others. Provide your number for SPKC if you want to.</string>
-    <string name="intro_agreement">I accept App Terms of Use,\nand have read the Privacy policy</string>
+    <string name="intro_agreement_hyperlink">I accept <a href="https://apturicovid.lv/privatuma-politika">App Terms of Use</a>, and have read the <a href="https://apturicovid.lv/lietosanas-noteikumi">Privacy policy</a></string>
     <string name="button_next">Next</string>
     <string name="button_send">Send</string>
     <string name="button_close">Close</string>
@@ -92,7 +92,8 @@
 
     <!-- Data transfer submit -->
     <string name="label_send_data">Notify detected contacts</string>
-    <string name="label_send_data_description">If you are infected, here’s where you can enter a code from SPKC and automatically notify detected contacts at risk to be infected – from loved ones to complete strangers. The notification will not disclose any information about you. Code is valid for 30\u00A0minutes.</string>
+    <string name="label_send_data_description">If you are infected, here’s where you can enter a code from SPKC and automatically notify detected contacts at risk to be infected – from loved ones to complete strangers, in Latvia and in Europe. The notification will not disclose any information about you. Code is valid for 30\u00A0minutes.</string>
+    <string name="list_of_countries_hyperlink"><a href="https://www.spkc.gov.lv/lv/apturicovid-sadarbibas-valstis#en">List of countries</a></string>
 
     <!--Various-->
     <string name="label_wrong_number">Number format incompatible</string>
@@ -101,8 +102,6 @@
     <string name="label_specify_phone">Provide number</string>
 
     <string name="share_link">https://www.apturicovid.lv/#en</string>
-    <string name="privacy_policy_url">https://apturicovid.lv/privatuma-politika/#en</string>
-    <string name="terms_of_use_url">https://apturicovid.lv/lietosanas-noteikumi/#en</string>
 
     <string name="label_exposure_message">Don’t panic. You have been exposed to COVID-19.</string>
     <string name="label_what_about_my_privacy">What about my privacy?</string>
@@ -143,8 +142,8 @@
     <string name="faq_question_9">Why is my Android device asking for GPS?</string>
     <string name="faq_answer_9">Because currently on Android operating system Bluetooth Low Energy connection is integrated in the GPS module. This is the only way to enable the required Bluetooth functionality. This request doesn\&apos;t come from this app, and it cannot access location data. You can check it in app settings – it has no GPS permission.</string>
 
-    <string name="faq_privacy_policy">Privacy policy</string>
-    <string name="faq_terms_of_use">App Terms of Use</string>
+    <string name="faq_privacy_policy_hyperlink"><a href="https://apturicovid.lv/privatuma-politika#en">Privacy policy</a></string>
+    <string name="faq_terms_of_use_hyperlink"><a href="https://apturicovid.lv/lietosanas-noteikumi#en">App Terms of Use</a></string>
 
     <string name="label_success_close">Close</string>
     <string name="confirm_turn_off_tracking_text">Continue with contact detection switched off?</string>
@@ -169,4 +168,9 @@
 
     <string name="exposure_api_error_unavailable">Unfortunately contact detection is unavailable for your device, as it doesn’t support Exposure API yet. Wait for update.</string>
     <string name="exposure_api_error_not_enabled">Nothing to send – looks like you haven\&apos;t used the app long enough</string>
+
+    <!-- terms acceptance -->
+    <string name="europe_support_title">Europe-wide contact detection!</string>
+    <string name="europe_support_description">Contact detection apps in Europe now work together as one. See privacy policy for list of countries.</string>
+    <string name="v2_terms_hyperlink">I accept <a href="https://apturicovid.lv/privatuma-politika#en">new App Terms of Use</a>, and have read the <a href="https://apturicovid.lv/lietosanas-noteikumi#en">new Privacy policy</a></string>
 </resources>

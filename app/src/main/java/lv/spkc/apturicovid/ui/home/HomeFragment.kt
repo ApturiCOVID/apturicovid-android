@@ -49,6 +49,8 @@ class HomeFragment : BaseFragment() {
 
         freshRedraw = true
 
+        presentAcceptanceIfNeeded()
+
         viewModel.refreshData(requireContext())
 
         observeLiveData(appStatusViewModel.isExposedLiveData) {
@@ -169,5 +171,11 @@ class HomeFragment : BaseFragment() {
 
         val density = resources.displayMetrics.density
         return outMetrics.heightPixels / density
+    }
+
+    private fun presentAcceptanceIfNeeded() {
+        if (!appStatusViewModel.getAcceptanceV2Confirmed()) {
+            Navigation.findNavController(requireActivity(), R.id.main_nav_fragment).navigate(R.id.termsConfirmationFragment)
+        }
     }
 }

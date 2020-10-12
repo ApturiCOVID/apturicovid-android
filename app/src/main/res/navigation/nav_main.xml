@@ -54,4 +54,9 @@
         android:id="@+id/debugInfoFragment"
         android:name="lv.spkc.apturicovid.ui.home.DebugInfoFragment"
         android:label="DebugInfoFragment" />
+
+    <fragment
+        android:id="@+id/termsConfirmationFragment"
+        android:name="lv.spkc.apturicovid.ui.home.TermsConfirmationFragment"
+        android:label="TermsConfirmationFragment" />
 </navigation>

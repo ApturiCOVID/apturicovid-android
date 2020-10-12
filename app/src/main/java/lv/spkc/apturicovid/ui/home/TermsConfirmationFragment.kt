@@ -1,4 +1,4 @@
-package lv.spkc.apturicovid.ui.intro
+package lv.spkc.apturicovid.ui.home
 
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
@@ -10,53 +10,49 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
 import lv.spkc.apturicovid.R
-import lv.spkc.apturicovid.databinding.FragmentIntroBinding
+import lv.spkc.apturicovid.databinding.FragmentTermsConfirmationBinding
 import lv.spkc.apturicovid.extension.observeEvent
 import lv.spkc.apturicovid.extension.observeLiveData
-import lv.spkc.apturicovid.extension.setOnDebounceClickListener
 import lv.spkc.apturicovid.ui.BaseFragment
 import lv.spkc.apturicovid.ui.LanguageFragment
 import lv.spkc.apturicovid.ui.LanguageViewModel
+import lv.spkc.apturicovid.ui.intro.AcceptancesViewModel
 
-class IntroFragment : BaseFragment() {
+class TermsConfirmationFragment : BaseFragment() {
+    private lateinit var binding: FragmentTermsConfirmationBinding
 
-    override val viewModel by navGraphViewModels<AcceptancesViewModel>(R.id.nav_onboarding) { viewModelFactory }
+    override val viewModel by navGraphViewModels<AcceptancesViewModel>(R.id.nav_main) { viewModelFactory }
     private val languageViewModel by viewModels<LanguageViewModel> { viewModelFactory }
 
-    private lateinit var binding: FragmentIntroBinding
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return DataBindingUtil.inflate<FragmentIntroBinding>(
-            inflater,
-            R.layout.fragment_intro,
-            container,
-            false
-        ).apply {
-            binding = this
-        }.root
+        return DataBindingUtil.inflate<FragmentTermsConfirmationBinding>(inflater, R.layout.fragment_terms_confirmation, container, false)
+            .apply { binding = this }
+            .root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        appStatusViewModel.resetLoading()
+
         val languageFragment = LanguageFragment()
-        childFragmentManager.beginTransaction().replace(R.id.language_stack, languageFragment).commit()
+        childFragmentManager.beginTransaction().replace(R.id.language_stack, languageFragment)
+            .commit()
 
         with(binding) {
-            introAgreementCb.setOnClickListener {
-                viewModel.setAcceptancesSelected(introAgreementCb.isChecked)
+            confirmationCbText.movementMethod = LinkMovementMethod()
+
+            confirmationCb.setOnClickListener {
+                viewModel.setAcceptancesSelected(confirmationCb.isChecked)
             }
 
-            introAgreementCbText.movementMethod = LinkMovementMethod()
-
-            nextButton.setOnDebounceClickListener {
-                findNavController().navigate(R.id.activationFragment)
+            continueButton.setOnClickListener {
+                appStatusViewModel.saveAcceptanceV2Confirmed()
+                findNavController().popBackStack()
             }
-
-            executePendingBindings()
 
             observeLiveData(viewModel.acceptancesLiveData) {
-                nextButton.isEnabled = it
+                continueButton.isEnabled = it
             }
         }
 
