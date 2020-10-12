@@ -87,7 +87,7 @@
     <!-- Data transfer submit -->
     <string name="label_send_data">Отправить сообщение констатированным контактам</string>
     <string name="label_send_data_description">Если ты инфицирован, можешь с помощью присвоенного SPKC кода разослать автоматическое сообщение тем зафиксированным контактам, у которых есть риск заражения – как близким, так и незнакомым людям. Сообщение не будет содержать какой-либо информации о тебе. Код действителен 30\u00A0минут.</string>
-    <string name="list_of_countries_hyperlink"><a href="https://www.spkc.gov.lv/lv/apturicovid-sadarbibas-valstis#ru">Список стран</a></string>
+    <string name="list_of_countries_hyperlink"><a href="https://www.spkc.gov.lv/lv/apturicovid-strani-sotrudnichestva">Список стран</a></string>
 
     <!--Various-->
     <string name="label_wrong_number">Недействительный формат номера</string>
@@ -138,7 +138,7 @@
     <string name="faq_answer_7">Bluetooth – это технология беспроводной связи малого радиуса действия для смартфонов, беспроводных наушников, смарт-часов и др. Bluetooth используется во многих приложениях для фиксации контактов, т.к. позволяет шифровать данные. Чтобы повысить эффективность и снизить нагрузку на аккумулятор, Apple и Google оптимизирует использование Bluetooth. Для работы приложения Bluetooth должен быть обязательно включен.</string>
     <string name="faq_question_8">Будет ли приложение работать и в других странах?</string>
     <string name="faq_answer_8">Последняя версия приложения взаимодействует с похожими приложениями в нескольких других странах Европы, также созданными на платформе Apple un Google. Т.е. приложение Apturi Covid отправляет для сопоставления зашифрованные данные и получает их и из других стран – точно так же, как до этого пересылало в пределах Латвии.</string>
-    <string name="faq_link_8"><a href="https://www.spkc.gov.lv/lv/apturicovid-sadarbibas-valstis#ru">Актуальный список доступных приложению стран можно найти здесь.</a></string>
+    <string name="faq_link_8"><a href="https://www.spkc.gov.lv/lv/apturicovid-strani-sotrudnichestva">Актуальный список доступных приложению стран можно найти здесь.</a></string>
     <string name="faq_question_9">Почему мое Android-устройство просит включить GPS?</string>
     <string name="faq_answer_9">Потому что соединение Bluetooth Low Energy в операционной системе Android входит в GPS-модуль. Только так можно использовать необходимые функции Bluetooth. Эта необходимость исходит не от приложения – оно не получает доступ к информации о местонахождении. Убедиться в этом можно в настройках приложения – у него нет GPS-доступа.</string>
 
