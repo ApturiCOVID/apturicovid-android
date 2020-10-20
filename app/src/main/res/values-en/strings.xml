@@ -7,7 +7,7 @@
     <!-- Intro -->
     <string name="intro_header">Help break the virus chain!</string>
     <string name="intro_main">Anonymously and with no location data register on your device when you are close to others. Provide your number for SPKC if you want to.</string>
-    <string name="intro_agreement_hyperlink">I accept <a href="https://apturicovid.lv/privatuma-politika">App Terms of Use</a>, and have read the <a href="https://apturicovid.lv/lietosanas-noteikumi">Privacy policy</a></string>
+    <string name="intro_agreement_hyperlink">I accept <a href="https://apturicovid.lv/lietosanas-noteikumi#en">App Terms of Use</a>, and have read the <a href="https://apturicovid.lv/privatuma-politika#en">Privacy policy</a></string>
     <string name="button_next">Next</string>
     <string name="button_send">Send</string>
     <string name="button_close">Close</string>
