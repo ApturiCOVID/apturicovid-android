@@ -170,5 +170,5 @@
     <!-- terms acceptance -->
     <string name="europe_support_title">Теперь работает и в Европе!</string>
     <string name="europe_support_description">Теперь приложения по фиксации контактов в Европе сотрудничают и понимают друг друга. Список стран найдешь в политике конфиденциальности.</string>
-    <string name="v2_terms_hyperlink">Я согласен(-на) с <a href="https://apturicovid.lv/privatuma-politika#ru">новыми Правилами использования приложения</a> и ознакомился(-ась) с <a href="https://apturicovid.lv/lietosanas-noteikumi#ru">новой Политикой конфиденциальности</a></string>
+    <string name="v2_terms_hyperlink">Я согласен(-на) с <a href="https://apturicovid.lv/lietosanas-noteikumi#ru">новыми Правилами использования приложения</a> и ознакомился(-ась) с <a href="https://apturicovid.lv/privatuma-politika#ru">новой Политикой конфиденциальности</a></string>
 </resources>

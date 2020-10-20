@@ -171,5 +171,5 @@
     <!-- terms acceptance -->
     <string name="europe_support_title">Europe-wide contact detection!</string>
     <string name="europe_support_description">Contact detection apps in Europe now work together as one. See privacy policy for list of countries.</string>
-    <string name="v2_terms_hyperlink">I accept <a href="https://apturicovid.lv/privatuma-politika#en">new App Terms of Use</a>, and have read the <a href="https://apturicovid.lv/lietosanas-noteikumi#en">new Privacy policy</a></string>
+    <string name="v2_terms_hyperlink">I accept <a href="https://apturicovid.lv/lietosanas-noteikumi#en">new App Terms of Use</a>, and have read the <a href="https://apturicovid.lv/privatuma-politika#en">new Privacy policy</a></string>
 </resources>

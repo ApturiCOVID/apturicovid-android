@@ -194,5 +194,5 @@
     <!-- terms acceptance -->
     <string name="europe_support_title">Tagad fiksē kontaktu arī Eiropā!</string>
     <string name="europe_support_description">Kontakta fiksēšanas lietotnes Eiropā tagad sadarbojas un saprotas. Valstu sarakstu lasi privātuma politikā.</string>
-    <string name="v2_terms_hyperlink">Piekrītu <a href="https://apturicovid.lv/privatuma-politika">Jaunajiem lietotnes noteikumiem</a>, ar <a href="https://apturicovid.lv/lietosanas-noteikumi">Jauno privātuma politiku iepazinos</a> iepazinos</string>
+    <string name="v2_terms_hyperlink">Piekrītu <a href="https://apturicovid.lv/lietosanas-noteikumi">Jaunajiem lietotnes noteikumiem</a>, ar <a href="https://apturicovid.lv/privatuma-politika">Jauno privātuma politiku iepazinos</a> iepazinos</string>
 </resources>
