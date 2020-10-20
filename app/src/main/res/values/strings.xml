@@ -68,8 +68,6 @@
     <string name="number_confirm_missing_code">Nesaņēmu kodu, sūtīt vēlreiz</string>
     <string name="number_confirm_incorrect_code">Ievadīts nepareizs kods</string>
 
-    <string name="code_expiration">Kods derīgs 30\u00A0minūtes</string>
-
     <!-- sms verification -->
     <string name="sms_verification_info">Uz norādīto tālruņa numuru %1$s ir nosūtīts kods.</string>
 
@@ -96,7 +94,7 @@
     <!-- Data transfer submit -->
     <string name="label_send_data">Sūtīt ziņu fiksētajiem kontaktiem</string>
     <string name="label_send_data_description">Ja esi inficēts, ar SPKC izsniegtu kodu šeit vari nosūtīt automātisku paziņojumu fiksētajiem kontaktiem, kam bijis inficēšanās risks – brīdināt gan savējos, gan arī svešos līdzcilvēkus Latvijā un Eiropā. Paziņojums neatklās informāciju par tevi pašu. Kods ir derīgs 30\u00A0minūtes.</string>
-    <string name="list_of_countries_hyperlink"><a href="https://www.spkc.gov.lv/lv/apturicovid-sadarbibas-valstis">Valstu saraksts</a></string>
+    <string name="list_of_countries_hyperlink"><a href="https://www.spkc.gov.lv/lv/apturicovid-sadarbibas-valstis">Valstu saraksts ></a></string>
 
     <!--Various-->
     <string name="label_wrong_number">Neatbilstošs numura formāts</string>

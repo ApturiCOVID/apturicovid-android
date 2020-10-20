@@ -127,20 +127,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/code_et" />
 
-            <TextView
-                android:id="@+id/code_expiration_tv"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/fragment_side_margin"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="@dimen/fragment_side_margin"
-                android:text="@string/code_expiration"
-                android:textColor="@color/grayTextColor2"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/code_et" />
-
             <Button
                 android:id="@+id/next_button"
                 android:layout_width="@dimen/default_button_width"

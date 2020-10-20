@@ -1,8 +1,6 @@
 package lv.spkc.apturicovid.ui.settings.datatransfer
 
 import android.content.Context
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.text.InputFilter
 import android.text.method.LinkMovementMethod
@@ -47,7 +45,6 @@ class DataTransferSubmitFragment : BaseFragment() {
                 if (errorTv.isVisible) {
                     codeEt.setPinBackground(ContextCompat.getDrawable(requireContext(), R.drawable.bg_pin_number))
                     codeEt.setTextColor(ContextCompat.getColor(requireContext(), R.color.headerTextColor))
-                    codeExpirationTv.visibility = View.VISIBLE
                     errorTv.visibility = View.INVISIBLE
                 }
             }
@@ -100,7 +97,6 @@ class DataTransferSubmitFragment : BaseFragment() {
         with(binding) {
             codeEt.setPinBackground(ContextCompat.getDrawable(requireContext(), R.drawable.bg_pin_error))
             codeEt.setTextColor(ContextCompat.getColor(requireContext(), R.color.editTextErrorTextColor))
-            codeExpirationTv.visibility = View.INVISIBLE
             errorTv.visibility = View.VISIBLE
         }
     }
