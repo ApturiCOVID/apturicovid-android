@@ -652,6 +652,7 @@
                         android:text="@string/faq_answer_8" />
 
                     <TextView
+                        android:textColorLink="@color/hyperlinkColor"
                         android:id="@+id/faq_question_8_link"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
