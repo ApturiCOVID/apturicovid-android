@@ -1,8 +1,7 @@
 package lv.spkc.apturicovid.ui.information
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +13,6 @@ import kotlinx.android.synthetic.main.fragment_information.*
 import lv.spkc.apturicovid.R
 import lv.spkc.apturicovid.activity.viewmodel.BaseViewModel
 import lv.spkc.apturicovid.databinding.FragmentInformationBinding
-import lv.spkc.apturicovid.extension.setOnDebounceClickListener
 import lv.spkc.apturicovid.ui.BaseFragment
 import net.cachapa.expandablelayout.ExpandableLayout
 
@@ -42,15 +40,11 @@ class InformationFragment : BaseFragment(), View.OnClickListener {
             questionContainer6.setOnClickListener(this@InformationFragment)
             questionContainer7.setOnClickListener(this@InformationFragment)
             questionContainer8.setOnClickListener(this@InformationFragment)
+            faqQuestion8Link.movementMethod = LinkMovementMethod()
             questionContainer9.setOnClickListener(this@InformationFragment)
 
-            termsOfUseView.setOnDebounceClickListener {
-                showTerms()
-            }
-
-            privacyPolicyLinkView.setOnDebounceClickListener {
-                showPrivacyPolicy()
-            }
+            termsOfUseView.movementMethod = LinkMovementMethod()
+            privacyPolicyLinkView.movementMethod = LinkMovementMethod()
         }
     }
 
@@ -78,18 +72,5 @@ class InformationFragment : BaseFragment(), View.OnClickListener {
             textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.hyperlinkColor))
             imageView.setImageResource(R.drawable.faq_expand)
         }
-    }
-
-    private fun startBrowserIntentWithUrl(url: String) {
-        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-        startActivity(browserIntent)
-    }
-
-    private fun showPrivacyPolicy() {
-        startBrowserIntentWithUrl(getString(R.string.privacy_policy_url))
-    }
-
-    private fun showTerms() {
-        startBrowserIntentWithUrl(getString(R.string.terms_of_use_url))
     }
 }

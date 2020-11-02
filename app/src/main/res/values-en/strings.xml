@@ -7,7 +7,7 @@
     <!-- Intro -->
     <string name="intro_header">Help break the virus chain!</string>
     <string name="intro_main">Anonymously and with no location data register on your device when you are close to others. Provide your number for SPKC if you want to.</string>
-    <string name="intro_agreement">I accept App Terms of Use,\nand have read the Privacy policy</string>
+    <string name="intro_agreement_hyperlink">I accept <a href="https://apturicovid.lv/lietosanas-noteikumi#en">App Terms of Use</a>, and have read the <a href="https://apturicovid.lv/privatuma-politika#en">Privacy policy</a></string>
     <string name="button_next">Next</string>
     <string name="button_send">Send</string>
     <string name="button_close">Close</string>
@@ -19,20 +19,19 @@
     <string name="home_status_idle">Is switched off</string>
     <!--status update -->
     <string name="home_status_starting">Switching on</string>
-    <string name="home_previous_day">In the last 24 hours</string>
+    <string name="home_previous_day">In the last 24\u00A0hours</string>
     <string name="home_tested">Tested</string>
     <string name="home_ill">New cases</string>
-    <string name="home_dead">Deceased</string>
+    <string name="home_dead">Deaths</string>
 
     <!--Label-->
     <string name="label_stats_title">COVID-19 statistics in Latvia</string>
     <string name="label_tested">Tested</string>
     <string name="label_infected">New cases</string>
-    <string name="label_dead">Deceased</string>
-    <string name="label_percentage">Proportion</string>
+    <string name="label_dead">Deaths</string>
+    <string name="label_recovered">Recovered</string>
     <string name="label_total">Total</string>
     <string name="label_yesterday">Yesterday</string>
-    <string name="label_sick">Infected</string>
     <string name="label_detailed_stats">Detailed statistics</string>
 
     <string name="confirm_stay_anonymous_text">In case of contact you will only get a notification in the app, and support options available to you will be limited. Continue without phone number?</string>
@@ -48,7 +47,7 @@
 
     <!--Activation-->
     <string name="label_contact_title_tv">Contact detection</string>
-    <string name="label_contact_activation_description_tv">Contact: up to ~2 m proximity for 15+ minutes.\nDetection: a code kept on phone for 14 days, then deleted.\nContact detection is not tracking.</string>
+    <string name="label_contact_activation_description_tv">Contact: up to ~2\u00A0m proximity for 15+\u00A0minutes.\nDetection: a code kept on phone for 14\u00A0days, then deleted.\nContact detection is not tracking.</string>
     <string name="label_activate">Switch on</string>
     <string name="label_switch_description">This function can be switched on later. And switched off at any time.</string>
     <string name="specify_contact_description">Provide a contact number for SPKC to call you if you have been exposed to COVID-19.</string>
@@ -68,8 +67,6 @@
     <string name="number_confirm_enter_code">Enter code:</string>
     <string name="number_confirm_missing_code">Code not received, resend</string>
     <string name="number_confirm_incorrect_code">Incorrect code entered</string>
-
-    <string name="code_expiration">Code valid for 30 minutes</string>
 
     <!-- sms verification -->
     <string name="sms_verification_info">A code has been sent to the provided number %1$s.</string>
@@ -93,7 +90,8 @@
 
     <!-- Data transfer submit -->
     <string name="label_send_data">Notify detected contacts</string>
-    <string name="label_send_data_description">If you are infected, here’s where you can enter a code from SPKC and automatically notify detected contacts at risk to be infected – from loved ones to complete strangers. The notification will not disclose any information about you.</string>
+    <string name="label_send_data_description">If you are infected, here’s where you can enter a code from SPKC and automatically notify detected contacts at risk to be infected – from loved ones to complete strangers, in Latvia and in Europe. The notification will not disclose any information about you. Code is valid for 30\u00A0minutes.</string>
+    <string name="list_of_countries_hyperlink"><a href="https://www.spkc.gov.lv/lv/apturicovid-interoperability-countries">List of countries ></a></string>
 
     <!--Various-->
     <string name="label_wrong_number">Number format incompatible</string>
@@ -101,8 +99,7 @@
     <string name="label_specify_contact">Contact detection</string>
     <string name="label_specify_phone">Provide number</string>
 
-    <string name="privacy_policy_url">https://apturicovid.lv/privatuma-politika/#en</string>
-    <string name="terms_of_use_url">https://apturicovid.lv/lietosanas-noteikumi/#en</string>
+    <string name="share_link">https://www.apturicovid.lv/#en</string>
 
     <string name="label_exposure_message">Don’t panic. You have been exposed to COVID-19.</string>
     <string name="label_what_about_my_privacy">What about my privacy?</string>
@@ -117,7 +114,7 @@
 
     <!--FAQ-->
     <string name="faq_header">How does contact detection work?</string>
-    <string name="faq_description">When two smartphones are in up to ~2 m proximity, they directly exchange a code, and each device keeps it for 14 days. If a phone user marks themselves as infected, all phones keeping the respective code receive a notification.</string>
+    <string name="faq_description">When two smartphones are in up to ~2\u00A0m proximity, they directly exchange a code, and each device keeps it for 14\u00A0days. If a phone user marks themselves as infected, all phones keeping the respective code receive a notification.</string>
     <string name="faq_bullet_points_header">What about my privacy?</string>
     <string name="label_dummy_point_1">Data is kept on device only</string>
     <string name="label_dummy_point_2">Data is automatically deleted</string>
@@ -129,9 +126,9 @@
     <string name="faq_question_2">How many users does the app need to be effective?</string>
     <string name="faq_answer_2">According to calculations by epidemiologists and experts, even if the app is used just by 20% of residents of Latvia, it will already help identify risks and limit the spread of infection going forward. However, the more people use it, the more effective it will be.</string>
     <string name="faq_question_3">How does the app work?</string>
-    <string name="faq_answer_3">It anonymously detects nearby smartphones that also have this app installed (up to ~2 m proximity, for 15+ minutes). This information is only kept on device, and automatically deleted after 14 days. If a user is confirmed to be a COVID-19 case, SPKC will send them a code. When entered in the app, an anonymous notification will be sent to detected contacts that have been at risk to be infected. Sender’s identity is not disclosed to recipients. Likewise, the infected individual does not know who the recipients are.</string>
+    <string name="faq_answer_3">It anonymously detects nearby smartphones that also have this app installed (up to ~2\u00A0m proximity, for 15+\u00A0minutes). This information is only kept on device, and automatically deleted after 14\u00A0days. If a user is confirmed to be a COVID-19 case, SPKC will send them a code. When entered in the app, an anonymous notification will be sent to detected contacts that have been at risk to be infected. Sender’s identity is not disclosed to recipients. Likewise, the infected individual does not know who the recipients are.</string>
     <string name="faq_question_4">What information is used in the app?</string>
-    <string name="faq_answer_4">Contacts detected via Bluetooth are kept on device only, encrypted with random generated key, and are not disclosed to the user or developers of this app. Data is deleted after 14 days.\n\nIf you provide your phone number, SPKC will only receive it if and when you are notified about exposure to COVID-19. SPKC will have access to this data: phone number, contact date, signal strength, contact duration.\n\nThe app does not access or store information about the location of the user or the exact time of contact.</string>
+    <string name="faq_answer_4">Contacts detected via Bluetooth are kept on device only, encrypted with random generated key, and are not disclosed to the user or developers of this app. Data is deleted after 14\u00A0days.\n\nIf you provide your phone number, SPKC will only receive it if and when you are notified about exposure to COVID-19. SPKC will have access to this data: phone number, contact date, signal strength, contact duration.\n\nThe app does not access or store information about the location of the user or the exact time of contact.</string>
     <string name="faq_question_5">What should I do if I receive a notification that I have been exposed to COVID-19?</string>
     <string name="faq_answer_5">To make sure you do not infect others SPKC recommends to self-isolate and monitor your symptoms for the onset of COVID-19. Only SPKC can get you official close contact status. If you have provided your phone number in the app, SPKC will get in touch and inform about further action.</string>
     <string name="faq_question_6">Is it safe to use the app?</string>
@@ -139,23 +136,28 @@
     <string name="faq_question_7">How does Bluetooth work?</string>
     <string name="faq_answer_7">Bluetooth is a short range wireless communication technology used in smartphones, wireless headphones and smart watches. Most of the world’s contact tracing apps are based on it as it allows encrypted tracing. For improved efficiency and battery life, also Apple and Google use Bluetooth optimisation in their software. To use the app, Bluetooth functionality has to be switched on. Otherwise the app will not be operational.</string>
     <string name="faq_question_8">Will the app work in other countries?</string>
-    <string name="faq_answer_8">Not yet. Together with international partners we are investigating how such contact tracing apps could be also used when travelling abroad. Currently, Apple and Google have imposed certain limitations to only allow using each tracing app in its respective country. It also applies to users in Latvia who use smartphone profiles registered to other countries.</string>
+    <string name="faq_answer_8">The latest version of the app works together with several other apps in Europe that are based on the Apple and Google framework. This means that Apturi Covid sends encrypted data for checking against the keys on other devices, and receives the same from other countries – just the same as it previously did only in Latvia.</string>
+    <string name="faq_link_8"><a href="https://www.spkc.gov.lv/lv/apturicovid-interoperability-countries">Find the latest list of countries here.</a></string>
     <string name="faq_question_9">Why is my Android device asking for GPS?</string>
     <string name="faq_answer_9">Because currently on Android operating system Bluetooth Low Energy connection is integrated in the GPS module. This is the only way to enable the required Bluetooth functionality. This request doesn\&apos;t come from this app, and it cannot access location data. You can check it in app settings – it has no GPS permission.</string>
 
-    <string name="faq_privacy_policy">Privacy policy</string>
-    <string name="faq_terms_of_use">App Terms of Use</string>
+    <string name="faq_privacy_policy_hyperlink"><a href="https://apturicovid.lv/privatuma-politika#en">Privacy policy</a></string>
+    <string name="faq_terms_of_use_hyperlink"><a href="https://apturicovid.lv/lietosanas-noteikumi#en">App Terms of Use</a></string>
 
     <string name="label_success_close">Close</string>
     <string name="confirm_turn_off_tracking_text">Continue with contact detection switched off?</string>
     <string name="label_data_refreshed">Information updated: %s</string>
     <string name="label_code_resent">Code resent</string>
-    <string name="label_code_resend_error">Please wait %1$s seconds to resend code</string>
+    <string name="label_code_resend_error">Please wait %1$s\u00A0seconds to resend code</string>
     <string name="label_generic_error">Something went wrong, please try again</string>
 
     <!-- bluetooth state monitor notification -->
     <string name="bt_monitor_notification_title">Contact detection is switched off</string>
     <string name="bt_monitor_notification_message">Contact tracing with Apturi Covid app is currently off.</string>
+
+    <!-- location services_ state monitor notification -->
+    <string name="location_services_notification_title">Contact detection is switched off</string>
+    <string name="location_services_notification_message">Contact tracing with Apturi Covid app is currently off.</string>
 
     <!-- exposure notification -->
     <string name="notification_title">Don’t panic.</string>
@@ -165,4 +167,9 @@
 
     <string name="exposure_api_error_unavailable">Unfortunately contact detection is unavailable for your device, as it doesn’t support Exposure API yet. Wait for update.</string>
     <string name="exposure_api_error_not_enabled">Nothing to send – looks like you haven\&apos;t used the app long enough</string>
+
+    <!-- terms acceptance -->
+    <string name="europe_support_title">Europe-wide contact detection!</string>
+    <string name="europe_support_description">Contact detection apps in Europe now work together as one. See privacy policy for list of countries.</string>
+    <string name="v2_terms_hyperlink">I accept <a href="https://apturicovid.lv/lietosanas-noteikumi#en">new App Terms of Use</a>, and have read the <a href="https://apturicovid.lv/privatuma-politika#en">new Privacy policy</a></string>
 </resources>

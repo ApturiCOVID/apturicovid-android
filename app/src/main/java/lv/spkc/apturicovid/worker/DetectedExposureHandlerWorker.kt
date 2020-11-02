@@ -15,9 +15,9 @@ import com.google.android.gms.nearby.Nearby
 import com.google.android.gms.nearby.exposurenotification.ExposureNotificationClient
 import com.google.gson.Gson
 import kotlinx.coroutines.tasks.await
-import lv.spkc.apturicovid.BuildConfig
 import lv.spkc.apturicovid.R
 import lv.spkc.apturicovid.activity.MainActivity
+import lv.spkc.apturicovid.di.module.NetworkModule
 import lv.spkc.apturicovid.network.ExposureApiConfig
 import lv.spkc.apturicovid.network.FileLoader
 import lv.spkc.apturicovid.persistance.ExposureRepository
@@ -65,7 +65,7 @@ class DetectedExposureHandlerWorker(
         } else {
             val exposureNotificationClient: ExposureNotificationClient = Nearby.getExposureNotificationClient(context)
 
-            val apiExposureConfig = fileLoader.getJsonFromApiFile(context, BuildConfig.CONFIG_URL, TEMP_CONFIG_FILE_PREFIX)?.let {
+            val apiExposureConfig = fileLoader.getJsonFromApiFile(context, NetworkModule.CONFIG_URL, TEMP_CONFIG_FILE_PREFIX)?.let {
                 Gson().fromJson(it, ExposureApiConfig::class.java)
             }
 

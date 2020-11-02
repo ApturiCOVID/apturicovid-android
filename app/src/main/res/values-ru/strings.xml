@@ -7,7 +7,7 @@
     <!-- Intro -->
     <string name="intro_header">Помоги прервать цепочку заражений!</string>
     <string name="intro_main">Анонимно и без данных геолокации фиксируй на своем устройстве случаи сближения с другими. Если хочешь, укажи свой телефон для связи с SPKC.</string>
-    <string name="intro_agreement">Я согласен(-а) с Правилами использования приложения и\nознакомился(-ась) с Политикой конфиденциальности</string>
+    <string name="intro_agreement_hyperlink">Я согласен(-а) с <a href="https://apturicovid.lv/lietosanas-noteikumi#ru">Правилами использования приложения</a> и\nознакомился(-ась) с <a href="https://apturicovid.lv/privatuma-politika#ru">Политикой конфиденциальности</a></string>
     <string name="button_next">Дальше</string>
     <string name="button_send">Отправить</string>
     <string name="button_close">Закрыть</string>
@@ -28,10 +28,9 @@
     <string name="label_tested">Протестировано</string>
     <string name="label_infected">Заболело</string>
     <string name="label_dead">Умерло</string>
-    <string name="label_percentage">Соотношение</string>
+    <string name="label_recovered">Выздоровело</string>
     <string name="label_total">Всего</string>
     <string name="label_yesterday">Вчера</string>
-    <string name="label_sick">Больные</string>
     <string name="label_detailed_stats">Подробная статистика</string>
 
     <!--Settings-->
@@ -42,7 +41,7 @@
 
     <!--Activation-->
     <string name="label_contact_title_tv">Обнаружение контакта</string>
-    <string name="label_contact_activation_description_tv">Контакт: присутствие не менее 15 мин. на расстоянии до ~2 м.\nОбнаружение: шифр, который хранится в телефоне 14 дней, затем удаляется.\nОбнаружение контакта – это не отслеживание местонахождения.</string>
+    <string name="label_contact_activation_description_tv">Контакт: присутствие не менее 15\u00A0мин. на расстоянии до ~2\u00A0м.\nОбнаружение: шифр, который хранится в телефоне 14\u00A0дней, затем удаляется.\nОбнаружение контакта – это не отслеживание местонахождения.</string>
     <string name="label_activate">Включить</string>
     <string name="label_switch_description">Эту функцию можно включить позже или отключить по желанию.</string>
     <string name="specify_contact_description">Укажи номер телефона, чтобы у SPKC была возможность связаться с тобой в случае контакта с COVID-19.</string>
@@ -63,8 +62,6 @@
     <string name="number_confirm_missing_code">Не получил код, выслать повторно</string>
     <string name="number_confirm_incorrect_code">Введен неправильный код</string>
 
-    <string name="code_expiration">Код действителен 30 мин.</string>
-
     <!-- sms verification -->
     <string name="sms_verification_info">На указанный номер телефона %1$s выслан код.</string>
 
@@ -75,7 +72,7 @@
     <string name="covid_contact_recommendation_1">Оставайся дома, ограничив контакты с окружающими</string>
     <string name="covid_contact_recommendation_2">Наблюдай за симптомами</string>
     <string name="covid_contact_recommendation_3">Есть симптомы? Свяжись с семейным врачом</string>
-    <string name="covid_contact_recommendation_4">Тяжелый симптомы? Звони 113! </string>
+    <string name="covid_contact_recommendation_4">Тяжелый симптомы? Звони 113</string>
     <string name="covid_contact_recommendation_5">Жди звонка из SPKC</string>
 
     <string name="covid_contact_description">Помни! Констатация контакта еще не означает, что ты  инфицирован(-на). Сейчас главное – сохранять спокойствие, соблюдать осторожность и следовать указаниям медиков. Возможно, мгновения до звонка SPKC покажутся вечностью – запасись терпением!</string>
@@ -87,7 +84,8 @@
 
     <!-- Data transfer submit -->
     <string name="label_send_data">Отправить сообщение констатированным контактам</string>
-    <string name="label_send_data_description">Если ты инфицирован, можешь с помощью присвоенного SPKC кода разослать автоматическое сообщение тем зафиксированным контактам, у которых есть риск заражения – как близким, так и незнакомым людям. Сообщение не будет содержать какой-либо информации о тебе.</string>
+    <string name="label_send_data_description">Если ты инфицирован, можешь с помощью присвоенного SPKC кода разослать автоматическое сообщение тем зафиксированным контактам, у которых есть риск заражения – как близким, так и незнакомым людям. Сообщение не будет содержать какой-либо информации о тебе. Код действителен 30\u00A0минут.</string>
+    <string name="list_of_countries_hyperlink"><a href="https://www.spkc.gov.lv/lv/apturicovid-strany-sotrudnichestva">Список стран ></a></string>
 
     <!--Various-->
     <string name="label_wrong_number">Недействительный формат номера</string>
@@ -100,8 +98,7 @@
     <string name="confirm_stay_anonymous_yes">Да</string>
     <string name="confirm_stay_anonymous_no">Нет</string>
 
-    <string name="privacy_policy_url">https://apturicovid.lv/privatuma-politika/#ru</string>
-    <string name="terms_of_use_url">https://apturicovid.lv/lietosanas-noteikumi/#ru</string>
+    <string name="share_link">https://www.apturicovid.lv/#ru</string>
 
     <string name="label_exposure_message">Спокойствие, только спокойствие. У тебя констатирован контакт с COVID-19.</string>
     <string name="label_what_about_my_privacy">И какова ситуация с сохранением моей конфиденциальности?</string>
@@ -116,7 +113,7 @@
 
     <!--FAQ-->
     <string name="faq_header">Как констатируется контакт?</string>
-    <string name="faq_description">Когда два смартфона находятся на расстоянии до ~2 м, они напрямую обмениваются кодом, который хранится в каждом телефоне 14 дней. Если пользователь отметит, что он инфицирован, на телефоны с этим же кодом приходит уведомление.</string>
+    <string name="faq_description">Когда два смартфона находятся на расстоянии до ~2\u00A0м, они напрямую обмениваются кодом, который хранится в каждом телефоне 14\u00A0дней. Если пользователь отметит, что он инфицирован, на телефоны с этим же кодом приходит уведомление.</string>
     <string name="faq_bullet_points_header">Что с моей конфиденциальностью?</string>
     <string name="label_dummy_point_1">Данные хранятся только в телефоне</string>
     <string name="label_dummy_point_2">Данные автоматически удаляются</string>
@@ -128,9 +125,9 @@
     <string name="faq_question_2">Сколько надо пользователей для эффективной работы приложения?</string>
     <string name="faq_answer_2">По расчетам эпидемиологов и ученых, даже если 20% населения Латвии начнут использовать приложение, это будет большим подспорьем в определении рисков и дальнейшем сдерживании инфекции. Чем больше жителей будут пользоваться приложением, тем значительнее будет эффект.</string>
     <string name="faq_question_3">Как работает приложение?</string>
-    <string name="faq_answer_3">Приложение анонимно, по Bluetooth, фиксирует те смартфоны поблизости (до ~2 метров, 15+ минут), на которых оно тоже установлено. Эта информация хранится только на смартфоне и через 14 дней автоматически стирается. Если у пользователя будет подтвержден COVID-19, SPKC отправит код, которым можно активизировать рассылку анонимного сообщения контактам, у которых есть риск инфицирования. Адресатам не раскрывается личность отправителя. Заболевшему также не доступна информация о получателях.</string>
+    <string name="faq_answer_3">Приложение анонимно, по Bluetooth, фиксирует те смартфоны поблизости (до ~2\u00A0метров, 15+\u00A0минут), на которых оно тоже установлено. Эта информация хранится только на смартфоне и через 14\u00A0дней автоматически стирается. Если у пользователя будет подтвержден COVID-19, SPKC отправит код, которым можно активизировать рассылку анонимного сообщения контактам, у которых есть риск инфицирования. Адресатам не раскрывается личность отправителя. Заболевшему также не доступна информация о получателях.</string>
     <string name="faq_question_4">Какую информацию использует приложение?</string>
-    <string name="faq_answer_4">Контакты, зафиксированные по Bluetooth, хранятся как зашифрованные коды только в устройстве и не доступны ни пользователю, ни разработчикам. Они удаляются через 14 дней.\n\nЕсли укажешь номер телефона, SPKC получит его только когда тебе придет оповещение о контакте с COVID-19. У SPKC будет доступ к номеру телефона, дате контакта, мощности сигнала и длительности контакта.\n\nПриложение не получает информацию о местонахождении пользователей и точном времени контакта.</string>
+    <string name="faq_answer_4">Контакты, зафиксированные по Bluetooth, хранятся как зашифрованные коды только в устройстве и не доступны ни пользователю, ни разработчикам. Они удаляются через 14\u00A0дней.\n\nЕсли укажешь номер телефона, SPKC получит его только когда тебе придет оповещение о контакте с COVID-19. У SPKC будет доступ к номеру телефона, дате контакта, мощности сигнала и длительности контакта.\n\nПриложение не получает информацию о местонахождении пользователей и точном времени контакта.</string>
     <string name="faq_question_5">Что делать, если получено сообщение приложения о контакте с заболевшим COVID-19?</string>
     <string name="faq_answer_5">Чтобы не инфицировать других, SPKC рекомендует самоизолироваться и наблюдать, не проявятся ли симптомы COVID-19. Статус близкого контактного лица присваивает только SPKC. Если в приложении указан номер телефона, SPKC свяжется с тобой и расскажет о дальнейших действиях.</string>
     <string name="faq_question_6">Безопасно ли использовать приложение?</string>
@@ -138,23 +135,28 @@
     <string name="faq_question_7">Как работает Bluetooth?</string>
     <string name="faq_answer_7">Bluetooth – это технология беспроводной связи малого радиуса действия для смартфонов, беспроводных наушников, смарт-часов и др. Bluetooth используется во многих приложениях для фиксации контактов, т.к. позволяет шифровать данные. Чтобы повысить эффективность и снизить нагрузку на аккумулятор, Apple и Google оптимизирует использование Bluetooth. Для работы приложения Bluetooth должен быть обязательно включен.</string>
     <string name="faq_question_8">Будет ли приложение работать и в других странах?</string>
-    <string name="faq_answer_8">Пока нет. В рамках международного сотрудничества изучается возможность использования приложения  за границей. В настоящее время Apple и Google установили ограничения, и каждое приложение фиксации контактов может быть использовано только в своей стране. Это относится и к пользователям, использующим в Латвии профили смартфонов, зарегистрированные в др. странах.</string>
+    <string name="faq_answer_8">Последняя версия приложения взаимодействует с похожими приложениями в нескольких других странах Европы, также созданными на платформе Apple и Google. Т.е. приложение Apturi Covid отправляет для сопоставления зашифрованные данные и получает их и из других стран – точно так же, как до этого пересылало в пределах Латвии.</string>
+    <string name="faq_link_8"><a href="https://www.spkc.gov.lv/lv/apturicovid-strany-sotrudnichestva">Актуальный список доступных приложению стран можно найти здесь.</a></string>
     <string name="faq_question_9">Почему мое Android-устройство просит включить GPS?</string>
     <string name="faq_answer_9">Потому что соединение Bluetooth Low Energy в операционной системе Android входит в GPS-модуль. Только так можно использовать необходимые функции Bluetooth. Эта необходимость исходит не от приложения – оно не получает доступ к информации о местонахождении. Убедиться в этом можно в настройках приложения – у него нет GPS-доступа.</string>
 
-    <string name="faq_privacy_policy">Политикa конфиденциальности</string>
-    <string name="faq_terms_of_use">Правила использования приложения</string>
+    <string name="faq_privacy_policy_hyperlink"><a href="https://apturicovid.lv/privatuma-politika#ru">Политикa конфиденциальности</a></string>
+    <string name="faq_terms_of_use_hyperlink"><a href="https://apturicovid.lv/lietosanas-noteikumi#ru">Правила использования приложения</a></string>
 
     <string name="label_success_close">Закрыть</string>
     <string name="confirm_turn_off_tracking_text">Действительно хочешь продолжить с выключенным обнаружением контактов?</string>
     <string name="label_data_refreshed">Данные обновлены: %s</string>
     <string name="label_code_resent">Код выслан повторно</string>
-    <string name="label_code_resend_error">Пожалуйста, подожди %1$s сек., чтобы отправить код повторно.</string>
+    <string name="label_code_resend_error">Пожалуйста, подожди %1$s\u00A0сек., чтобы отправить код повторно.</string>
     <string name="label_generic_error">Произошла ошибка, пожалуйста, попробуй еще раз!</string>
 
     <!-- bluetooth state monitor notification -->
     <string name="bt_monitor_notification_title">Фиксирование контакта выключено</string>
     <string name="bt_monitor_notification_message">Фиксирование контакта в приложении Apturi Covid сейчас не происходит.</string>
+
+    <!-- location services_ state monitor notification -->
+    <string name="location_services_notification_title">Фиксирование контакта выключено</string>
+    <string name="location_services_notification_message">Фиксирование контакта в приложении Apturi Covid сейчас не происходит.</string>
 
     <!-- exposure notification -->
     <string name="notification_title">Спокойствие, только спокойствие!</string>
@@ -164,4 +166,9 @@
 
     <string name="exposure_api_error_unavailable">К сожалению, на твоем устройстве фиксация контакта невозможна, поскольку оно пока не поддерживает  Exposure API. Дождись обновления.</string>
     <string name="exposure_api_error_not_enabled">Нет данных для отправки, кажется, ты использовал приложение недостаточно долго</string>
+
+    <!-- terms acceptance -->
+    <string name="europe_support_title">Теперь работает и в Европе!</string>
+    <string name="europe_support_description">Теперь приложения по фиксации контактов в Европе сотрудничают и понимают друг друга. Список стран найдешь в политике конфиденциальности.</string>
+    <string name="v2_terms_hyperlink">Я согласен(-на) с <a href="https://apturicovid.lv/lietosanas-noteikumi#ru">новыми Правилами использования приложения</a> и ознакомился(-ась) с <a href="https://apturicovid.lv/privatuma-politika#ru">новой Политикой конфиденциальности</a></string>
 </resources>

@@ -24,13 +24,9 @@ import lv.spkc.apturicovid.extension.setOnDebounceClickListener
 import lv.spkc.apturicovid.ui.BaseFragment
 import lv.spkc.apturicovid.ui.intro.SmsViewModel
 import lv.spkc.apturicovid.ui.settings.SettingsViewModel
-import lv.spkc.apturicovid.utils.DebouncedInfoClickListener
 
 class SmsRetrievalFragment: BaseFragment() {
-    companion object {
-        const val MILLIS_IN_SECOND = 1000L
-        const val MILLIS_IN_MINUTE = MILLIS_IN_SECOND * 60
-    }
+
     override val viewModel by viewModels<SmsRetrievalViewModel> { viewModelFactory }
 
     private val smsViewModel by activityViewModels<SmsViewModel> { viewModelFactory }
@@ -48,7 +44,7 @@ class SmsRetrievalFragment: BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         with(binding) {
-            sendNumber()
+            smsViewModel.processSmsRequest()
 
             codeEt.filters += AllCaps()
 
@@ -73,19 +69,17 @@ class SmsRetrievalFragment: BaseFragment() {
                 findNavController().popBackStack()
             }
 
-            resendCodeTv.setOnClickListener(object : DebouncedInfoClickListener(MILLIS_IN_MINUTE) {
-                override fun performClick(v: View?) {
-                    sendNumber()
-                    Toast.makeText(requireContext(), getString(R.string.label_code_resent), Toast.LENGTH_SHORT).show()
-                }
+            resendCodeTv.setOnClickListener { smsViewModel.processSmsRequestAndLogTimeIfNeeded() }
+        }
 
-                override fun onError(timeRemainingMillis: Long) {
-                    val errorText = String.format(getString(R.string.label_code_resend_error), timeRemainingMillis * -1 / MILLIS_IN_SECOND)
-                    Toast.makeText(requireContext(), errorText, Toast.LENGTH_SHORT).show()
-                }
+        observeEvent(smsViewModel.smsRemainingRequestTimeLiveData) {
+            val errorText = String.format(getString(R.string.label_code_resend_error), it)
+            Toast.makeText(requireContext(), errorText, Toast.LENGTH_SHORT).show()
+        }
 
-            })
-
+        observeEvent(smsViewModel.sendSmsAndShowMessageLiveData) {
+            sendNumber()
+            if (it) { Toast.makeText(requireContext(), getString(R.string.label_code_resent), Toast.LENGTH_SHORT).show() }
         }
 
         observeEvent(smsViewModel.smsCodeEventLiveData) {

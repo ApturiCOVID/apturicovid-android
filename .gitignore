@@ -13,3 +13,4 @@ secrets.properties
 dev-keystore.properties
 ajcore.*
 *.jks
+staging-environment.properties

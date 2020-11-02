@@ -18,12 +18,15 @@
     <dimen name="bg_rounded_corner_radius">28dp</dimen>
     <dimen name="stats_card_corner_radius">12dp</dimen>
     <dimen name="stat_card_side_margin">20dp</dimen>
+    <dimen name="stat_card_middle_margin">10dp</dimen>
     <dimen name="stat_card_height">140dp</dimen>
+    <dimen name="stat_card_min_width">150dp</dimen>
 
     <dimen name="web_view_back_height">45dp</dimen>
     <dimen name="web_view_back_width">45dp</dimen>
     <dimen name="web_view_back_insets">16dp</dimen>
     <dimen name="fragment_side_margin">28dp</dimen>
+    <dimen name="fragment_large_side_margin">38dp</dimen>
     <dimen name="confirmation_fragment_side_margin">20dp</dimen>
     <dimen name="confirmation_dialog_button_size">16sp</dimen>
     <dimen name="fragment_top_margin">56dp</dimen>
@@ -41,6 +44,7 @@
     <dimen name="share_top_margin">46dp</dimen>
     <dimen name="edit_text_corner_radius">5dp</dimen>
     <dimen name="checkbox_side_length">38dp</dimen>
+    <dimen name="pin_entry_side_margin">25dp</dimen>
 
     <dimen name="sms_header_text_size">18sp</dimen>
 

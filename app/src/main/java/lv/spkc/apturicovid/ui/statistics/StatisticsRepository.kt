@@ -2,7 +2,7 @@ package lv.spkc.apturicovid.ui.statistics
 
 import android.content.Context
 import com.google.gson.GsonBuilder
-import lv.spkc.apturicovid.BuildConfig
+import lv.spkc.apturicovid.di.module.NetworkModule
 import lv.spkc.apturicovid.network.CovidStats
 import lv.spkc.apturicovid.network.DateTimeDeserializer
 import lv.spkc.apturicovid.network.FileLoader
@@ -18,7 +18,7 @@ class StatisticsRepository @Inject constructor(private val fileLoader: FileLoade
     }
 
     suspend fun getStats(context: Context): CovidStats? {
-        return fileLoader.getJsonFromApiFile(context, BuildConfig.STATS_URL, TEMP_STATS_FILE_PREFIX)?.let {
+        return fileLoader.getJsonFromApiFile(context, NetworkModule.STATS_URL, TEMP_STATS_FILE_PREFIX)?.let {
             GSON.fromJson(it, CovidStats::class.java)
         }
     }

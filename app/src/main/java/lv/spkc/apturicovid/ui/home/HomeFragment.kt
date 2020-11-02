@@ -49,6 +49,8 @@ class HomeFragment : BaseFragment() {
 
         freshRedraw = true
 
+        presentAcceptanceIfNeeded()
+
         viewModel.refreshData(requireContext())
 
         observeLiveData(appStatusViewModel.isExposedLiveData) {
@@ -133,6 +135,18 @@ class HomeFragment : BaseFragment() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        //
+        // Needed to reset correct switch state after user dismisses tracing disabling dialog by
+        // sending app to the background and then resuming
+        //
+        exposureViewModel.exposureApiState.value.let {
+            binding.tracingToggle.isChecked = it == ExposureApiState.Enabled
+        }
+    }
+
     private fun showExposurePanelBottomMargin(newMargin: Int, animate: Boolean = !freshRedraw) {
         val params: ConstraintLayout.LayoutParams = binding.exposedNextSteps.layoutParams as ConstraintLayout.LayoutParams
         binding.exposedNextSteps.toggleVisibility(true)
@@ -157,5 +171,11 @@ class HomeFragment : BaseFragment() {
 
         val density = resources.displayMetrics.density
         return outMetrics.heightPixels / density
+    }
+
+    private fun presentAcceptanceIfNeeded() {
+        if (!appStatusViewModel.getAcceptanceV2Confirmed()) {
+            Navigation.findNavController(requireActivity(), R.id.main_nav_fragment).navigate(R.id.termsConfirmationFragment)
+        }
     }
 }

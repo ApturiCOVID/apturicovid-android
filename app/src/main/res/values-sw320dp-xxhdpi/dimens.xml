@@ -18,6 +18,7 @@
     <dimen name="share_top_margin">10dp</dimen>
 
     <dimen name="stat_card_height">130dp</dimen>
+    <dimen name="stat_card_min_width">140dp</dimen>
 
     <item name="home_image_size_percent" type="dimen">0.42</item>
 
@@ -37,5 +38,6 @@
     <dimen name="stat_regular_text_size">16sp</dimen>
     <dimen name="stat_ratio_text_size">18sp</dimen>
     <dimen name="stat_card_side_margin">14dp</dimen>
+    <dimen name="stat_card_middle_margin">4dp</dimen>
     <dimen name="exposed_label_icon_size">25dp</dimen>
 </resources>

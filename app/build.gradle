@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.firebase.appdistribution'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
@@ -15,15 +14,15 @@ def secretsPropertiesFile = rootProject.file("secrets.properties")
 def secretsProperties = new Properties()
 secretsProperties.load(new FileInputStream(secretsPropertiesFile))
 
+def stagingEnvironmentPropertiesFile = rootProject.file("staging-environment.properties")
+def stagingEnvironmentProperties = new Properties()
+stagingEnvironmentProperties.load(new FileInputStream(stagingEnvironmentPropertiesFile))
+
 buildscript {
     repositories {
         google()
         mavenCentral()
         jcenter()
-    }
-
-    dependencies {
-        classpath 'com.google.firebase:firebase-appdistribution-gradle:1.4.1'
     }
 }
 
@@ -35,8 +34,8 @@ android {
         applicationId "lv.spkc.gov.apturicovid"
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 47
-        versionName "1.0.47"
+        versionCode 55
+        versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -64,21 +63,25 @@ android {
     productFlavors {
         staging {
             applicationIdSuffix ".staging"
-            firebaseAppDistribution {
-                releaseNotes="New demo version"
-                groups="mak-it"
-            }
 
-            buildConfigField("String", "API_URL", "\"https://apturicovid-staging-api.spkc.gov.lv/api/\"")
-            buildConfigField("String", "STATS_URL", "\"https://apturicovid-staging-files.spkc.gov.lv/stats/v1/covid-stats.json\"")
-            buildConfigField("String", "INDEX_URL", "\"https://apturicovid-staging-files.spkc.gov.lv/dkfs/v1/index.txt\"")
-            buildConfigField("String", "CONFIG_URL", "\"https://apturicovid-staging-files.spkc.gov.lv/exposure_configurations/v1/android.json\"")
+            buildConfigField("String", "API_DOMAIN", stagingEnvironmentProperties["API_DOMAIN"])
+            buildConfigField("String", "FILES_DOMAIN", stagingEnvironmentProperties["FILES_DOMAIN"])
+            buildConfigField("String[]", "API_SSL_PINS", "new String[]{" + stagingEnvironmentProperties["API_SSL_PINS"] + "}")
+            buildConfigField("String[]", "FILES_SSL_PINS", "new String[]{" + stagingEnvironmentProperties["FILES_SSL_PINS"] + "}")
         }
         production {
-            buildConfigField("String", "API_URL", "\"https://apturicovid-api.spkc.gov.lv/api/\"")
-            buildConfigField("String", "STATS_URL", "\"https://apturicovid-files.spkc.gov.lv/stats/v1/covid-stats.json\"")
-            buildConfigField("String", "INDEX_URL", "\"https://apturicovid-files.spkc.gov.lv/dkfs/v1/index.txt\"")
-            buildConfigField("String", "CONFIG_URL", "\"https://apturicovid-files.spkc.gov.lv/exposure_configurations/v1/android.json\"")
+            buildConfigField("String", "API_DOMAIN", "\"apturicovid-api.spkc.gov.lv\"")
+            buildConfigField("String", "FILES_DOMAIN", "\"apturicovid-files.spkc.gov.lv\"")
+            buildConfigField("String[]", "API_SSL_PINS", "new String[]{" +
+                    "\"sha256/AD1268BbF/w+Hh5JXyPLDLVAdh67VIG2agjkdYjC/kI=\"," +
+                    "\"sha256/KhxI+AM5BFntDid1jc3tGAWOh/Qg8uG4ARPFF/QdXyg=\"," +
+                    "\"sha256/3LJ/K6jSPOrKBxIZSUFxI0dmVpKPGj0a5WVm7/RPh8w=\"," +
+                    "\"sha256/Mr5krFQTCZzw9aBSWDcRTiX6pD3qEpBytrjXwKt7/v8=\"}")
+            buildConfigField("String[]", "FILES_SSL_PINS", "new String[]{" +
+                    "\"sha256/u4OJJH+SZhvigfdKR+e1F3/OmICvFTnUl5Fnv6myaHg=\"," +
+                    "\"sha256/OMEJX6dz1nbHkHom4UjDI6IV7MntvN2OyaV4xHsdRdA=\"," +
+                    "\"sha256/dgbAjpXEfPJsPkFbQx99pUUg7iXQgCsjSNTs1A/X8mI=\"," +
+                    "\"sha256/gVxo9q/ofaPErOFjlBfYGUlX4RPMYwFIcpCPKMWX3aM=\"}")
         }
     }
 
@@ -101,24 +104,24 @@ android {
         jvmTarget = "1.8"
     }
 
-    dataBinding {
-        enabled = true
+    buildFeatures {
+        dataBinding = true
     }
 }
 
 dependencies {
-    api 'com.google.android.gms:play-services-base:17.2.1'
+    api 'com.google.android.gms:play-services-base:17.3.0'
     api fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
 
     def daggerVersion = '2.25.2'
     def recyclerviewVersion = '1.1.0'
-    def constraintLayoutVersion = '2.0.0-beta6'
+    def constraintLayoutVersion = '2.0.0-beta8'
     def workVersion = "2.3.4"
     def glideVersion = "4.11.0"
     def glideCompilerVersion = "4.10.0"
     def glideOkHttpIntegrationVersion = "4.9.0"
     def guavaVersion = '27.0.1'
-    def coroutinesVersion = "1.3.1"
+    def coroutinesVersion = "1.3.5"
     def retrofitVersion = '2.8.1'
     def jodaTimeVersion = '2.10.2'
     def timberTreeUtilsVersion = '1.0.0'
@@ -132,13 +135,13 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.3.0'
-    implementation 'androidx.navigation:navigation-fragment:2.2.2'
-    implementation 'androidx.navigation:navigation-ui:2.2.2'
+    implementation 'androidx.navigation:navigation-fragment:2.3.0'
+    implementation 'androidx.navigation:navigation-ui:2.3.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
-    implementation "androidx.security:security-crypto:1.0.0-rc02"
+    implementation "androidx.security:security-crypto:1.1.0-alpha01"
 
     implementation "com.google.android.gms:play-services-safetynet:$google_play_services_version"
 
@@ -164,6 +167,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0'
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
     implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
+    implementation 'com.google.android:flexbox:2.0.1'
 
     //work manager
     // Kotlin + coroutines
@@ -197,11 +201,11 @@ dependencies {
 
     implementation 'com.google.android.gms:play-services-auth:18.0.0'
     implementation 'com.google.android.gms:play-services-auth-api-phone:17.4.0'
-    implementation 'com.google.android.gms:play-services-basement:17.2.1'
-    implementation 'com.google.android.gms:play-services-tasks:17.0.2'
-    implementation 'com.google.android.gms:play-services-vision:20.0.0'
-    implementation 'com.google.firebase:firebase-crashlytics:17.0.0'
-    implementation 'com.google.firebase:firebase-analytics-ktx:17.4.2'
+    implementation 'com.google.android.gms:play-services-basement:17.3.0'
+    implementation 'com.google.android.gms:play-services-tasks:17.1.0'
+    implementation 'com.google.android.gms:play-services-vision:20.1.0'
+    implementation 'com.google.firebase:firebase-crashlytics:17.1.1'
+    implementation 'com.google.firebase:firebase-analytics-ktx:17.4.4'
 
     // logger'
     implementation "net.ypresto.timbertreeutils:timbertreeutils:$timberTreeUtilsVersion"

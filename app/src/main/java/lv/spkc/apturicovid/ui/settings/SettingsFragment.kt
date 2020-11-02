@@ -6,19 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import lv.spkc.apturicovid.R
 import lv.spkc.apturicovid.databinding.FragmentSettingsBinding
 import lv.spkc.apturicovid.extension.observeEvent
 import lv.spkc.apturicovid.extension.observeLiveData
 import lv.spkc.apturicovid.ui.BaseFragment
+import lv.spkc.apturicovid.ui.LanguageFragment
+import lv.spkc.apturicovid.ui.LanguageViewModel
 
 class SettingsFragment: BaseFragment() {
-    companion object {
-        const val LV_LANGUAGE_CODE = "lv"
-        const val EN_LANGUAGE_CODE = "en"
-        const val RU_LANGUAGE_CODE = "ru"
-    }
+
+    override val viewModel by activityViewModels <SettingsViewModel> { viewModelFactory }
+    private val languageViewModel by viewModels<LanguageViewModel> { viewModelFactory }
 
     private lateinit var binding: FragmentSettingsBinding
 
@@ -28,10 +29,11 @@ class SettingsFragment: BaseFragment() {
             .root
     }
 
-    override val viewModel by activityViewModels <SettingsViewModel> { viewModelFactory }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val languageFragment = LanguageFragment()
+        childFragmentManager.beginTransaction().replace(R.id.language_selector, languageFragment).commit()
 
         with(binding) {
             observeLiveData(viewModel.contactNumberLiveData) {
@@ -40,38 +42,8 @@ class SettingsFragment: BaseFragment() {
 
             notifySwitch.isChecked = viewModel.getSwitchStatus()
 
-            when (viewModel.getSelectedLocale()) {
-                LV_LANGUAGE_CODE -> languageCodeLv.isSelected = true
-                EN_LANGUAGE_CODE -> languageCodeEn.isSelected = true
-                RU_LANGUAGE_CODE -> languageCodeRu.isSelected = true
-            }
+            versionNr.text = viewModel.getApplicationVersionString()
 
-            languageCodeLv.setOnClickListener {
-                if (it.isSelected) return@setOnClickListener
-
-                it.isSelected = true
-                viewModel.setLanguage(LV_LANGUAGE_CODE)
-                languageCodeEn.isSelected = false
-                languageCodeRu.isSelected = false
-            }
-
-            languageCodeEn.setOnClickListener {
-                if (it.isSelected) return@setOnClickListener
-
-                it.isSelected = true
-                viewModel.setLanguage(EN_LANGUAGE_CODE)
-                languageCodeLv.isSelected = false
-                languageCodeRu.isSelected = false
-            }
-
-            languageCodeRu.setOnClickListener {
-                if (it.isSelected) return@setOnClickListener
-
-                it.isSelected = true
-                viewModel.setLanguage(RU_LANGUAGE_CODE)
-                languageCodeLv.isSelected = false
-                languageCodeEn.isSelected = false
-            }
 
             codeButton.setOnClickListener {
                 Navigation.findNavController(requireActivity(), R.id.main_nav_fragment).navigate(R.id.toDataTransferWizard)
@@ -81,14 +53,14 @@ class SettingsFragment: BaseFragment() {
                 Navigation.findNavController(requireActivity(), R.id.main_nav_fragment).navigate(R.id.contactFragment)
             }
 
-            observeEvent(viewModel.languageChangedLiveData) {
+            observeEvent(languageViewModel.languageChangedEventLiveData) {
                 if (it) {
                     requireActivity().recreate()
                 }
             }
 
-            notifySwitch.setOnClickListener {
-                viewModel.selectNotifyTrackingSwitch(notifySwitch.isChecked)
+            notifySwitch.setOnCheckedChangeListener { _, isChecked ->
+                viewModel.selectNotifyTrackingSwitch(isChecked)
             }
         }
     }

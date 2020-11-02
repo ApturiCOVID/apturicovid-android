@@ -7,7 +7,7 @@ import androidx.security.crypto.MasterKeys
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 
-class SharedPreferenceStorage(private val context: Context, storeName: String) : PreferenceStorage {
+class SharedPreferenceStorage(context: Context, storeName: String) : PreferenceStorage {
     private val keyGenParameterSpec = MasterKeys.AES256_GCM_SPEC
     private val masterKeyAlias = MasterKeys.getOrCreate(keyGenParameterSpec)
     val backgroundPreferences = EncryptedSharedPreferences

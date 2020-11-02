@@ -637,14 +637,31 @@
                     app:el_expanded="false"
                     app:el_parallax="0.5">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_marginStart="@dimen/fragment_text_horizontal_margin"
                         android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
                         android:layout_marginBottom="@dimen/faq_margin_vertical"
+                        android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:textColor="@color/headerTextColor"
                         android:text="@string/faq_answer_8" />
+
+                    <TextView
+                        android:textColorLink="@color/hyperlinkColor"
+                        android:id="@+id/faq_question_8_link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/faq_margin_vertical"
+                        android:text="@string/faq_link_8"
+                        android:textColor="@color/colorGreenAccent"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    </LinearLayout>
                 </net.cachapa.expandablelayout.ExpandableLayout>
 
                 <View style="@style/Divider" />
@@ -713,9 +730,10 @@
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
                     android:layout_marginBottom="@dimen/faq_margin_vertical"
-                    android:text="@string/faq_privacy_policy"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorButton" />
+                    android:text="@string/faq_privacy_policy_hyperlink"
+                    android:textColor="@color/primaryTextColor"
+                    android:textColorLink="@color/hyperlinkColor"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/termsOfUseView"
@@ -725,9 +743,10 @@
                     android:layout_marginTop="@dimen/faq_margin_vertical"
                     android:layout_marginEnd="@dimen/fragment_text_horizontal_margin"
                     android:layout_marginBottom="75dp"
-                    android:textStyle="bold"
-                    android:text="@string/faq_terms_of_use"
-                    android:textColor="@color/colorButton" />
+                    android:text="@string/faq_terms_of_use_hyperlink"
+                    android:textColor="@color/primaryTextColor"
+                    android:textColorLink="@color/hyperlinkColor"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ScrollView
@@ -26,11 +27,10 @@
                 android:id="@+id/contact_image_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fragment_side_margin"
                 android:src="@drawable/image_contact"
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/back_arrow_iv" />
+                app:layout_constraintTop_toBottomOf="@id/back_arrow_iv" />
 
             <TextView
                 android:id="@+id/activation_title_tv"
@@ -40,7 +40,6 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="@dimen/fragment_side_margin"
                 android:text="@string/label_contact_title_tv"
-                android:textAlignment="center"
                 android:textColor="@color/titleTextColor"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -56,7 +55,6 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="@dimen/fragment_side_margin"
                 android:text="@string/label_contact_activation_description_tv"
-                android:textAlignment="center"
                 android:textColor="@color/subtitleTextColor"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +77,7 @@
                 android:id="@+id/label_activate_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/fragment_side_margin"
+                android:layout_marginStart="@dimen/fragment_large_side_margin"
                 android:layout_marginTop="20dp"
                 android:text="@string/label_activate"
                 android:textColor="@color/subtitleTextColor"
@@ -92,7 +90,7 @@
                 android:id="@+id/label_switch_description_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/fragment_side_margin"
+                android:layout_marginStart="@dimen/fragment_large_side_margin"
                 android:layout_marginTop="8dp"
                 android:text="@string/label_switch_description"
                 android:textColor="@color/regularTextColor"
@@ -109,7 +107,7 @@
                 android:scaleX="0.9"
                 android:scaleY="0.9"
                 android:thumb="@drawable/switch_thumb"
-                android:track="@drawable/switch_track_gray"
+                android:track="@drawable/switch_track_red"
                 app:layout_constraintTop_toTopOf="@id/label_activate_tv"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="@id/label_activate_tv" />
@@ -150,24 +148,45 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/contact_why_btn_tv"
+                <RelativeLayout
+                    android:id="@+id/contact_why_rl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/fragment_side_margin"
-                    android:layout_marginTop="10dp"
+                    android:paddingStart="@dimen/fragment_side_margin"
+                    android:paddingEnd="@dimen/fragment_side_margin"
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
-                    android:text="@string/label_why_number"
-                    android:textColor="@color/titleTextColor"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
+                    android:gravity="center_vertical"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/contact_description_tv" />
+                    app:layout_constraintTop_toBottomOf="@id/contact_description_tv">
+
+                    <TextView
+                        android:id="@+id/contact_why_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:paddingEnd="16dp"
+                        android:text="@string/label_why_number"
+                        android:textColor="@color/titleTextColor"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/contact_why_iv"
+                        android:layout_width="13dp"
+                        android:layout_height="10dp"
+                        android:layout_alignEnd="@id/contact_why_tv"
+                        android:layout_centerVertical="true"
+                        android:paddingTop="3dp"
+                        android:src="@drawable/ic_chevron_right"
+                        android:tint="@color/titleTextColor" />
+                </RelativeLayout>
 
                 <EditText
                     android:id="@+id/phone_code_et"
-                    android:layout_width="75dp"
+                    android:layout_width="wrap_content"
+                    android:minWidth="75dp"
                     android:layout_height="45dp"
                     android:layout_marginStart="@dimen/fragment_side_margin"
                     android:layout_marginTop="8dp"
@@ -175,10 +194,10 @@
                     android:inputType="phone"
                     android:enabled="false"
                     android:paddingStart="16dp"
-                    android:text="+371"
+                    android:text="@string/lv_phone_code"
                     android:textColor="@color/grayTextColor"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/contact_why_btn_tv" />
+                    app:layout_constraintTop_toBottomOf="@id/contact_why_rl" />
 
                 <View
                     android:id="@+id/phone_divider"
@@ -196,13 +215,15 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="@dimen/fragment_side_margin"
                     android:background="@drawable/bg_edit_text_phone"
+                    android:digits="0123456789"
                     android:inputType="phone"
                     android:maxLength="8"
                     android:paddingStart="16dp"
                     android:textColor="@color/subtitleTextColor"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/phone_divider"
-                    app:layout_constraintTop_toBottomOf="@id/contact_why_btn_tv" />
+                    app:layout_constraintTop_toBottomOf="@id/contact_why_rl"
+                    tools:ignore="TextFields" />
 
                 <CheckBox
                     android:id="@+id/third_party_contact_cb"
@@ -228,39 +249,41 @@
                     app:layout_constraintStart_toEndOf="@id/third_party_contact_cb"
                     app:layout_constraintTop_toTopOf="@id/third_party_contact_cb" />
 
-                <LinearLayout
-                    android:id="@+id/remain_anonymous_ll"
+                <RelativeLayout
+                    android:id="@+id/remain_anonymous_rl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/fragment_side_margin"
+                    android:paddingStart="@dimen/fragment_side_margin"
+                    android:paddingEnd="@dimen/fragment_side_margin"
                     android:layout_marginTop="24dp"
                     android:gravity="center_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/other_contact_description_tv">
 
                     <TextView
-                        android:id="@+id/contact_remain_anonymous_btn_tv"
+                        android:id="@+id/remain_anonymous_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
                         android:paddingTop="8dp"
                         android:paddingBottom="8dp"
+                        android:paddingEnd="16dp"
                         android:text="@string/label_remain_anonymous"
-                        android:textColor="@color/regularTextColor"
+                        android:textColor="@color/titleTextColor"
                         android:textSize="15sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/other_contact_description_tv" />
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="10dp"
-                        android:layout_height="10dp"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginTop="2dp"
+                        android:layout_height="13dp"
+                        android:layout_alignEnd="@id/remain_anonymous_tv"
+                        android:layout_centerVertical="true"
+                        android:paddingTop="3dp"
                         android:src="@drawable/ic_chevron_right"
-                        app:layout_constraintStart_toEndOf="@id/contact_remain_anonymous_btn_tv"
-                        app:layout_constraintTop_toTopOf="@id/contact_remain_anonymous_btn_tv" />
-                </LinearLayout>
+                        android:tint="@color/titleTextColor" />
+                </RelativeLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.Barrier

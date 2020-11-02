@@ -1,6 +1,5 @@
 package lv.spkc.apturicovid.extension
 
-import android.util.TypedValue
 import androidx.annotation.DimenRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
@@ -20,7 +19,3 @@ inline fun <T> Fragment.observeEvent(data: LiveData<Event<T>>, crossinline onEve
 }
 
 fun Fragment.bindDimension(@DimenRes dimenId: Int) = lazy { resources.getDimension(dimenId).toInt() }
-
-fun Fragment.bindFloatDimension(@DimenRes dimenId: Int) = lazy {
-    TypedValue().apply { resources.getValue(dimenId, this, true) }.float
-}

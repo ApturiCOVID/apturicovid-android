@@ -12,8 +12,6 @@ class SplashActivityViewModel @Inject constructor(private var sharedPreferenceMa
     val isOnboardingFinished: LiveData<Boolean> = _isOnboardingFinished
 
     init {
-
-
         viewModelScope.launch(coroutineExceptionHandler) {
             _isOnboardingFinished.value = sharedPreferenceManager.isOnboardingFinished
         }
