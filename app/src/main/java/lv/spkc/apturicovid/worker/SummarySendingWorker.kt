@@ -37,13 +37,8 @@ class SummarySendingWorker(
         private const val SYNC_TAG = "Summary_worker_tag"
 
         fun scheduleWorkManager(context: Context) {
-            val workManager = WorkManager.getInstance(context)
-
-            Timber.d("Cancelling existing summary sending worker")
-            workManager.cancelAllWorkByTag(SYNC_TAG)
-
             Timber.d("Scheduling new summary sending worker")
-            val syncWorkRequest: PeriodicWorkRequest = PeriodicWorkRequest
+            val syncWorkRequest = PeriodicWorkRequest
                 .Builder(
                     SummarySendingWorker::class.java,
                     SYNC_UPDATE_INTERVAL,
@@ -51,7 +46,9 @@ class SummarySendingWorker(
                 )
                 .addTag(SYNC_TAG)
                 .build()
-            workManager.enqueue(syncWorkRequest)
+
+            WorkManager.getInstance(context)
+                .enqueueUniquePeriodicWork(SYNC_TAG, ExistingPeriodicWorkPolicy.REPLACE, syncWorkRequest)
         }
     }
 

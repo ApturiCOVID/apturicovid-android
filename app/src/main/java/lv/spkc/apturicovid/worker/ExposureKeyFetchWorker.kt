@@ -53,13 +53,8 @@ class ExposureKeyFetchWorker @Inject constructor(
         private const val TEMP_CONFIG_FILE_PREFIX = "exp_config"
 
         fun scheduleWorkManager(context: Context) {
-            val workManager = WorkManager.getInstance(context)
-
-            Timber.d("Cancelling existing exposure sync")
-            workManager.cancelAllWorkByTag(SYNC_TAG)
-
             Timber.d("Scheduling new exposure sync")
-            val syncWorkRequest: PeriodicWorkRequest = PeriodicWorkRequest
+            val syncWorkRequest = PeriodicWorkRequest
                 .Builder(
                     ExposureKeyFetchWorker::class.java,
                     SYNC_UPDATE_INTERVAL,
@@ -67,7 +62,9 @@ class ExposureKeyFetchWorker @Inject constructor(
                 )
                 .addTag(SYNC_TAG)
                 .build()
-            workManager.enqueue(syncWorkRequest)
+
+            WorkManager.getInstance(context)
+                .enqueueUniquePeriodicWork(SYNC_TAG, ExistingPeriodicWorkPolicy.REPLACE, syncWorkRequest)
         }
     }
 
@@ -116,7 +113,7 @@ class ExposureKeyFetchWorker @Inject constructor(
             }
             val responseBody = response.body?.string() ?: return@withContext
 
-            Timber.d("Got response")
+            Timber.d("Got response body")
 
             val newFiles = responseBody.split("\n")
                 .filter { exposureCheckTokenDao.findById(it) == null } // Keep only new entries ...

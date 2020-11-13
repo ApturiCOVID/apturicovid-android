@@ -32,7 +32,8 @@ class ExposureRepository @Inject constructor(
     private val exposureNotificationClient = Nearby.getExposureNotificationClient(context)
 
     suspend fun cleanExpiredData() {
-        exposureCheckTokenDao.deleteOlderThan(DateTime.now().minusDays(14).millis / MILLIS_PER_SECOND)
+        val deletedCount = exposureCheckTokenDao.deleteOlderThan(DateTime.now().minusDays(14).millis / MILLIS_PER_SECOND)
+        Timber.d("Deleted $deletedCount number of old records")
     }
 
     suspend fun markTokenContainsExposure(token: String) {

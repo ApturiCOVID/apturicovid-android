@@ -28,13 +28,8 @@ class DeleteExpiredDataWorker (
         private const val SYNC_TAG = "DeleteExpiredDataWorker_worker_tag"
 
         fun scheduleWorkManager(context: Context) {
-            val workManager = WorkManager.getInstance(context)
-
-            Timber.d("Cancelling existing expired data delete jobs")
-            workManager.cancelAllWorkByTag(SYNC_TAG)
-
             Timber.d("Scheduling new expired data delete job")
-            val syncWorkRequest: PeriodicWorkRequest = PeriodicWorkRequest
+            val deleteExpiredDataRequest = PeriodicWorkRequest
                 .Builder(
                     DeleteExpiredDataWorker::class.java,
                     SYNC_UPDATE_INTERVAL,
@@ -42,7 +37,9 @@ class DeleteExpiredDataWorker (
                 )
                 .addTag(SYNC_TAG)
                 .build()
-            workManager.enqueue(syncWorkRequest)
+
+            WorkManager.getInstance(context)
+                .enqueueUniquePeriodicWork(SYNC_TAG, ExistingPeriodicWorkPolicy.REPLACE, deleteExpiredDataRequest)
         }
     }
 
