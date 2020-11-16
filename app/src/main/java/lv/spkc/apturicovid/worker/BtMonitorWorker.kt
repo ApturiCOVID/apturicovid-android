@@ -27,11 +27,6 @@ class BtMonitorWorker(
         fun scheduleWorkManager(context: Context) {
             Timber.d("Scheduling BT monitor")
 
-            Timber.d("Cancelling existing exposure sync")
-
-            val workManager = WorkManager.getInstance(context)
-            workManager.cancelAllWorkByTag(BT_MONITOR_TAG)
-
             val btMonitor: PeriodicWorkRequest = PeriodicWorkRequest
                 .Builder(
                     BtMonitorWorker::class.java,
@@ -41,7 +36,8 @@ class BtMonitorWorker(
                 .addTag(BT_MONITOR_TAG)
                 .build()
 
-            WorkManager.getInstance(context).enqueue(btMonitor)
+            WorkManager.getInstance(context)
+                .enqueueUniquePeriodicWork(BT_MONITOR_TAG, ExistingPeriodicWorkPolicy.REPLACE, btMonitor)
         }
     }
 

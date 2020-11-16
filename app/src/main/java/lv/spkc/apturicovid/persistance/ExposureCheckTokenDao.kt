@@ -30,5 +30,5 @@ interface ExposureCheckTokenDao {
 
     @Transaction
     @Query("DELETE from exposure_check_tokens WHERE created_at < :timestamp")
-    suspend fun deleteOlderThan(timestamp: Long)
+    suspend fun deleteOlderThan(timestamp: Long): Int
 }
