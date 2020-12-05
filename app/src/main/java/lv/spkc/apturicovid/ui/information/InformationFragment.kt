@@ -9,7 +9,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
-import kotlinx.android.synthetic.main.fragment_information.*
 import lv.spkc.apturicovid.R
 import lv.spkc.apturicovid.activity.viewmodel.BaseViewModel
 import lv.spkc.apturicovid.databinding.FragmentInformationBinding
@@ -21,7 +20,7 @@ class InformationFragment : BaseFragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentInformationBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return DataBindingUtil.inflate<FragmentInformationBinding>(inflater, R.layout.fragment_information, container, false)
             .apply { binding = this }
             .root
@@ -49,16 +48,18 @@ class InformationFragment : BaseFragment(), View.OnClickListener {
     }
 
     override fun onClick(view: View) {
-        when (view.id) {
-            R.id.questionContainer1 -> processViews(expandableLayout1, questionView1, questionImage1)
-            R.id.questionContainer2 -> processViews(expandableLayout2, questionView2, questionImage2)
-            R.id.questionContainer3 -> processViews(expandableLayout3, questionView3, questionImage3)
-            R.id.questionContainer4 -> processViews(expandableLayout4, questionView4, questionImage4)
-            R.id.questionContainer5 -> processViews(expandableLayout5, questionView5, questionImage5)
-            R.id.questionContainer6 -> processViews(expandableLayout6, questionView6, questionImage6)
-            R.id.questionContainer7 -> processViews(expandableLayout7, questionView7, questionImage7)
-            R.id.questionContainer8 -> processViews(expandableLayout8, questionView8, questionImage8)
-            R.id.questionContainer9 -> processViews(expandableLayout9, questionView9, questionImage9)
+        with(binding) {
+            when (view.id) {
+                R.id.questionContainer1 -> processViews(expandableLayout1, questionView1, questionImage1)
+                R.id.questionContainer2 -> processViews(expandableLayout2, questionView2, questionImage2)
+                R.id.questionContainer3 -> processViews(expandableLayout3, questionView3, questionImage3)
+                R.id.questionContainer4 -> processViews(expandableLayout4, questionView4, questionImage4)
+                R.id.questionContainer5 -> processViews(expandableLayout5, questionView5, questionImage5)
+                R.id.questionContainer6 -> processViews(expandableLayout6, questionView6, questionImage6)
+                R.id.questionContainer7 -> processViews(expandableLayout7, questionView7, questionImage7)
+                R.id.questionContainer8 -> processViews(expandableLayout8, questionView8, questionImage8)
+                R.id.questionContainer9 -> processViews(expandableLayout9, questionView9, questionImage9)
+            }
         }
     }
 

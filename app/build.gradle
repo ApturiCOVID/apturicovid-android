@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
 apply plugin: 'com.google.firebase.crashlytics'
@@ -113,36 +112,36 @@ dependencies {
     api 'com.google.android.gms:play-services-base:17.5.0'
     api fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
 
-    def daggerVersion = '2.25.2'
+    def daggerVersion = '2.27'
     def recyclerviewVersion = '1.1.0'
     def constraintLayoutVersion = '2.0.4'
-    def workVersion = "2.5.0-beta01"
+    def workVersion = "2.5.0-beta02"
     def glideVersion = "4.11.0"
     def glideCompilerVersion = "4.10.0"
     def glideOkHttpIntegrationVersion = "4.11.0"
     def guavaVersion = '27.0.1'
     def coroutinesVersion = "1.3.9"
     def retrofitVersion = '2.8.1'
-    def jodaTimeVersion = '2.10.2'
+    def jodaTimeVersion = '2.10.7'
     def timberTreeUtilsVersion = '1.0.0'
     def timberVersion = '4.7.1'
     def ok2curlVersion = "0.6.0"
     def lifecycleVersion = "2.2.0"
     def roomVersion = '2.2.5'
-    def navigationVersion = '2.3.1'
+    def navigationVersion = '2.3.2'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.core:core-ktx:1.3.2'
-    implementation "androidx.navigation:navigation-fragment:$navigationVersion"
-    implementation "androidx.navigation:navigation-ui:$navigationVersion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
-    implementation "androidx.security:security-crypto:1.1.0-alpha02"
+    implementation "androidx.security:security-crypto:1.1.0-alpha03"
 
     implementation "com.google.android.gms:play-services-safetynet:$google_play_services_version"
 
@@ -205,7 +204,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-basement:17.5.0'
     implementation 'com.google.android.gms:play-services-tasks:17.2.0'
     implementation 'com.google.android.gms:play-services-vision:20.1.2'
-    implementation 'com.google.firebase:firebase-crashlytics:17.2.2'
+    implementation 'com.google.firebase:firebase-crashlytics:17.3.0'
     implementation 'com.google.firebase:firebase-analytics-ktx:18.0.0'
 
     // logger'
