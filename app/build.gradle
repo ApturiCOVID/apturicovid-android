@@ -116,7 +116,7 @@ dependencies {
     def daggerVersion = '2.25.2'
     def recyclerviewVersion = '1.1.0'
     def constraintLayoutVersion = '2.0.4'
-    def workVersion = "2.5.0-beta01"
+    def workVersion = "2.8.0-alpha02"
     def glideVersion = "4.11.0"
     def glideCompilerVersion = "4.10.0"
     def glideOkHttpIntegrationVersion = "4.11.0"
