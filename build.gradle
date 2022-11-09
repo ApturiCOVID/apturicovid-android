@@ -2,7 +2,7 @@
 
 buildscript {
     ext.kotlin_version = '1.4.10'
-    ext.safeArgsVersion = "2.2.0-rc02"
+    ext.safeArgsVersion = "2.6.0-alpha04"
     ext.google_play_services_version = '17.0.0'
 
     repositories {
